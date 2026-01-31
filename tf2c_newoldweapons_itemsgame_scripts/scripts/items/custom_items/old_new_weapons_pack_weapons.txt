@@ -3186,143 +3186,108 @@ Oh, don't be such a baby... Ribs grow back!"
 			"mouse_pressed_sound"		"#ui/item_heavy_gun_pickup.wav"
 			"drop_sound"				"#ui/item_heavy_gun_drop.wav"
 		}
-
-
 		"3366"
 		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_GASCAN"
-			"item_class"				"tf_weapon_grenade_mirv"								// Same deal as Jarate, BUT it had to be its own independent weapon! No prefabs, those were causing weirdness.
-			"show_in_armory"			"1"
-			"item_slot"					"secondary"
-			"anim_slot"					"melee"
-			"equip_region"				"back"
-			
-			"image_inventory_size_w"	"128"
-			"image_inventory_size_h"	"82"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Gas Passer"
-			"item_type_name"			"Gas Can"
-			"item_description"			"Item recharge: (20s)
-
-Fuel for the flames."
-			"item_logname"				"jar_gas"
-			"item_iconname"				"jar_gas"
-			"image_inventory"			"backpack/weapons/c_models/c_gascan/c_gascan"
+			"name"	"The Gas Passer"
+			"item_class"	"tf_weapon_jar_gas"
+			"craft_class"	"weapon"
+			"craft_material_type"	"weapon"
+			"capabilities"
+			{
+				"nameable"		"1"
+			}
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_Jar_Gas"
+			"item_name"	"#TF_GasPasser"
+			"item_description"	"#TF_GasPasser_Desc"
+			"item_slot"	"secondary"
+			"item_quality"	"unique"
+			"min_ilevel"	"1"
+			"max_ilevel"	"100"
+			"propername"	"1"
 			"model_world"				"models/weapons/w_models/w_gascan.mdl"
 			"model_player"				"models/weapons/v_models/v_gascan_pyro.mdl"
 			"attach_to_hands"			"2"
 			"extra_wearable"			"models/player/items/pyro_firemans_essentials_backpack.mdl"	// This used to go with the Spray n' Pray, but I decided it was better to signpost this item instead!
-			"drop_type"					"drop"
+			"anim_slot" "MELEE_ALLCLASS"
+			"image_inventory"	"backpack/weapons/c_models/c_gascan/c_gascan"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+
 			"used_by_classes"
 			{
-				"pyro"					"1"
+				"pyro"	"1"
 			}
-			"static_attrs"																		// Just some small backend stuff to make it behave... well, not like the Gas Passer in Live TF2, but a general purpose grenade.
+			"static_attrs"
 			{
-				"override projectile type"				"3"
-				"min_viewmodel_offset"					"10 0 -10"								// Fix for NOWP v1.5.1 -- Adds in settings for min viewmodels where they were absent before.
-
-				"chargeweapon no extra speed"			"1"
-				"special taunt"							"1"
-				"allowed in medieval mode"				"1"
-				"meter_label"							"GAS"									// Re-added since the string was removed with TF2C v2.1.0. Thankfully this accepts plaintext!
-				"custom projectile model"				"models/weapons/w_models/w_gascan.mdl"	// Gas Can model
-
-				"damage bonus hidden"					"0.002"									// This actually DOES damage too that isn't fire damage! But, essentially none...
-				"mult dmg crit multiplier"				"83"									// FOR CRIT-VARIANT ONLY: Do 90 damage on a direct crit hit!
-				"add condition on hit weapon"			"101 0.66"								// NOWP v3.0.0 - The new TF2 update actually made this + Neon Annihilator work together, so let's add that! Shame I can't use the original cond number...
-			}
-			"attributes"
-			{
-				"gas passer nowp"
-				{
-					"attribute_class"	"set_dmgtype_ignite"
-					"value"				"1"
-				}
-				"crit vs burning players"														// NOWP v3.0.0 - I loosely based this off of Shualdock's variant of the Gas Passer... honestly it's sorta common sense, how'd I miss this!! Of course gasoline does more damage to burning targets, duh...!
-				{
-					"attribute_class"	"single_crit_vs_playercond_no_dot"
-					"value"				"23"													// Copied from DF, so it doesn't have crit-afterburn...
-				}
-				"hide_attrib_additive"															// NOWP v3.0.0 - Restored to exploding on contact again, just for parity with Live... even slight
-				{
-					"attribute_class"	"set_detonate_mode"
-					"value"				"3"
-				}
-				"crit mod disabled"
-				{
-					"attribute_class"	"mult_crit_chance"
-					"value"				"0"
-				}
-				// Backend stuff
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"stickybomb_charge_rate"
-					"value"				"0.75"
-				}
-				"hide_attrib_percentage"														// Charge Rate
-				{
-					"attribute_class"	"effectbar_recharge_rate"
-					"value"				"2.0"													// More specifically, this recharges in 24 seconds, an EXTREMELY long time!
-				}
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"blast_dmg_to_self"
-					"value"				"0"
-				}
-				"self dmg push force hidden"													// Unlike my other weapons based on explosives, you CANNOT jump with this weapon by design. It explodes harmlessly (to you) under your feet.
-				{
-					"attribute_class"	"mult_dmgself_push_force"
-					"value"				"0"
-				}
+				"min_viewmodel_offset"					"10 3 -7"				
+				"item_meter_charge_type"						"3"
+				"item_meter_charge_rate"			"60"
+				"item_meter_damage_for_full_charge"			"750"
+				"item_meter_resupply_denied"		"1"
+				"grenades1_resupply_denied"				"1"
+				"item_meter_starts_empty_DISPLAY_ONLY"	"1"
+				"item_meter_charge_type_3_DISPLAY_ONLY"	"1"
+				"meter_label"							"#TF_Gas"
 			}
 			"visuals"
 			{
-				"sound_single_shot"		"Weapon_GasCan.Throw"
-				"sound_burst"			"Weapon_GasCan.ThrowCrit"
-				"sound_special1"		"Weapon_GasCan.Explode"
-				"sound_special2"		"Weapon_GasCan.Explode"
-				"sound_special3"		"Weapon_GasCan.Throw"
-				"player_bodygroups"
+				"animation_replacement"
 				{
-					"backpack"			"1"
-					"medic_backpack"	"1"
+					"ACT_VM_DRAW"				"ACT_ITEM2_VM_DRAW"
+					"ACT_VM_IDLE"				"ACT_ITEM2_VM_IDLE"
+					"ACT_VM_PRIMARYATTACK"		"ACT_ITEM2_VM_FIRE"
+					"ACT_MP_ATTACK_STAND_MELEE_ALLCLASS"		"ACT_MP_ATTACK_STAND_ITEM2"
+					"ACT_MP_ATTACK_CROUCH_MELEE_ALLCLASS"		"ACT_MP_ATTACK_CROUCH_ITEM2"
+					"ACT_MP_ATTACK_SWIM_MELEE_ALLCLASS"			"ACT_MP_ATTACK_SWIM_ITEM2"
+					"ACT_SECONDARY_VM_INSPECT_START"		"ACT_ITEM2_VM_INSPECT_START"
+					"ACT_SECONDARY_VM_INSPECT_IDLE"		"ACT_ITEM2_VM_INSPECT_IDLE"
+					"ACT_SECONDARY_VM_INSPECT_END"			"ACT_ITEM2_VM_INSPECT_END"
+				}
+				"custom_particlesystem"
+				{
+					"system"	"energydrink_milk_splash"
+				}
+				"player_poseparam"
+				{
+					"r_hand_grip"		"16"
+				}
+				"sound_deploy"	"Weapon_GasCan.Draw"
+				"sound_single_shot"	"Weapon_GasCan.Throw"
+				"sound_special1"		"Weapon_GasCan.Explode"  
+				"visuals_red"
+				{
+					"trail_effect"			"peejar_trail_red_timer"
+					"trail_effect_crit"		"critical_grenade_red"
+					"explosion_effect"		"gas_can_impact_red"									// No bits of shrapnel unlike the Jarate, just a cloud of gas. pumpkin_cloud might also work for this...?
+					"explosion_effect_crit"	"explosion_shrapnel_PARENT_red_crit"
+				}
+				"visuals_blu"
+				{
+					"trail_effect"			"peejar_trail_blu_timer"
+					"trail_effect_crit"		"critical_grenade_blue"
+					"explosion_effect"		"gas_can_impact_blue"
+					"explosion_effect_crit"	"explosion_shrapnel_PARENT_blue_crit"
+				}
+				"visuals_grn"
+				{
+					"trail_effect"			"peejar_trail_grn_timer"
+					"trail_effect_crit"		"critical_grenade_green"
+					"explosion_effect"		"gas_can_impact_green"
+					"explosion_effect_crit"	"explosion_shrapnel_PARENT_green_crit"
+				}
+				"visuals_ylw"
+				{
+					"trail_effect"			"peejar_trail_ylw_timer"
+					"trail_effect_crit"		"critical_grenade_yellow"
+					"explosion_effect"		"gas_can_impact_yellow"
+					"explosion_effect_crit"	"explosion_shrapnel_PARENT_yellow_crit"
 				}
 			}
-			"visuals_red"
-			{
-				"trail_effect"			"peejar_trail_red_timer"
-				"trail_effect_crit"		"critical_grenade_red"
-				"explosion_effect"		"gas_can_impact_red"									// No bits of shrapnel unlike the Jarate, just a cloud of gas. pumpkin_cloud might also work for this...?
-				"explosion_effect_crit"	"explosion_shrapnel_PARENT_red_crit"
-			}
-			"visuals_blu"
-			{
-				"trail_effect"			"peejar_trail_blu_timer"
-				"trail_effect_crit"		"critical_grenade_blue"
-				"explosion_effect"		"gas_can_impact_blue"
-				"explosion_effect_crit"	"explosion_shrapnel_PARENT_blue_crit"
-			}
-			"visuals_grn"
-			{
-				"trail_effect"			"peejar_trail_grn_timer"
-				"trail_effect_crit"		"critical_grenade_green"
-				"explosion_effect"		"gas_can_impact_green"
-				"explosion_effect_crit"	"explosion_shrapnel_PARENT_green_crit"
-			}
-			"visuals_ylw"
-			{
-				"trail_effect"			"peejar_trail_ylw_timer"
-				"trail_effect_crit"		"critical_grenade_yellow"
-				"explosion_effect"		"gas_can_impact_yellow"
-				"explosion_effect_crit"	"explosion_shrapnel_PARENT_yellow_crit"
-			}
-			"mouse_pressed_sound"		"#ui/item_paint_can_pickup.wav"
-			"drop_sound"				"#ui/item_bottle_drop.wav"
+			"mouse_pressed_sound"	"ui/item_bottle_pickup.wav"
+			"drop_sound"		"ui/item_bottle_drop.wav"
 		}
+
 
 		"3367"
 		{
@@ -15876,150 +15841,76 @@ Let this be the hair o' the dog that bit ye."
 
 		"4202"
 		{
-			"mod_item"					"1"
+			"name"	"The Thermal Thruster"
 			"tags"
 			{
 				"bots_cant_use"			"1"
 			}
-			"name"						"TF_WEAPON_JETPACK_PYRO"								// This weapon was largely inspired by OCSonic & azzy, creators / co-creators of the TF2 Un-Classic pack - which includes some funky techniques!
-			"item_class"				"tf_weapon_grenade_mirv"								// Un-Classic includes an interesting take on the Thermal Thruster - it inspired me to try to make a similar variant with some recent attribute magic I learned!
-			"show_in_armory"			"1"
-			"item_slot"					"secondary"
-			"anim_slot"					"melee"
-			"equip_region"				"back"
-			
-			"image_inventory_size_w"	"128"
-			"image_inventory_size_h"	"82"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Thermal Thruster"
-			"item_type_name"			"Jetpack"
-			"item_description"			"Holds 2 charges of Jetpack boost (14s)
-
-Soar up and crash down, with all
-the glory of a misfired firework."																// MIRV used here as a "Secondary Weapon w/ Recharging Ammo" for these boosts!
-			"item_logname"				"rocketpack"
-			"item_iconname"				"rocketpack"
-			"image_inventory"			"backpack/weapons/c_models/c_rocketpack/c_rocketpack"
+			"item_class"			"tf_weapon_rocketpack"
+			"craft_class"			"weapon"
+			"craft_material_type"	"weapon"
+			"capabilities"
+			{
+				"nameable"		"1"
+			}
+			"item_logname"	"rocketpack"
+			"item_iconname"	"rocketpack"
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_RocketPack"
+			"item_name"			"#TF_ThermalThruster"
+			"item_description"	"#TF_ThermalThruster_Desc"
+			"item_slot"			"secondary"
+			"equip_region"		"back"
+			"anim_slot"			"ITEM4"
+			"image_inventory"	"backpack/weapons/c_models/c_rocketpack/c_rocketpack"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"inspect_panel_dist" 				"60"			
 			"model_world"				"models/weapons/w_models/w_rocketpack_deployed.mdl"		// NOWP v2.5.0 - Now it deploys its handles if active! And undeploys when you're not holding it out as of NOWP v2.7.5!
 			"model_player"				"models/weapons/v_models/v_rocketpack_pyro.mdl"			// Fun Fact: If I had to guess, Live TF2 has a special exception to animate the Rocketpack away, since trying to load the weapon onto the animations leads to the RP covering the screen!
 			"extra_wearable"			"models/weapons/w_models/w_rocketpack.mdl"
 			"extra_wearable_hide_on_active"	"1"
 			"attach_to_hands"			"2"
-			"drop_type"					"drop"
-			"used_by_classes"
-			{
-				"pyro"				"1"
-			}
-			"static_attrs"																		// This is an AMALGAM of weapons, but mostly it's based on the Brick and FAN
-			{
-				"override projectile type"				"2"										// This fires a rocket! Not much to say.
-				"min_viewmodel_offset"					"10 0 -10"
-				"meter_label"							"JETPACK"								// The text in Live TF2 is technically "Charges", but comes with its own UI element. Since this just uses the MIRV element, this word fits better.
-				"special taunt"							"1"
-				"hide extra wearable on active"			"1"
-
-
-				"damage bonus hidden"					"0.001"
-				"fire rate penalty hidden"				"2.75"									// This feels... about right?
-			}
-			"attributes"
-			{
-				"comm weapon azzy basil"
-				{
-					"attribute_class"	"apply_z_velocity_on_damage"
-					"value"				"175"
-				}
-				"thermal thruster nowp"
-				{
-					"attribute_class"	"centerfire_projectile"									// Actually rEALLY important - otherwise rockets will send you slightly to the right when exploding
-					"value"				"1"
-				}
-				"boots falling stomp"
-				{
-					"attribute_class"	"boots_falling_stomp"
-					"value"				"1"
-				}
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"damage_force_reduction"
-					"value"				"1.5"
-				}
-				"hide_attrib_percentage"														// Even with the already slow switch speed, it takes a bit longer to use this specifically
-				{
-					"attribute_class"	"mult_single_wep_deploy_time"
-					"value"				"2"
-				}
-				"deploy time increased"
-				{
-					"attribute_class"	"mult_deploy_time"
-					"value"				"1.33"
-				}
-				"hide_attrib_percentage"														// SHOULD be 14s
-				{
-					"attribute_class"	"effectbar_recharge_rate"
-					"value"				"1.4"
-				}
-				// Backend stuff. Yes, basically all of it is backend stuff.
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"stickybomb_charge_rate"
-					"value"				"0.5"
-				}
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"mult_maxammo_grenades1"
-					"value"				"2"
-				}
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"mult_explosion_radius"
-					"value"				"0.01"													// JUST small enough to avoid hitting enemies unless you're practically touching
-				}
-				"rocket limited lifetime"
-				{
-					"attribute_class"	"rocket_lifetime"
-					"value"				"0.00001"												// Rockets explode INSTANTLY - which is somewhere in front of your torso!
-				}
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"blast_dmg_to_self"
-					"value"				"0"														// Obviously necessary
-				}
-				"self dmg push force hidden"													// Negative propulsive force generally means this sends you in the direction you were looking!
-				{
-					"attribute_class"	"mult_dmgself_push_force"
-					"value"				"-0.55"
-				}
-			}
+			"item_quality"	"unique"
+			"propername"	"1"
+			"min_ilevel"	"1"
+			"max_ilevel"	"100"
 			"visuals"
 			{
-				"sound_single_shot"		"Weapon_RocketPack.BoostersFire"						// NOWP v3.0.0 - This is the OLD soundscript, but I made a new, shortened sound so it doesn't linger for super long...
-				"sound_burst"			"Weapon_RocketPack.BoostersFire"
-				"sound_special1"		"Weapon_Airstrike.Explosion"
-				"sound_special2"		"Weapon_Airstrike.Explosion"
-				"sound_double_shot"		"Weapon_Throwable.ChargeUpFast"
-				"explosion_effect"		"explosion_shrapnel_PARENT"
 				"player_bodygroups"
 				{
-					"backpack"			"1"														// I think this is totally useless rn given Pyro doesn't have a BP bodygroup, but hey.
-					"medic_backpack"	"1"
-				}
-				"animation_replacement"
-				{
-					"ACT_MP_ATTACK_STAND_MELEE"					"ACT_MP_ATTACK_STAND_GRENADE"
-					"ACT_MP_ATTACK_CROUCH_MELEE"				"ACT_MP_ATTACK_STAND_GRENADE"
-					"ACT_MP_ATTACK_SWIM_MELEE"					"ACT_MP_ATTACK_STAND_GRENADE"
-
-					"ACT_MP_JUMP_START_MELEE"					"ACT_MP_JUMP_START_LOSERSTATE"	// I just kinda like how the Loser anims look with this weapon
-					"ACT_MP_JUMP_FLOAT_MELEE"					"ACT_MP_JUMP_FLOAT_LOSERSTATE"
-					"ACT_MP_JUMP_END_MELEE"						"ACT_MP_JUMP_END_LOSERSTATE"
-					"ACT_MP_AIRWALK_MELEE"						"ACT_MP_AIRWALK_LOSERSTATE"
+					"backpack"		"1"
 				}
 			}
-			"mouse_pressed_sound"		"#ui/item_heavier_gun_pickup.wav"
-			"drop_sound"				"#weapons/rocket_pack_boosters_retract.wav"
+			"used_by_classes"
+			{
+				"pyro"	"1"
+			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"					"10 0 -9"	
+				"damage force increase hidden"	"1.5"
+				"taunt attack name"		"TAUNTATK_PYRO_GASBLAST"
+				"taunt attack time"		"4.7"
+				"item_meter_charge_type"						"1"
+				"item_meter_charge_rate"			"30"
+				"holster_anim_time"		"0.8"
+				"falling_impact_radius_pushback"	"1"
+				"thermal_thruster"					"1"
+			}
+			"taunt"
+			{
+				"custom_taunt_scene_per_class"
+				{
+					"pyro"	"scenes/player/pyro/low/taunt_gasblast.vcd"
+				}
+				"custom_taunt_prop_per_class"
+				{
+					"pyro"	"models/player/items/taunts/matchbox/matchbox.mdl"
+				}
+			}
+			"mouse_pressed_sound"	"ui/item_metal_weapon_pickup.wav"
+			"drop_sound"		"ui/item_metal_weapon_drop.wav"
 		}
 
 		"4203"
@@ -16427,7 +16318,7 @@ entire trap o' bombs, just ta bloody jump!?"
 			"item_slot"					"primary"												// Please leave this disabled unless you know exactly what you're doing - I generally only use this for testing or quick travel around maps!
 			"anim_slot"					"primary"
 			"testing"					"1"														
-
+			"hidden"					"1"
 			"image_inventory_size_w"	"128"
 			"image_inventory_size_h"	"82"
 
