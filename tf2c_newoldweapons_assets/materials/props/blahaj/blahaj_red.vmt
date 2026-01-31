@@ -1,0 +1,70 @@
+VERTEXLITGENERIC	// KEEP THIS AS REGULAR VERTEXLITGENERIC OR ELSE THE DETAIL TEXTURES BREAK!! Thanks Mapbase, I hate you!
+{
+	"$basetexture" "props/blahaj/blahaj_red"
+	"$bumpmap" "props/blahaj/blahaj_bump"
+
+	"$detail" "props/blahaj/fabric_detail"
+	"$detailscale" 22.5
+	"$detailblendfactor" 0.75
+	"$detailblendmode" 0
+
+	"$phong" "1"
+//	"$phongexponent" "3"
+//	"$phongboost" "0.15"
+//	"$phongfresnelranges"	"[.25 .5 2]"
+
+//	"$rimlight" "1"
+//	"$rimlightexponent" "500"
+//	"$rimlightboost" "0.05"
+
+	//---------------
+	// Visual Effects
+	//---------------
+	"$glowcolor" 		"1"
+	"$cloakPassEnabled" 	"1"
+	"$yellow" 		"0"
+	"$sheenPassEnabled" "1"
+
+	"$sheenmap" 		"cubemaps/cubemap_sheen001"
+	"$sheenmapmask" 		"Effects/AnimatedSheen/animatedsheen0"
+	"$sheenmaptint" 		"[ 1 1 1 ]"
+	"$sheenmapmaskframe" 	"0"
+	"$sheenindex" 		"0"
+
+	"Proxies"
+	{
+		"ModelGlowColor"
+		{
+			"resultVar" 	"$glowcolor"
+		}
+		"Equals"
+		{
+			"srcVar1"  	"$glowcolor"
+			"resultVar" 	"$selfillumtint"
+		}
+		"Equals"
+		{
+			"srcVar1"  	"$glowcolor"
+			"resultVar" 	"$color2"
+		}
+		"invis"
+		{
+		}
+		"YellowLevel"
+		{
+			"resultVar" 	"$yellow"
+		}
+		"Multiply"
+		{
+			"srcVar1" 	"$color2"
+			"srcVar2" 	"$yellow"
+			"resultVar" 	"$color2"
+		}
+		"AnimatedWeaponSheen"
+		{
+			"animatedtexturevar" 		"$sheenmapmask"
+			"animatedtextureframenumvar" 	"$sheenmapmaskframe"
+			"animatedtextureframerate" 		"40"
+		}
+	}
+}

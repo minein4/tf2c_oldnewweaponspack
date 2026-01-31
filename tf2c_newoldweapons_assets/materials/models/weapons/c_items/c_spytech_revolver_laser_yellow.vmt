@@ -1,0 +1,10 @@
+"Patch"
+{
+	include "materials/models/weapons/c_items/c_spytech_revolver_laser_shared.vmt"
+	
+	insert
+	{
+	"$colortint_base"		"{ 242 173 46 }"
+	"$color2"		"{ 242 173 46 }"
+	}
+}

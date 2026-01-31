@@ -1,0 +1,10 @@
+"Patch"
+{
+	include "materials\models\weapons\c_items\c_healthsaw.vmt"
+	
+	insert
+	{
+	"$color2" "[.93 .97 1]"
+	"$selfillumtint" "[.2 .4 1]"
+	}
+}

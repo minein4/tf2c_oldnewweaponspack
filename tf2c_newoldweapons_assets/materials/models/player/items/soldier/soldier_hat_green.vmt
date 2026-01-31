@@ -1,0 +1,11 @@
+"Patch"
+{
+	include "materials/models/player/items/soldier/soldier_hat.vmt"
+
+	insert
+	{
+	"$baseTexture" "models/player/items/soldier/soldier_hat_green"
+//	"$color2" "{18 48 15}"
+//	"$colortint_base" "{18 48 15}"
+	}
+}

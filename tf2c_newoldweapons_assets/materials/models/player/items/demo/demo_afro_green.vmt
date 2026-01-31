@@ -1,0 +1,11 @@
+"Patch"
+{
+	include "materials/models/player/items/demo/demo_afro.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models/player/items/demo/demo_afro_green"
+	"$color2" "{37 33 29}"
+	"$colortint_base" "{37 33 29}"
+	}
+}

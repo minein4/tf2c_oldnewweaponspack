@@ -1,0 +1,10 @@
+"Patch"
+{
+	include "materials\models\player\sniper\sniper_red.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models\player\sniper\sniper_darts_blue"
+	"$bumpmap"     "models\player\shared\shared_normal"
+	}
+}

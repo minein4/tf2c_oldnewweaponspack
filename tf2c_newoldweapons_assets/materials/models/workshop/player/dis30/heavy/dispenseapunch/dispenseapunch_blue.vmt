@@ -1,0 +1,11 @@
+"Patch"
+{
+	include "materials/models/workshop/player/dis30/heavy/dispenseapunch/dispenseapunch.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models/workshop/player/dis30/heavy/dispenseapunch/dispenseapunch_blue_color"
+//	"$colortint_base"		"{ 159 179 203 }"
+//	"$color2"		"{ 159 179 203 }"
+	}
+}

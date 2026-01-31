@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials\models/weapons/c_models/h3vr/stickyshell_albedo.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models/weapons/c_models/h3vr/stickyshell_albedo_yellow"
+	}
+}

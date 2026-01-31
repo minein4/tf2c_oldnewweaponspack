@@ -1,0 +1,116 @@
+particles_manifest
+{
+	"file"		"!particles/error.pcf"
+	"file"		"particles/rockettrail.pcf"
+	"file"		"particles/smoke_blackbillow.pcf"
+	"file"		"particles/teleport_status.pcf"
+	"file"		"particles/explosion.pcf"
+	"file"		"particles/player_recent_teleport.pcf"
+	"file"		"particles/rocketjumptrail.pcf"
+	"file"		"particles/rocketbackblast.pcf"
+	"file"		"particles/flamethrower.pcf"
+	"file"		"particles/burningplayer.pcf"
+	"file"		"particles/blood_impact.pcf"
+	"file"		"particles/blood_trail.pcf"
+	"file"		"particles/muzzle_flash.pcf"
+	"file"		"particles/teleported_fx.pcf"
+	"file"		"particles/cig_smoke.pcf"
+	"file"		"particles/crit.pcf"
+	"file"		"particles/medicgun_beam.pcf"
+	"file"		"!particles/water.pcf"
+	"file"		"particles/stickybomb.pcf"
+	"file"		"particles/buildingdamage.pcf"
+	"file"		"particles/nailtrails.pcf"
+	"file"		"particles/speechbubbles.pcf"
+	"file"		"particles/bullet_tracers.pcf"
+	"file"		"particles/nemesis.pcf"
+	"file"		"particles/disguise.pcf"
+	"file"		"particles/sparks.pcf"
+	"file"		"particles/flag_particles.pcf"
+	"file"		"particles/buildingdamage.pcf"
+	"file"		"particles/shellejection.pcf"
+	"file"		"!particles/impact_fx.pcf"
+	"file"		"!particles/conc_stars.pcf"
+	"file"		"particles/scout_nailtrails.pcf"
+	"file"		"particles/taunt_fx.pcf"
+	"file"		"particles/firstperson_weapon_fx.pcf"
+	"file"		"particles/bigboom.pcf"
+	"file"		"particles/cine_fx.pcf"
+	"file"		"particles/level_fx.pcf"
+	"file"		"particles/mvm.pcf"
+	"file"		"!particles/doomsday_fx.pcf"
+	"file"		"particles/scary_ghost.pcf"
+	"file"		"!particles/soldierbuff.pcf"
+	"file"		"particles/weather_fx.pcf"
+	"file"		"particles/item_fx.pcf"
+	"file"		"particles/explosion_red.pcf"
+	"file"		"particles/explosion_blue.pcf"
+	"file"		"particles/explosion_green.pcf"
+	"file"		"particles/explosion_yellow.pcf"
+	"file"		"particles/urban_fx.pcf"
+	"file"		"!particles/drg_pyro.pcf"
+	"file"		"particles/jumppad_fx.pcf"
+	"file"		"particles/smoke_disappear.pcf"
+	"file"		"particles/rain_fx.pcf"
+	"file"		"particles/stormfront.pcf"	
+	"file"		"particles/env_sakura01.pcf"
+	"file"		"particles/environmental_fx.pcf"
+	"file"		"particles/fire_01.pcf"
+	"file"		"!particles/medicgl.pcf"
+	"file"		"!particles/powerup_fx.pcf"
+
+//----------------------//
+// Live TF2 Particles Precache (in no particular order)
+//----------------------//
+	"file"		"particles/flamethrower_mvm.pcf"
+	"file"		"particles/coin_spin.pcf"
+	"file"		"particles/stamp_spin.pcf"
+	"file"		"particles/class_fx.pcf"
+	"file"		"particles/training.pcf"
+	"file"		"particles/drg_cowmangler.pcf"
+	"file"		"particles/drg_bison.pcf"
+	"file"		"particles/dxhr_fx.pcf"
+	"file"		"particles/eyeboss.pcf"
+	"file"		"particles/bombinomicon.pcf"
+	"file"		"particles/drg_engineer.pcf"
+	"file"		"particles/xms.pcf"
+	"file"		"particles/mvm.pcf"
+	"file"		"particles/halloween.pcf"
+	"file"		"particles/items_demo.pcf"
+	"file"		"particles/items_engineer.pcf"
+	"file"		"particles/rps.pcf"
+	"file"		"particles/rankup.pcf"
+	"file"		"particles/powerups.pcf"
+	"file"		"particles/passtime.pcf"
+	"file"		"particles/passtime_beam.pcf"
+	"file"		"particles/invasion_ray_gun_fx.pcf"
+	"file"		"particles/rocketpack.pcf"
+
+//----------------------// Finally! NOWP has (a few) custom particles now, so this finally gets a section!
+//----------------------// As of NOWP v2.7.5, I'll put all of my particle customizations in a single file, unless something comes up.
+//--- User Additions ---// Also includes the usual hooks for other particles, if you need them! Also includes a few common Live TF2 particle hooks if you... need those.
+//----------------------// 
+//----------------------// Quick note: Putting an exclamation mark (!) in front of the particle path makes that file precache globally! There's not really a rhyme or reason to it, but try to use it sparingly.
+
+// Catch-all if you just wanna add your own stuff quickly! Above everything else to take priority. Make + use one of these if you want to add your own sound-scripts; all 5 are unused.
+	"file"  	"particles/custom_particles.pcf"
+	"file"  	"particles/custom_particles_2.pcf"
+	"file"  	"particles/custom_particles_3.pcf"
+	"file"  	"particles/custom_particles_4.pcf"
+	"file"  	"particles/custom_particles_5.pcf"
+
+// Includes for other Weapons Packs / CW Mods! Add your own if you need, or let me know so I can update it!
+// IF YOU WANT TO BE ADDED TO THIS LIST / WANT NAMING SCHEMES CHANGED, AND I HAVEN'T DONE SO YET, CONTACT ME ON GB OR DISCORD!!
+	"file"  	"!particles/scattershock_fx.pcf"		// Knockout! Custom Weapons
+	"file"  	"!particles/laser_tracers.pcf"			// Knockout! Custom Weapons
+//	"file"  	"!particles/kocw_beams.pcf"				// Knockout! Custom Weapons - Disabled for now since it causes that infernal Medigun beam bug. Go fuckin' figure, huh?
+	"file"		"!particles/renaissance_revival_v2_1_particles.pcf"	// Renaissance Revival Particles
+
+// ...I don't currently have anything here - this might change in the future. If you wanna add particles at any point, talk to me and I can add you here!
+
+// NOWP - Split into parts since each .pcf seems to have a max file-size of 1 MB before crashing the game on load....
+	"file"  	"!particles/nowp_wpnfx.pcf"				// New-Old Weapons Pack's Particles. NEEDS to be Global Precache or else some particles don't load ever (?????).
+	"file"  	"!particles/nowp_drg_cm5k.pcf"			// New-Old Weapons Pack's Particles (Cow Mangler 5000). Yes, a file for a single weapon. This has way too many particles...
+	"file"  	"!particles/nowp_flamethrower.pcf"		// New-Old Weapons Pack's Particles (Flamethrowers)
+	"file"  	"!particles/nowp_medigun.pcf"			// New-Old Weapons Pack's Particles (Mediguns)
+}

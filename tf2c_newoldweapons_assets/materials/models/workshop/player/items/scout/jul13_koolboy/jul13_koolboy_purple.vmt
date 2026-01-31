@@ -1,0 +1,659 @@
+SDK_VertexLitGeneric
+{
+	"$basetexture"		"models/workshop/player/items/scout/jul13_koolboy/jul13_koolboy_purple_color"
+	"$bumpmap"		"models/workshop/player/items/scout/jul13_koolboy/jul13_koolboy_normal"
+	"$lightwarptexture"		"models/player/pyro/pyro_lightwarp"
+	"$phong"		"1"
+	"$phongexponent"		"15.000000"
+	"$phongboost"		"2.100000"
+	"$phongfresnelranges"		"[.25 .5 1]"
+	"$rimlight"		"1"
+	"$rimlightexponent"		"4"
+	"$rimlightboost"		"2"
+	"$bumpmapalphaphongmask"		"1"
+	">=DX90"
+	{
+		"$selfillum"		"0"
+	}
+	"$glowcolor" "[1 1 1]"
+
+	// Cloaking
+	"$cloakPassEnabled" "1"
+
+	"$yellow" 		"0"
+	"$sheenPassEnabled" "1"
+
+	"$sheenmap" 		"cubemaps/cubemap_sheen001"
+	"$sheenmapmask" 		"Effects/AnimatedSheen/animatedsheen0"
+	"$sheenmaptint" 		"[ 1 1 1 ]"
+	"$sheenmapmaskframe" 	"0"
+	"$sheenindex" 		"0"
+	
+	//Custom crit colour variables
+	"$originalGlow"		"[1 1 1]"
+	"$originalGlowR"		"1.0"
+	"$originalGlowG"		"1.0"
+	"$originalGlowB"		"1.0"
+	
+	"$customBluMiniCritGlow"	"[25 5 48]"	//This colour will replace the default BLU Mini-Crit colour
+	"$defaultBluMiniCritR"		"28"
+	"$defaultBluMiniCritG"		"168"
+	"$defaultBluMiniCritB"		"112"
+	
+	"$customBluCritGlow"		"[6 21 80]"		//This colour will replace the default BLU Crit colour
+	"$defaultBluCritR"		"6"
+	"$defaultBluCritG"		"21"
+	"$defaultBluCritB"		"80"
+	
+	"$customRedMiniCritGlow"	"[25 5 48]"	//This colour will replace the default RED Mini-Crit colour
+	"$defaultRedMiniCritR"		"237"
+	"$defaultRedMiniCritG"		"140"
+	"$defaultRedMiniCritB"		"55"
+	
+	"$customRedCritGlow"		"[94 8 5]"		//This colour will replace the default RED Crit colour
+	"$defaultRedCritR"		"94"
+	"$defaultRedCritG"		"8"
+	"$defaultRedCritB"		"5"
+	
+	"$customGrnMiniCritGlow"	"[25 5 48]"	//This colour will replace the default GRN Mini-Crit colour
+	"$defaultGrnMiniCritR"		"58"
+	"$defaultGrnMiniCritG"		"180"
+	"$defaultGrnMiniCritB"		"25"
+	
+	"$customGrnCritGlow"		"[1 28 9]"		//This colour will replace the default GRN Crit colour
+	"$defaultGrnCritR"		"1"
+	"$defaultGrnCritG"		"28"
+	"$defaultGrnCritB"		"9"
+	
+	"$customYlwMiniCritGlow"	"[25 5 48]"	//This colour will replace the default YLW Mini-Crit colour
+	"$defaultYlwMiniCritR"		"125"
+	"$defaultYlwMiniCritG"		"125"
+	"$defaultYlwMiniCritB"		"25"
+	
+	"$customYlwCritGlow"		"[28 28 9]"		//This colour will replace the default YLW Crit colour
+	"$defaultYlwCritR"		"28"
+	"$defaultYlwCritG"		"28"
+	"$defaultYlwCritB"		"9"
+
+	//BLU Mini Crit - G+B
+	"$bluMiniCritCheck1"		"0"
+	"$bluMiniCritCheck2"		"0"
+	
+	//BLU Crit - G+B
+	"$bluCritCheck1"			"0"
+	"$bluCritCheck2"			"0"
+	
+	//RED Mini Crit - R+G
+	"$redMiniCritCheck1"		"0"
+	"$redMiniCritCheck2"		"0"
+	
+	//RED Crit - R+G
+	"$redCritCheck1"			"0"
+	"$redCritCheck2"			"0"
+	
+	//GRN Mini Crit - R+G
+	"$grnMiniCritCheck1"		"0"
+	"$grnMiniCritCheck2"		"0"
+	
+	//GRN Crit - G+B
+	"$grnCritCheck1"			"0"
+	"$grnCritCheck2"			"0"
+	
+	//YLW Mini Crit - G+B
+	"$ylwMiniCritCheck1"		"0"
+	"$ylwMiniCritCheck2"		"0"
+	
+	//YLW Crit - R+B
+	"$ylwCritCheck1"			"0"
+	"$ylwCritCheck2"			"0"
+	
+	"$bluMiniCritR"		"1"
+	"$bluMiniCritG"		"1"
+	"$bluMiniCritB"		"1"
+	
+	"$bluCritR"			"1"
+	"$bluCritG"			"1"
+	"$bluCritB"			"1"
+	
+	"$redMiniCritR"		"1"
+	"$redMiniCritG"		"1"
+	"$redMiniCritB"		"1"
+	
+	"$redCritR"			"1"
+	"$redCritG"			"1"
+	"$redCritB"			"1"
+	
+	"$grnMiniCritR"		"1"
+	"$grnMiniCritG"		"1"
+	"$grnMiniCritB"		"1"
+	
+	"$grnCritR"			"1"
+	"$grnCritG"			"1"
+	"$grnCritB"			"1"
+	
+	"$ylwMiniCritR"		"1"
+	"$ylwMiniCritG"		"1"
+	"$ylwMiniCritB"		"1"
+	
+	"$ylwCritR"			"1"
+	"$ylwCritG"			"1"
+	"$ylwCritB"			"1"
+	
+	"$zero"	"0"
+	"$one"	"1"
+
+	"Proxies"
+	{
+		"invis"
+		{
+		}
+		
+		//Get colour
+		"ModelGlowColor"
+		{
+			"resultVar" "$originalGlow"
+		}
+		
+		//Split into RGB values
+		"Clamp"
+		{
+			"srcVar1"	"$zero"
+			"resultVar"	"$originalGlowR"
+			"min"		"$originalGlow[0]"
+			"max"		"$originalGlow[0]"
+		}
+		"Clamp"
+		{
+			"srcVar1"	"$zero"
+			"resultVar"	"$originalGlowG"
+			"min"		"$originalGlow[1]"
+			"max"		"$originalGlow[1]"
+		}
+		"Clamp"
+		{
+			"srcVar1"	"$zero"
+			"resultVar"	"$originalGlowB"
+			"min"		"$originalGlow[2]"
+			"max"		"$originalGlow[2]"
+		}
+		"Int"
+		{
+			"srcVar1"	"$originalGlowR"
+			"resultVar"	"$originalGlowR"
+		}
+		"Int"
+		{
+			"srcVar1"	"$originalGlowG"
+			"resultVar"	"$originalGlowG"
+		}
+		"Int"
+		{
+			"srcVar1"	"$originalGlowB"
+			"resultVar"	"$originalGlowB"
+		}
+		
+		//BLU Mini Crit
+		"Subtract"
+		{
+			"srcVar1"	"$originalGlowG"
+			"srcVar2"	"$defaultBluMiniCritG"
+			"resultVar"	"$bluMiniCritG"
+		}
+		"Subtract"
+		{
+			"srcVar1"	"$originalGlowB"
+			"srcVar2"	"$defaultBluMiniCritB"
+			"resultVar"	"$bluMiniCritB"
+		}
+		"Abs"
+		{
+			"srcVar1"	"$bluMiniCritG"
+			"resultVar"	"$bluMiniCritG"
+		}
+		"Abs"
+		{
+			"srcVar1"	"$bluMiniCritB"
+			"resultVar"	"$bluMiniCritB"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$bluMiniCritG"
+			"srcVar2"		"$zero"
+			"lessEqualVar"	"$one"
+			"greaterVar"		"$zero"
+			"resultVar"		"$bluMiniCritCheck1"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$bluMiniCritB"
+			"srcVar2"		"$zero"
+			"lessEqualVar"	"$one"
+			"greaterVar"		"$zero"
+			"resultVar"		"$bluMiniCritCheck2"
+		}
+		"Multiply"
+		{
+			"srcVar1"	"$bluMiniCritCheck1"
+			"srcVar2"	"$bluMiniCritCheck2"
+			"resultVar"	"$bluMiniCritCheck1"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$one"
+			"srcVar2"		"$bluMiniCritCheck1"
+			"lessEqualVar"	"$customBluMiniCritGlow"
+			"greaterVar"		"$glowcolor"
+			"resultVar"		"$glowcolor"
+		}
+		
+		//BLU Crit
+		"Subtract"
+		{
+			"srcVar1"	"$originalGlowG"
+			"srcVar2"	"$defaultBluCritG"
+			"resultVar"	"$bluCritG"
+		}
+		"Subtract"
+		{
+			"srcVar1"	"$originalGlowB"
+			"srcVar2"	"$defaultBluCritB"
+			"resultVar"	"$bluCritB"
+		}
+		"Abs"
+		{
+			"srcVar1"	"$bluCritG"
+			"resultVar"	"$bluCritG"
+		}
+		"Abs"
+		{
+			"srcVar1"	"$bluCritB"
+			"resultVar"	"$bluCritB"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$bluCritG"
+			"srcVar2"		"$zero"
+			"lessEqualVar"	"$one"
+			"greaterVar"		"$zero"
+			"resultVar"		"$bluCritCheck1"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$bluCritB"
+			"srcVar2"		"$zero"
+			"lessEqualVar"	"$one"
+			"greaterVar"		"$zero"
+			"resultVar"		"$bluCritCheck2"
+		}
+		"Multiply"
+		{
+			"srcVar1"	"$bluCritCheck1"
+			"srcVar2"	"$bluCritCheck2"
+			"resultVar"	"$bluCritCheck1"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$one"
+			"srcVar2"		"$bluCritCheck1"
+			"lessEqualVar"	"$customBluCritGlow"
+			"greaterVar"		"$glowcolor"
+			"resultVar"		"$glowcolor"
+		}
+		
+		//RED Mini Crit
+		"Subtract"
+		{
+			"srcVar1"	"$originalGlowR"
+			"srcVar2"	"$defaultRedMiniCritR"
+			"resultVar"	"$redMiniCritR"
+		}
+		"Subtract"
+		{
+			"srcVar1"	"$originalGlowG"
+			"srcVar2"	"$defaultRedMiniCritG"
+			"resultVar"	"$redMiniCritG"
+		}
+		"Abs"
+		{
+			"srcVar1"	"$redMiniCritR"
+			"resultVar"	"$redMiniCritR"
+		}
+		"Abs"
+		{
+			"srcVar1"	"$redMiniCritG"
+			"resultVar"	"$redMiniCritG"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$redMiniCritR"
+			"srcVar2"		"$zero"
+			"lessEqualVar"	"$one"
+			"greaterVar"		"$zero"
+			"resultVar"		"$redMiniCritCheck1"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$redMiniCritG"
+			"srcVar2"		"$zero"
+			"lessEqualVar"	"$one"
+			"greaterVar"		"$zero"
+			"resultVar"		"$redMiniCritCheck2"
+		}
+		"Multiply"
+		{
+			"srcVar1"	"$redMiniCritCheck1"
+			"srcVar2"	"$redMiniCritCheck2"
+			"resultVar"	"$redMiniCritCheck1"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$one"
+			"srcVar2"		"$redMiniCritCheck1"
+			"lessEqualVar"	"$customRedMiniCritGlow"
+			"greaterVar"		"$glowcolor"
+			"resultVar"		"$glowcolor"
+		}
+		
+		//RED Crit
+		"Subtract"
+		{
+			"srcVar1"	"$originalGlowR"
+			"srcVar2"	"$defaultRedCritR"
+			"resultVar"	"$redCritR"
+		}
+		"Subtract"
+		{
+			"srcVar1"	"$originalGlowG"
+			"srcVar2"	"$defaultRedCritG"
+			"resultVar"	"$redCritG"
+		}
+		"Abs"
+		{
+			"srcVar1"	"$redCritR"
+			"resultVar"	"$redCritR"
+		}
+		"Abs"
+		{
+			"srcVar1"	"$redCritG"
+			"resultVar"	"$redCritG"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$redCritR"
+			"srcVar2"		"$zero"
+			"lessEqualVar"	"$one"
+			"greaterVar"		"$zero"
+			"resultVar"		"$redCritCheck1"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$redCritG"
+			"srcVar2"		"$zero"
+			"lessEqualVar"	"$one"
+			"greaterVar"		"$zero"
+			"resultVar"		"$redCritCheck2"
+		}
+		"Multiply"
+		{
+			"srcVar1"	"$redCritCheck1"
+			"srcVar2"	"$redCritCheck2"
+			"resultVar"	"$redCritCheck1"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$one"
+			"srcVar2"		"$redCritCheck1"
+			"lessEqualVar"	"$customRedCritGlow"
+			"greaterVar"		"$glowcolor"
+			"resultVar"		"$glowcolor"
+		}
+		
+		//GRN Mini Crit
+		"Subtract"
+		{
+			"srcVar1"	"$originalGlowR"
+			"srcVar2"	"$defaultGrnMiniCritR"
+			"resultVar"	"$grnMiniCritR"
+		}
+		"Subtract"
+		{
+			"srcVar1"	"$originalGlowG"
+			"srcVar2"	"$defaultGrnMiniCritG"
+			"resultVar"	"$grnMiniCritG"
+		}
+		"Abs"
+		{
+			"srcVar1"	"$grnMiniCritR"
+			"resultVar"	"$grnMiniCritR"
+		}
+		"Abs"
+		{
+			"srcVar1"	"$grnMiniCritG"
+			"resultVar"	"$grnMiniCritG"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$grnMiniCritR"
+			"srcVar2"		"$zero"
+			"lessEqualVar"	"$one"
+			"greaterVar"		"$zero"
+			"resultVar"		"$grnMiniCritCheck1"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$grnMiniCritG"
+			"srcVar2"		"$zero"
+			"lessEqualVar"	"$one"
+			"greaterVar"		"$zero"
+			"resultVar"		"$grnMiniCritCheck2"
+		}
+		"Multiply"
+		{
+			"srcVar1"	"$grnMiniCritCheck1"
+			"srcVar2"	"$grnMiniCritCheck2"
+			"resultVar"	"$grnMiniCritCheck1"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$one"
+			"srcVar2"		"$grnMiniCritCheck1"
+			"lessEqualVar"	"$customGrnMiniCritGlow"
+			"greaterVar"		"$glowcolor"
+			"resultVar"		"$glowcolor"
+		}
+		
+		//GRN Crit
+		"Subtract"
+		{
+			"srcVar1"	"$originalGlowG"
+			"srcVar2"	"$defaultGrnCritG"
+			"resultVar"	"$grnCritG"
+		}
+		"Subtract"
+		{
+			"srcVar1"	"$originalGlowB"
+			"srcVar2"	"$defaultGrnCritB"
+			"resultVar"	"$grnCritB"
+		}
+		"Abs"
+		{
+			"srcVar1"	"$grnCritG"
+			"resultVar"	"$grnCritG"
+		}
+		"Abs"
+		{
+			"srcVar1"	"$grnCritB"
+			"resultVar"	"$grnCritB"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$grnCritG"
+			"srcVar2"		"$zero"
+			"lessEqualVar"	"$one"
+			"greaterVar"		"$zero"
+			"resultVar"		"$grnCritCheck1"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$grnCritB"
+			"srcVar2"		"$zero"
+			"lessEqualVar"	"$one"
+			"greaterVar"		"$zero"
+			"resultVar"		"$grnCritCheck2"
+		}
+		"Multiply"
+		{
+			"srcVar1"	"$grnCritCheck1"
+			"srcVar2"	"$grnCritCheck2"
+			"resultVar"	"$grnCritCheck1"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$one"
+			"srcVar2"		"$grnCritCheck1"
+			"lessEqualVar"	"$customGrnCritGlow"
+			"greaterVar"		"$glowcolor"
+			"resultVar"		"$glowcolor"
+		}
+		
+		//YLW Mini Crit
+		"Subtract"
+		{
+			"srcVar1"	"$originalGlowG"
+			"srcVar2"	"$defaultYlwMiniCritG"
+			"resultVar"	"$ylwMiniCritG"
+		}
+		"Subtract"
+		{
+			"srcVar1"	"$originalGlowB"
+			"srcVar2"	"$defaultYlwMiniCritB"
+			"resultVar"	"$ylwMiniCritB"
+		}
+		"Abs"
+		{
+			"srcVar1"	"$ylwMiniCritG"
+			"resultVar"	"$ylwMiniCritG"
+		}
+		"Abs"
+		{
+			"srcVar1"	"$ylwMiniCritB"
+			"resultVar"	"$ylwMiniCritB"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$ylwMiniCritG"
+			"srcVar2"		"$zero"
+			"lessEqualVar"	"$one"
+			"greaterVar"		"$zero"
+			"resultVar"		"$ylwMiniCritCheck1"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$ylwMiniCritB"
+			"srcVar2"		"$zero"
+			"lessEqualVar"	"$one"
+			"greaterVar"		"$zero"
+			"resultVar"		"$ylwMiniCritCheck2"
+		}
+		"Multiply"
+		{
+			"srcVar1"	"$ylwMiniCritCheck1"
+			"srcVar2"	"$ylwMiniCritCheck2"
+			"resultVar"	"$ylwMiniCritCheck1"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$one"
+			"srcVar2"		"$ylwMiniCritCheck1"
+			"lessEqualVar"	"$customYlwMiniCritGlow"
+			"greaterVar"		"$glowcolor"
+			"resultVar"		"$glowcolor"
+		}
+		
+		//YLW Crit
+		"Subtract"
+		{
+			"srcVar1"	"$originalGlowR"
+			"srcVar2"	"$defaultYlwCritR"
+			"resultVar"	"$ylwCritR"
+		}
+		"Subtract"
+		{
+			"srcVar1"	"$originalGlowB"
+			"srcVar2"	"$defaultYlwCritB"
+			"resultVar"	"$ylwCritB"
+		}
+		"Abs"
+		{
+			"srcVar1"	"$ylwCritR"
+			"resultVar"	"$ylwCritR"
+		}
+		"Abs"
+		{
+			"srcVar1"	"$ylwCritB"
+			"resultVar"	"$ylwCritB"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$ylwCritR"
+			"srcVar2"		"$zero"
+			"lessEqualVar"	"$one"
+			"greaterVar"		"$zero"
+			"resultVar"		"$ylwCritCheck1"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$ylwCritB"
+			"srcVar2"		"$zero"
+			"lessEqualVar"	"$one"
+			"greaterVar"		"$zero"
+			"resultVar"		"$ylwCritCheck2"
+		}
+		"Multiply"
+		{
+			"srcVar1"	"$ylwCritCheck1"
+			"srcVar2"	"$ylwCritCheck2"
+			"resultVar"	"$ylwCritCheck1"
+		}
+		"LessOrEqual"
+		{
+			"srcVar1"		"$one"
+			"srcVar2"		"$ylwCritCheck1"
+			"lessEqualVar"	"$customYlwCritGlow"
+			"greaterVar"		"$glowcolor"
+			"resultVar"		"$glowcolor"
+		}
+		
+		//Apply colours
+		LessOrEqual
+		{
+			srcVar1 $originalGlowG
+			srcVar2 $one
+			lessEqualVar $one
+			greaterVar $glowcolor
+			resultVar $glowcolor
+		}
+		"Equals"
+		{
+			"srcVar1"	"$glowcolor"
+			"resultVar"	"$color2"
+		}
+		
+		"YellowLevel"
+		{
+			"resultVar" "$yellow"
+		}
+		"Multiply"
+		{
+			"srcVar1" 	"$color2"
+			"srcVar2" 	"$yellow"
+			"resultVar" 	"$color2"
+		}
+		"AnimatedWeaponSheen"
+		{
+			"animatedtexturevar" 		"$sheenmapmask"
+			"animatedtextureframenumvar" 	"$sheenmapmaskframe"
+			"animatedtextureframerate" 		"40"
+		}
+	}
+}

@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials/models/weapons/c_models/c_rapier/c_rapier.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models/weapons/c_models/c_rapier/c_rapier_blue"
+	}
+}

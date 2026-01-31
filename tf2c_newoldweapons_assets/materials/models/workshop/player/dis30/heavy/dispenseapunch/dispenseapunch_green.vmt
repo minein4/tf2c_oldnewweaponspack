@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials/models/workshop/player/dis30/heavy/dispenseapunch/dispenseapunch.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models/workshop/player/dis30/heavy/dispenseapunch/dispenseapunch_green_color"
+	}
+}

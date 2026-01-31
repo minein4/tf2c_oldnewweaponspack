@@ -1,0 +1,25 @@
+This file is for everything that handles Kill-Icons in TF2C!
+Yes, it's mighty small, but this is really all you need, beside assignin' them to weapons in items_game.txt
+
+If you want to make your very own, read this Imgur Album I made!
+https://imgur.com/a/6MJ6DjL
+
+If you want to add other folks' Kill-Icons into your own, or into this pack, look inside the file
+[scripts/hud_textures.txt]
+
+//-------------//
+Kill-Icons have 3 moving parts, 2 of which are in front of you here. They are;
+
+-d_ and dneg_ .vmt and .vtf files
+(These are the actual icons images themselves!)
+
+-hud_textures.txt or mod_textures.txt
+(These are some Text Entries that tell the game "where" an icon is, via bounding box!)
+
+-items_game.txt
+(You can tell a weapon to use a certain icon entry you defined in hud_textures.txt as a Kill Icon for it!)
+
+
+
+That's all I feel like explaining for now - I included a few other resources about it elsewhere!
+If all else fails, feel free to ask the TF2C Discord

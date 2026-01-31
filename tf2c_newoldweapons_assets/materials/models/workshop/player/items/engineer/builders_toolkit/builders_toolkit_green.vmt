@@ -1,0 +1,11 @@
+"Patch"
+{
+	include "materials/models/workshop/player/items/engineer/builders_toolkit/builders_toolkit.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models/workshop/player/items/engineer/builders_toolkit/builders_toolkit_green_color"
+	"$colortint_base"		"{ 124 168 63 }"
+	"$color2"		"{ 124 168 63 }"
+	}
+}

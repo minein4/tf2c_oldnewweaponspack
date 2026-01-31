@@ -1,0 +1,267 @@
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+//-------------------Custom Response Rule File -- This is to add taunts!----------------------------
+//--------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------
+
+//------------------
+//--Generic Taunts--
+//------------------
+
+// Scout
+//------------------------------------------------------------------------------------------------------------
+	criterion "WeaponIsNotScattergun"		"playerweapon" "!=tf_weapon_scattergun" 		"required" weight 0
+	criterion "WeaponIsNotNailGun" 			"playerweapon" "!=tf_weapon_nailgun" 			"required" weight 0
+	criterion "WeaponIsNotPistolScout" 		"playerweapon" "!=tf_weapon_pistol_scout" 		"required" weight 0
+	criterion "WeaponIsNotThrowBrick" 		"playerweapon" "!=tf_weapon_throwable" 			"required" weight 0		// A bunch of weapons / wep classes aren't defined in response_rules.txt to begin with, so do that here.
+	criterion "WeaponIsNotBat" 				"playerweapon" "!=tf_weapon_bat" 				"required" weight 0
+	
+	rule ScoutTauntPrimaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsScout IsWeaponPrimary WeaponIsNotScattergun WeaponIsNotNailGun
+		response ScoutTauntPrimary
+	}
+	rule ScoutTauntSecondaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsScout IsWeaponSecondary WeaponIsNotPistolScout WeaponIsNotThrowBrick
+		response ScoutTauntSecondary
+	}
+	rule ScoutTauntMeleeGeneric
+	{
+		criteria ConceptPlayerTaunt IsScout IsWeaponMelee WeaponIsNotBat
+		response ScoutTauntMelee
+	}
+
+// Soldier
+//------------------------------------------------------------------------------------------------------------
+	criterion "WeaponIsNotRocket" 			"playerweapon" "!=tf_weapon_rocketlauncher" 	"required" weight 0
+	criterion "WeaponIsNotShotgunSoldier" 	"playerweapon" "!=tf_weapon_shotgun_soldier" 	"required" weight 0		// All classes have their Shotguns multiply defined, for some reason.
+	criterion "WeaponIsNotShovel" 			"playerweapon" "!=tf_weapon_shovel" 			"required" weight 0
+	criterion "WeaponIsNotAnchor" 			"playerweapon" "!=tf_weapon_anchor" 			"required" weight 0
+
+	rule SoldierTauntPrimaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsSoldier IsWeaponPrimary WeaponIsNotRocket
+		response SoldierTauntPrimary
+	}
+	rule SoldierTauntSecondaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsSoldier IsWeaponSecondary WeaponIsNotShotgunSoldier
+		response SoldierTauntSecondary
+	}
+	rule SoldierTauntMeleeGeneric
+	{
+		criteria ConceptPlayerTaunt IsSoldier IsWeaponMelee WeaponIsNotShovel WeaponIsNotAnchor						// TO-DO: Bottle exclude? TF_Weapon_Saxxy autoconverts Shovel and Bottle item classes depending on playerclass.
+		response SoldierTauntMelee
+	}
+
+// Pyro
+//------------------------------------------------------------------------------------------------------------
+	criterion "WeaponIsNotFlamethrower" 	"playerweapon" "!=tf_weapon_flamethrower" 		"required" weight 0
+	criterion "WeaponIsNotShotgunPyro" 		"playerweapon" "!=tf_weapon_shotgun_pyro" 		"required" weight 0
+	criterion "WeaponIsNotFlaregun" 		"playerweapon" "!=tf_weapon_flaregun" 			"required" weight 0
+	criterion "WeaponIsNotDoubleShotgun" 	"playerweapon" "!=tf_weapon_doubleshotgun" 		"required" weight 0
+	criterion "WeaponIsNotFireAxe" 			"playerweapon" "!=tf_weapon_fireaxe" 			"required" weight 0
+	criterion "WeaponIsNotBeacon" 			"playerweapon" "!=tf_weapon_beacon" 			"required" weight 0
+
+	rule PyroTauntPrimaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsPyro IsWeaponPrimary WeaponIsNotFlamethrower
+		response PyroTauntPrimary
+	}
+	rule PyroTauntSecondaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsPyro IsWeaponSecondary WeaponIsNotShotgunPyro WeaponIsNotFlaregun WeaponIsNotDoubleShotgun
+		response PyroTauntSecondary
+	}
+	rule PyroTauntMeleeGeneric
+	{
+		criteria ConceptPlayerTaunt IsPyro IsWeaponMelee WeaponIsNotFireAxe WeaponIsNotBeacon
+		response PyroTauntMelee
+	}
+
+// Demoman
+//------------------------------------------------------------------------------------------------------------
+	criterion "WeaponIsNotGrenade" 			"playerweapon" "!=tf_weapon_grenadelauncher" 	"required" weight 0
+	criterion "WeaponIsNotPillstreak" 		"playerweapon" "!=tf_weapon_pillstreak" 		"required" weight 0
+	criterion "WeaponIsNotBrimstone" 		"playerweapon" "!=tf_weapon_brimstonelauncher" 	"required" weight 0
+	criterion "WeaponIsNotCyclops" 			"playerweapon" "!=tf_weapon_cyclops" 			"required" weight 0
+	criterion "WeaponIsNotPipebomb" 		"playerweapon" "!=tf_weapon_pipebomblauncher" 	"required" weight 0
+	criterion "WeaponIsNotMIRVType" 		"playerweapon" "!=tf_weapon_grenade_mirv" 		"required" weight 0
+	criterion "WeaponIsNotMIRVType2" 		"playerweapon" "!=tf_weapon_grenade_mirv2" 		"required" weight 0
+	criterion "WeaponIsNotBottle" 			"playerweapon" "!=tf_weapon_bottle" 			"required" weight 0
+	criterion "WeaponIsNotDetonator" 		"playerweapon" "!=tf_weapon_detonator" 			"required" weight 0
+
+	rule DemomanTauntPrimaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsDemoman IsWeaponPrimary WeaponIsNotPipebomb WeaponIsNotMIRVType				// Demoman's slots are swapped.
+		response DemomanTauntPrimary
+	}
+	rule DemomanTauntSecondaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsDemoman IsWeaponSecondary WeaponIsNotGrenade WeaponIsNotBrimstone WeaponIsNotPillstreak WeaponIsNotCyclops
+		response DemomanTauntSecondary
+	}
+	rule DemomanTauntMeleeGeneric
+	{
+		criteria ConceptPlayerTaunt IsDemoman IsWeaponMelee WeaponIsNotBottle WeaponIsNotDetonator					// TO-DO: Shovel exclude? TF_Weapon_Saxxy autoconverts Shovel and Bottle item classes depending on playerclass.
+		response DemomanTauntMelee
+	}
+
+// Heavy
+//------------------------------------------------------------------------------------------------------------
+	criterion "WeaponIsNotMinigun" 			"playerweapon" "!=tf_weapon_minigun" 			"required" weight 0
+	criterion "WeaponIsNotAAGunType" 		"playerweapon" "!=tf_weapon_aagun" 				"required" weight 0
+	criterion "WeaponIsNotRiot" 			"playerweapon" "!=tf_weapon_riot" 				"required" weight 0
+	criterion "WeaponIsNotShotgunHwg" 		"playerweapon" "!=tf_weapon_shotgun_hwg" 		"required" weight 0
+	criterion "WeaponIsNotLunchbox" 		"playerweapon" "!=tf_weapon_lunchbox" 			"required" weight 0
+	criterion "WeaponIsNotFists" 			"playerweapon" "!=tf_weapon_fists" 				"required" weight 0
+	criterion "WeaponIsNotRussianRoulette" 	"playerweapon" "!=tf_weapon_russianroulette" 	"required" weight 0
+
+	rule HeavyTauntPrimaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsHeavy IsWeaponPrimary WeaponIsNotMinigun WeaponIsNotAAGunType WeaponIsNotRiot
+		response HeavyTauntPrimary
+	}
+	rule HeavyTauntSecondaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsHeavy IsWeaponSecondary WeaponIsNotShotgunHwg WeaponIsNotLunchbox
+		response HeavyTauntSecondary
+	}
+	rule HeavyTauntLunchboxGeneric
+	{
+		criteria ConceptPlayerTaunt IsHeavy IsWeaponSecondary WeaponIsNotShotgunHwg WeaponIsLunchbox				// Special include for if Heavy has a non-stock lunchbox
+		response HeavyTauntPlayerItem1
+	}
+	rule HeavyTauntMeleeGeneric
+	{
+		criteria ConceptPlayerTaunt IsHeavy IsWeaponMelee WeaponIsNotFists WeaponIsNotRussianRoulette				// TO-DO: Fireaxe exclude? TF_Weapon_Saxxy autoconverts Fists over to Fireaxe item class...
+		response HeavyTauntMelee
+	}
+
+// Engineer
+//------------------------------------------------------------------------------------------------------------
+	criterion "WeaponIsNotShotgunPrimary" 	"playerweapon" "!=tf_weapon_shotgun_primary" 	"required" weight 0
+	criterion "WeaponIsNotPistol" 			"playerweapon" "!=tf_weapon_pistol" 			"required" weight 0
+	criterion "WeaponIsNotCoilgunType" 		"playerweapon" "!=tf_weapon_coilgun" 			"required" weight 0
+	criterion "WeaponIsNotWrench"		 	"playerweapon" "!=tf_weapon_wrench" 			"required" weight 0
+
+	criterion "WeaponIsNotBuild" 			"playerweapon" "!=tf_weapon_builder" 			"required" weight 0
+	criterion "WeaponIsNotPDABuild" 		"playerweapon" "!=tf_weapon_pda_engineer_build" "required" weight 0
+	criterion "WeaponIsNotPDADestroy" 		"playerweapon" "!=tf_weapon_pda_engineer_destroy" "required" weight 0
+
+	rule EngineerTauntPrimaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsEngineer IsWeaponPrimary WeaponIsNotShotgunPrimary
+		response EngineerTauntPrimary
+	}
+	rule EngineerTauntSecondaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsEngineer IsWeaponSecondary WeaponIsNotPistol WeaponIsNotCoilgunType
+		response EngineerTauntSecondary
+	}
+	rule EngineerTauntMeleeGeneric
+	{
+		criteria ConceptPlayerTaunt IsEngineer IsWeaponMelee WeaponIsNotWrench
+		response EngineerTauntMelee
+	}
+
+// Medic
+//------------------------------------------------------------------------------------------------------------
+	criterion "WeaponIsNotSyringe" 			"playerweapon" "!=tf_weapon_syringegun_medic" 	"required" weight 0
+//	criterion "WeaponIsNotMediGun"			"playerweapon" "!=tf_weapon_medigun"			"required" weight 10	// Already set in response_rules.txt, here for reference
+	criterion "WeaponIsNotPaintBall" 		"playerweapon" "!=tf_weapon_paintballrifle" 	"required" weight 0
+	criterion "WeaponIsNotHealLauncher" 	"playerweapon" "!=tf_weapon_heallauncher" 		"required" weight 0
+	criterion "WeaponIsNotBonesaw" 			"playerweapon" "!=tf_weapon_bonesaw" 			"required" weight 0
+	criterion "WeaponIsNotTaser" 			"playerweapon" "!=tf_weapon_taser" 				"required" weight 0
+
+	rule MedicTauntPrimaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsMedic IsWeaponPrimary WeaponIsNotSyringe
+		response MedicTauntPrimary
+	}
+	rule MedicTauntSecondaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsMedic IsWeaponSecondary WeaponIsNotMediGun WeaponIsNotPaintBall WeaponIsNotHealLauncher
+		response MedicTauntSecondary
+	}
+	rule MedicTauntMeleeGeneric
+	{
+		criteria ConceptPlayerTaunt IsMedic IsWeaponMelee WeaponIsNotBonesaw WeaponIsNotTaser
+		response MedicTauntMelee
+	}
+
+// Sniper
+//------------------------------------------------------------------------------------------------------------
+	criterion "WeaponIsNotSniperrifle" 		"playerweapon" "!=tf_weapon_sniperrifle" 		"required" weight 0
+	criterion "WeaponIsNotBowType" 			"playerweapon" "!=tf_weapon_compound_bow" 		"required" weight 0
+	criterion "WeaponIsNotHunterRifle" 		"playerweapon" "!=tf_weapon_hunterrifle" 		"required" weight 0
+	criterion "WeaponIsNotSMG" 				"playerweapon" "!=tf_weapon_smg" 				"required" weight 0
+	criterion "WeaponIsNotClub" 			"playerweapon" "!=tf_weapon_club" 				"required" weight 0
+
+	rule SniperTauntPrimaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsSniper IsWeaponPrimary WeaponIsNotSniperrifle WeaponIsNotBowType WeaponIsNotHunterRifle
+		response SniperTauntPrimary
+	}
+	rule SniperTauntSecondaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsSniper IsWeaponSecondary WeaponIsNotSMG
+		response SniperTauntSecondary
+	}
+	rule SniperTauntMeleeGeneric
+	{
+		criteria ConceptPlayerTaunt IsSniper IsWeaponMelee WeaponIsNotClub
+		response SniperTauntMelee
+	}
+	
+// Spy
+//------------------------------------------------------------------------------------------------------------
+	criterion "WeaponIsNotRevolver" 		"playerweapon" "!=tf_weapon_revolver" 			"required" weight 0
+	criterion "WeaponIsNotTranquilizer" 	"playerweapon" "!=tf_weapon_tranq" 				"required" weight 0
+	criterion "WeaponIsNotKnife" 			"playerweapon" "!=tf_weapon_knife" 				"required" weight 0
+	criterion "WeaponIsNotThrowKnife" 		"playerweapon" "!=tf_weapon_throwingknife" 		"required" weight 0
+
+	criterion "WeaponIsNotSapper" 			"playerweapon" "!=tf_weapon_sapper" 			"required" weight 0
+	criterion "WeaponIsNotSpyPDA" 			"playerweapon" "!=tf_weapon_pda_spy" 			"required" weight 0
+
+	rule SpyTauntPrimaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsSpy IsWeaponPrimary
+		response SpyTauntPrimary
+	}
+	rule SpyTauntSecondaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsSpy IsWeaponSecondary WeaponIsNotRevolver WeaponIsNotTranquilizer WeaponIsNotThrowKnife
+		response SpyTauntPrimary
+	}
+	rule SpyTauntMeleeGeneric
+	{
+		criteria ConceptPlayerTaunt IsSpy IsWeaponMelee WeaponIsNotKnife WeaponIsNotThrowKnife						// There's ambiguity what slot Throwing Knife was intended for, I'm just adding excludes for both.
+		response SpyTauntMelee
+	}
+	rule SpyTauntPDAGeneric
+	{
+		criteria ConceptPlayerTaunt IsSpy IsWeaponPda WeaponIsNotSpyPDA
+		response SpyTauntPDA
+	}
+
+// Civilian (TF2C)
+//------------------------------------------------------------------------------------------------------------
+	criterion "WeaponIsNotUmbrella" 		"playerweapon" "!=tf_weapon_umbrella" 			"required" weight 0
+
+	rule CivilianTauntPrimaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsCivilian IsWeaponPrimary
+		response CivilianTauntMelee
+	}
+	rule CivilianTauntSecondaryGeneric
+	{
+		criteria ConceptPlayerTaunt IsCivilian IsWeaponSecondary
+		response CivilianTauntMelee
+	}
+	rule CivilianTauntMeleeGeneric
+	{
+		criteria ConceptPlayerTaunt IsCivilian IsWeaponMelee WeaponIsNotUmbrella
+		response CivilianTauntMelee
+	}

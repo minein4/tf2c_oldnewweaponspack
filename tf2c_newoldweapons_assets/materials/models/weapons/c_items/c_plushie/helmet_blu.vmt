@@ -1,0 +1,11 @@
+"Patch"
+{
+	include "materials\models\weapons\c_items\c_plushie\body.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models\weapons\c_items\c_plushie\helmet_blu"
+	"$phongboost"	"0.5"
+	"$phongexponent"	"25"
+	}
+}

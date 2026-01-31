@@ -1,0 +1,7 @@
+SDK_UnlitGeneric
+{
+	"$basetexture" "editor/obsolete"
+	$vertexcolor 1
+	$vertexalpha 1
+	$translucent 1
+}

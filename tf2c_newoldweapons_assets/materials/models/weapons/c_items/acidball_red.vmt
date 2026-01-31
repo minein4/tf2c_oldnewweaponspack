@@ -1,0 +1,137 @@
+SDK_VertexLitGeneric
+{
+	"$basetexture" "passtime/neons/neon_red_solid"
+	"$selfillummask" "passtime/neons/neon_red_solid"
+	"$bumpmap"		 "water/tfwater001_normal"
+//	"$basetexture" "water/caustic/causticfade2"	// For VolumeClouds shader variants. These are sorted in order fastest to slowest!
+//	"$basetexture2" "water/waterfall002"
+//	"$basetexture3" "passtime/neons/neon_red_point"
+
+	"$detail"	"water/caustic/causticfade2"
+	"$detailscale" "[1 -1]"
+	"$detailblendfactor" 0.5	// 0.2 for unlitgeneric
+	"$detailblendmode" 2
+
+	"$envmap" "env_cubemap"	
+	"$envmaptint"	"[.75 .75 .75]"
+	"$selfillum" "1"
+	"$additive" "1"
+
+	"$phong" "1"
+	"$phongexponent" 250
+	"$phongboost" "50"
+	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
+	"$phongfresnelranges"	"[.3 .5 3]"
+
+	"$rimlight" "1"						
+	"$rimlightexponent" "20"			
+	"$rimlightboost" "2"
+
+	"$time" "0.0"
+	//---------------
+	// Visual Effects
+	//---------------
+	"$glowcolor" 		"1"
+	"$cloakPassEnabled" 	"1"
+	"$yellow" 		"0"
+	"$sheenPassEnabled" "1"
+
+	"$sheenmap" 		"cubemaps/cubemap_sheen001"
+	"$sheenmapmask" 		"Effects/AnimatedSheen/animatedsheen0"
+	"$sheenmaptint" 		"[ 1 1 1 ]"
+	"$sheenmapmaskframe" 	"0"
+	"$sheenindex" 		"0"
+
+	"Proxies"
+	{
+// For VolumeClouds
+		"CurrentTime"
+		{
+			"resultVar" "$time"
+		}
+// Normal stuff
+		"ModelGlowColor"
+		{
+			"resultVar" 	"$glowcolor"
+		}
+		"Equals"
+		{
+			"srcVar1"  	"$glowcolor"
+			"resultVar" 	"$selfillumtint"
+		}
+		"Equals"
+		{
+			"srcVar1"  	"$glowcolor"
+			"resultVar" 	"$color2"
+		}
+		"invis"
+		{
+		}
+		"YellowLevel"
+		{
+			"resultVar" 	"$yellow"
+		}
+		"Multiply"
+		{
+			"srcVar1" 	"$color2"
+			"srcVar2" 	"$yellow"
+			"resultVar" 	"$color2"
+		}
+		"AnimatedWeaponSheen"
+		{
+			"animatedtexturevar" 		"$sheenmapmask"
+			"animatedtextureframenumvar" 	"$sheenmapmaskframe"
+			"animatedtextureframerate" 		"40"
+		}
+// Moving water
+		"TextureScroll"
+		{
+			"texturescrollvar" "$detailtexturetransform"
+			"texturescrollrate" 0.1
+		}
+// For glow
+		"Sine"
+		{
+			"resultVar" $selfillumtint
+			"sinemin" .6
+			"sinemax" 1.1
+			"sineperiod" 3
+		}
+// Moving bumpmap
+//		"AnimatedTexture"
+//		{
+//			"animatedtexturevar" "$normalmap"
+//			"animatedtextureframenumvar" "$bumpframe"
+//			"animatedtextureframerate" 30.00
+//		}
+//		"Sine"
+//		{
+//			"sineperiod" "24"
+//			"sinemin" -0.5
+//			"sinemax" 0.5
+//			"resultVar" "$curr"
+//		}
+//		"Sine"
+//		{
+//			"sineperiod" "16"
+//			"sinemin" 0.5
+//			"sinemax" -0.5
+//			"resultVar" "$curr2"
+//		}
+//		"Equals"
+//		{
+//			"srcVar1" "$curr2"
+//			"resultVar" "$temp[0]"
+//		}
+//		"Equals"
+//		{
+//			"srcVar1" "$curr"
+//			"resultVar" "$temp[1]"
+//		}
+//		"TextureTransform"
+//		{
+//			"translateVar" "$temp"
+//			"resultVar" "$bumptransform"
+//		}  
+	}
+}

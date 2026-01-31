@@ -1,0 +1,66 @@
+SDK_UnlitTwoTexture
+{
+	"$baseTexture" "models/workshop/weapons/c_models/c_tele_shotgun/c_tele_shotgun_tv"
+	"$texture2"  "models/workshop/weapons/c_models/c_tele_shotgun/c_tele_shotgun_gradient"
+	
+	"$glowcolor" "1"
+	"$cloakPassEnabled" "1"
+	"$txScale" "1"
+
+	"$yellow" 		"0"
+	"$sheenPassEnabled" "1"
+
+	"$sheenmap" 		"cubemaps/cubemap_sheen001"
+	"$sheenmapmask" 		"Effects/AnimatedSheen/animatedsheen0"
+	"$sheenmaptint" 		"[ 1 1 1 ]"
+	"$sheenmapmaskframe" 	"0"
+	"$sheenindex" 		"0"
+
+	"Proxies"
+	{	
+		"TextureScroll"
+		{
+		"texturescrollvar" "$texture2transform"
+		"texturescrollrate" -.6
+		"texturescrollangle" 0
+		}
+		"TextureScroll"
+		{
+		"texturescrollvar" "$basetexturetransform"
+		"texturescrollrate" -.1
+		"texturescrollangle" 0
+		}
+		"invis"
+		{
+		}
+		"ModelGlowColor"
+		{
+			"resultVar" "$glowcolor"
+		}
+		"Equals"
+		{
+			"srcVar1"  "$glowcolor"
+			"resultVar" "$color2"
+		}
+		"YellowLevel"
+		{
+			"resultVar" "$yellow"
+		}
+		"Multiply"
+		{
+			"srcVar1" 	"$color2"
+			"srcVar2" 	"$yellow"
+			"resultVar" 	"$color2"
+		}
+		"AnimatedWeaponSheen"
+		{
+			"animatedtexturevar" 		"$sheenmapmask"
+			"animatedtextureframenumvar" 	"$sheenmapmaskframe"
+			"animatedtextureframerate" 		"40"
+		}
+		"BuildingRescueLevel"
+		{
+			"resultVar" "$basetexturetransform"
+		}
+	}
+}

@@ -1,0 +1,11 @@
+"Patch"
+{
+	include "materials\models\weapons\c_items\acidball_red.vmt"
+	
+	insert
+	{
+	"$basetexture" "passtime/neons/neon_green_solid"
+	"$selfillummask" "passtime/neons/neon_green_solid"
+//	"$basetexture3" "passtime/neons/neon_green_point"
+	}
+}

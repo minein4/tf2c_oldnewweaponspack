@@ -1,0 +1,11 @@
+"Patch"
+{
+	include "materials/models/player/items/medic/medic_helmet.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models/player/items/medic/medic_helmet_blue"
+	"$color2" "{40 57 77}"
+	"$colortint_base" "{40 57 77}"  // put the RGB value of whats being colored when no paint is present, if $blendtintcoloroverbase is 0 then put [1 1 1] here.
+	}
+}

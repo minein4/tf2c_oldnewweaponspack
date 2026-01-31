@@ -1,0 +1,10 @@
+"Patch"
+{
+	include "materials/models/player/items/scout/batter_helmet_red.vmt"
+	
+	insert
+	{
+	"$color2" "{51 87 142}"
+	"$colortint_base" "{51 87 142}"
+	}
+}

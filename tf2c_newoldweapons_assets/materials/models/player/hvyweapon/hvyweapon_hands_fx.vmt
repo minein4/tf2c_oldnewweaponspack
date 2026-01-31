@@ -1,0 +1,87 @@
+"Patch"
+{
+	include "materials/models/player/hvyweapon/hvyweapon_hands.vmt"
+	
+	insert
+	{
+		//---------------
+		// Visual Effects
+		//---------------
+		"$glowcolor" 		"1"
+
+// Magic bullshit starts here, courtesy of Squid Eevee's Yakuza-styled crits mod (pure sorcery!!)
+		"$aVector"			"[0 0 0]"
+		"$zero"				"0.0"
+		"$one"				"1.0"
+		"$green"				"1"
+		
+		"$defaultphongboost"	".8"
+		"$critphongboost"		"0"
+		"$defaultphongfresnelranges"	"[.3 1 8]"
+		"$critphongfresnelranges"	"[0 0 0]"
+		
+		"$defaultrlexp"		"4"
+		"$critrlexp"			"20"
+		
+		"$defaultrlboost"		"2"
+		"$critrlboost"		"5"
+
+		"Proxies"	// So much as I can tell, this does 2 things; It applies crit-colored phong when you get any kind of critboost, and it also does some Magic Bullshit(tm) to remap your phong's intensity, fresnel, AND the rimlight?????
+		{
+			"ModelGlowColor"
+			{
+				"resultVar" "$aVector"
+			}
+			"Clamp"
+			{
+				"min"		"$aVector[1]"
+				"max"		"$aVector[1]"
+				"srcVar1"	"$zero"
+				"resultVar"	"$green"
+			}
+			"LessOrEqual"
+			{
+				lessEqualVar $defaultphongboost
+				greaterVar $critphongboost
+				srcVar1 $green
+				srcVar2 $one
+				resultVar $phongboost
+			}
+			"LessOrEqual"
+			{
+				lessEqualVar $defaultphongfresnelranges
+				greaterVar $critphongfresnelranges
+				srcVar1 $green
+				srcVar2 $one
+				resultVar $phongfresnelranges
+			}
+			"LessOrEqual"
+			{
+				lessEqualVar $defaultrlexp
+				greaterVar $critrlexp
+				srcVar1 $green
+				srcVar2 $one
+				resultVar $rimlightexponent
+			}
+			"LessOrEqual"
+			{
+				lessEqualVar $defaultrlboost
+				greaterVar $critrlboost
+				srcVar1 $green
+				srcVar2 $one
+				resultVar $rimlightboost
+			}
+			
+			"ModelGlowColor"
+			{
+				"resultVar" "$glowcolor"
+			}
+			"Equals"
+			{
+				"srcVar1"  "$glowcolor"
+				"resultVar" "$phongtint"
+			}
+// Magic bullshit ends here
+		}
+	}
+}

@@ -1,0 +1,10 @@
+"Patch"
+{
+	include "materials\models\weapons\c_items\techpistol.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models\weapons\c_items\techpistol_yellow"
+	"$envmaptint" "[.125 .125 .1]"
+	}
+}

@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials\models/weapons/c_models/c_classic_knife/c_classic_knife.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models/weapons/c_models/c_classic_knife/c_classic_knife_bloody"
+	}
+}

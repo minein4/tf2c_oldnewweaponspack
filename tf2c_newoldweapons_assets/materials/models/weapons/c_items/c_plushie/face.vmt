@@ -1,0 +1,29 @@
+SDK_VertexLitGeneric
+{
+//	"$baseTexture" "models\weapons\c_items\c_plushie\face1anim"	// Gritted teeth, animated!
+// Alternate Faces
+	"$baseTexture" "models\weapons\c_items\c_plushie\face2"	// Frown
+//	"$baseTexture" "models\weapons\c_items\c_plushie\face3"	// :D Smile
+//	"$baseTexture" "models\weapons\c_items\c_plushie\face4"	// Smile
+//	"$baseTexture" "models\weapons\c_items\c_plushie\face5"	// Yelling
+
+	$translucent 1
+
+	//---------------
+	// Visual Effects
+	//---------------
+	"$cloakPassEnabled" 	"1"
+
+	"Proxies"
+	{
+		"AnimatedTexture"
+		{
+			"animatedtexturevar"	"$basetexture"
+			"animatedtextureframenumvar"	"$frame"
+			"animatedtextureframerate"	"15"
+		}
+		"invis"
+		{
+		}
+	}
+}

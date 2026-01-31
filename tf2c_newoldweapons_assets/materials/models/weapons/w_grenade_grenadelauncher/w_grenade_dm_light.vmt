@@ -1,0 +1,4 @@
+"Patch"
+{
+	include "materials\models\weapons\w_grenade_grenadelauncher\w_grenade_dm.vmt"
+}

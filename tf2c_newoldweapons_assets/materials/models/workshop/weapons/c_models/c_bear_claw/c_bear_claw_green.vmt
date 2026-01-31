@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials\models/workshop/weapons/c_models/c_bear_claw/c_bear_claw_red.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models/workshop/weapons/c_models/c_bear_claw/c_bear_claw_green"
+	}
+}

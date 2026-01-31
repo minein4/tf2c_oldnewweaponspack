@@ -1,0 +1,78 @@
+//-----------------------//
+//-- Custom Kill Icons --//
+//-----------------------//
+//
+// [June 28, 2022]
+// Hi! You might be wondering why this is hud_textures.txt now, instead of mod_textures.txt
+// The long and short of it is - I did a bit of looking at some of the public code for SDK2013, and apparently the game loads TWO files when it comes to HUD icons - not just mod_textures!!
+// (Look at it here, completely public; https://github.com/ValveSoftware/source-sdk-2013/blob/master/mp/src/game/client/hud.cpp)
+//
+// So, why bother? Eh. It's mostly because mod_textures gets updated fairly frequently - be it new HUD elements for gamemodes, OFFICIAL weapon kill icons, icons for new buildings, etc.
+// Meanwhile, hud_textures.txt is VERY rarely touched so far as I understand - it's not even present in TF2Classic's install, so I had to grab it from SDK2013-MP's folders! (which are all HL2 defaults might I add.)
+// I figure - since this file gets updated FAR LESS FREQUENTLY (read: basically never), and I have to modify one of the two files anyway, I might as well modify hud_textures.
+//
+// If your mod uses mod_textures.txt, it's still fine! It'll load as normal alongside hud_textures.txt!
+// I should note though, in the code, it looks like hud_textures gets loaded first, and then mod_textures second. I'm not sure how much of an effect that'll have on icons, but it's something to consider!
+//
+//---
+//
+// That aside, welcome! This and mod_textures.txt are central icons files for TF2 / TF2C!
+// This one in particular is reserved pretty much exclusively for Custom Weapon icons - since they need to be defined here.
+// SPECIFICALLY, as of a new development - we can treat this file like a game_sounds_manifest.txt - a central file in which to load EVERYTHING else!
+//
+// I learned about this from user and friend Yakibomb, who themselves learned it from grand arch-wizard supreme ficool2 (hallowed be his name), who honestly yeah I would have expected to be the one to reveal this
+// Below, EVERY Custom Weapons mod that exists right now that I can think of has an entry - if you own or made one of these, feel free to include this file as well as your own entry into your mod!
+//
+// Note: As it is packaged right now, it only has actual icon-files for New-Old Weapons Pack's Icons + Additions!
+// Other entries will WORK - but you need to first get the icon files from wherever else, first! Either from the other mod's main install or something.
+//
+// As you can see, this file is very easy to edit. If you want to add a new pack, just add one below!
+// That way, if you're so inclined, you can very easily update this! And, even add kill-icons for unlisted packs!
+//
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
+	#base "custom_hud/SDK2013MP Defaults.txt"								// SDK 2013 MP's default entries - probably safe to delete but I'm being extra safe!
+	#base "custom_hud/Live TF2 T.I.P.txt"									// Live TF2 T.I.P Kill-Icons
+	#base "custom_hud/Live TF2 Extras + Tweaks.txt"							// Live TF2 Icon Tweaks + Additions
+
+// Catch-all if you just wanna add your own stuff quickly!
+	#base "custom_hud/custom_hud_1.txt"
+	#base "custom_hud/custom_hud_2.txt"
+	#base "custom_hud/custom_hud_3.txt"
+	#base "custom_hud/custom_hud_4.txt"
+	#base "custom_hud/custom_hud_5.txt"
+
+// Includes for other Weapons Packs / CW Mods! Add your own if you need, or let me know so I can update it!
+// IF YOU WANT TO BE ADDED TO THIS LIST / WANT NAMING SCHEMES CHANGED, AND I HAVEN'T DONE SO YET, CONTACT ME ON GB OR DISCORD!!
+	#base "custom_hud/Knockout! Custom Weapons.txt"							// Knockout! Custom Weapons
+	#base "custom_hud/Mannly Munitions.txt"									// Mannly Munitions [* Same as parent mod]
+	#base "custom_hud/Renaissance Revival.txt"								// Renaissance Revival
+	#base "custom_hud/Freds Fight-Starters!.txt"							// Fred's Fight-Starters!
+
+	#base "custom_hud/Mombae Weapons Pack.txt"								// Mombae's Fun-Pack UvU [* Same as parent mod]
+	#base "custom_hud/Weaponized Insanity.txt"								// Weaponized Insanity Pack
+	#base "custom_hud/Spacenauts Armament Box.txt"							// Spacenaut's Armament Box
+	#base "custom_hud/Woomys Weapons Pack.txt"								// Woomy's Weapons Pack
+	#base "custom_hud/high_octane_icons.txt"								// High-Octane Pack [* Same as parent mod]
+	#base "custom_hud/Trained-Mercs Weapon Pack.txt"						// Trained-Mercs Weapon Pack
+	#base "custom_hud/Team Fortress 2 ReValve.txt"							// TF2: ReValve
+	#base "custom_hud/Littlefirez Custom Weapons!.txt"						// Littlefirez's Custom Weapons!
+	#base "custom_hud/Tangerine Paint's Weapons Pack.txt"					// T. Paint's Weapons Pack
+
+// NOWP
+	#base "custom_hud/New-Old Weapons Pack!.txt"							// New-Old Weapons Pack - Loaded after EVERYTHING else if you wanna replace anything!
+
+"custom_kill_icons"
+{
+	TextureFileRefs // Quick note about these: for kill icon grids, the dimensions hafta be a power of 2 (128, 256, 512, 1024, etc.)
+	{
+		"dfile"
+		{
+			"prefix"		"d_"
+		}
+		"dnegfile"
+		{
+			"prefix"		"dneg_"
+		}
+	}
+}

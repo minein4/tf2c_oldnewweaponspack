@@ -1,0 +1,6 @@
+SDK_UnlitGeneric
+{
+	"$basetexture" "Debug/debugempty"
+	$vertexcolor 1
+	$vertexalpha 1
+}

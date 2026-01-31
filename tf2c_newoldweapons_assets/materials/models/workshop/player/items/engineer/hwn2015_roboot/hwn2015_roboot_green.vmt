@@ -1,0 +1,11 @@
+"Patch"
+{
+	include "materials/models/workshop/player/items/engineer/hwn2015_roboot/hwn2015_roboot.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models/workshop/player/items/engineer/hwn2015_roboot/hwn2015_roboot_green_color"
+	"$colortint_base"		"{ 74 104 30 }"
+	"$color2"		"{ 74 104 30 }"
+	}
+}

@@ -1,0 +1,11 @@
+"Patch"
+{
+	include "materials/models/weapons/c_items/gold_machine_gun.vmt"
+
+	insert
+	{
+	"$envmap"		"cubemaps/cubemap_newzealium"
+	"$envmaptint" 	"[ 3.75 3.75 4.25 ]"	// Silver
+//	"$envmaptint" 	"[ 4 4 4 ]"				// Steel
+	}
+}

@@ -1,0 +1,10 @@
+"Patch"
+{
+	include "materials\models\weapons\Skull_Buster\BoneDiffuseMap.vmt"
+	
+	insert
+	{
+	"$basetexture"	"models\weapons\Skull_Buster\CraniumDiffuseMap"
+	"$bumpmap" 	"models\weapons\Skull_Buster\CraniumNormalMap"
+	}
+}

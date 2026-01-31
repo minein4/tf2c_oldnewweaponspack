@@ -1,0 +1,11 @@
+"Patch"
+{
+	include "materials/models/player/items/pyro/pyro_hat.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models/player/items/pyro/pyro_hat_blue"
+	"$color2" "{61 101 125}"
+	"$colortint_base" "{61 101 125}"
+	}
+}

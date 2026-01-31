@@ -1,0 +1,11 @@
+"Patch"
+{
+	include "materials/models/workshop/player/items/engineer/builders_toolkit/builders_toolkit.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models/workshop/player/items/engineer/builders_toolkit/builders_toolkit_yellow_color"
+	"$colortint_base"		"{ 219 167 37 }"
+	"$color2"		"{ 219 167 37 }"
+	}
+}

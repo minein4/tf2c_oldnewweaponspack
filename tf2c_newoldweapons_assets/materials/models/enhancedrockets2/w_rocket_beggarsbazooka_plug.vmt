@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials\models\enhancedrockets2\w_rocket_base.vmt"
+	
+	insert
+	{
+	"$basetexture" "models/workshop/player/items/soldier/robo_soldier_sparkplug/robo_soldier_sparkplug_color"
+	}
+}

@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials\models\enhancedrockets2\w_rocket_base.vmt"
+	
+	insert
+	{
+	"$basetexture" "models\weapons\c_items\c_dumpster_device"
+	}
+}

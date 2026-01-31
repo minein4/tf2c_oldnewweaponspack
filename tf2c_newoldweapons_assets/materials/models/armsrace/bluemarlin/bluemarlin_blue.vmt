@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials\models\armsrace\bluemarlin\bluemarlin.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models\armsrace\bluemarlin\bluemarlin_blue"
+	}
+}

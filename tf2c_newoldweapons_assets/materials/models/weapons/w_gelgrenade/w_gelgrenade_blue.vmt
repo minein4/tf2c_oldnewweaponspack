@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials\models\weapons\w_gelgrenade\w_gelgrenade_red.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models\weapons\w_gelgrenade\w_gelgrenade_blue"
+	}
+}

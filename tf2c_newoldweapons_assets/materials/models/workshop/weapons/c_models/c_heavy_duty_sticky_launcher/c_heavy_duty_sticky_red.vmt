@@ -1,0 +1,87 @@
+SDK_VertexLitGeneric
+{
+	"$baseTexture" "models\workshop\weapons\c_models\c_heavy_duty_sticky_launcher\c_heavy_duty_sticky_red"
+
+	"$envmap" "env_cubemap"	
+	"$envmaptint"	"[.3 .3 .3]"
+	"$basemapalphaenvmapmask" "1"
+
+	"$selfillum" "1"
+	$selfillummask "models\workshop\weapons\c_models\c_heavy_duty_sticky_launcher\c_heavy_duty_sticky_illum"
+
+	"$phong" "1"
+	"$phongexponent" "5"
+	"$phongboost" "3"	
+	"$lightwarptexture" "models/lightwarps/weapon_lightwarp"
+	"$phongfresnelranges"	"[.3 .5 3]"
+	"$phongtint"	"[1 .5 .5]"
+	"$halflambert" "1"
+	"$basemapalphaphongmask" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "10"	
+	"$rimlightboost" "6"
+	
+	//---------------
+	// Visual Effects
+	//---------------
+	"$glowcolor" 		"1"
+	"$cloakPassEnabled" 	"1"
+	"$yellow" 		"0"
+	"$sheenPassEnabled" "1"
+
+	"$sheenmap" 		"cubemaps/cubemap_sheen001"
+	"$sheenmapmask" 		"Effects/AnimatedSheen/animatedsheen0"
+	"$sheenmaptint" 		"[ 1 1 1 ]"
+	"$sheenmapmaskframe" 	"0"
+	"$sheenindex" 		"0"
+
+	"Proxies"
+	{
+		// "StickybombGlowColor"
+		// {
+			// "resultVar" "$glowcolor"
+		// }
+		"ModelGlowColor"
+		{
+			"resultVar" 	"$glowcolor"
+		}
+		"Equals"
+		{
+			"srcVar1"  	"$glowcolor"
+			"resultVar" 	"$selfillumtint"
+		}
+		"Equals"
+		{
+			"srcVar1"  	"$glowcolor"
+			"resultVar" 	"$color2"
+		}
+		"invis"
+		{
+		}
+		"YellowLevel"
+		{
+			"resultVar" 	"$yellow"
+		}
+		"Multiply"
+		{
+			"srcVar1" 	"$color2"
+			"srcVar2" 	"$yellow"
+			"resultVar" 	"$color2"
+		}
+		"AnimatedWeaponSheen"
+		{
+			"animatedtexturevar" 		"$sheenmapmask"
+			"animatedtextureframenumvar" 	"$sheenmapmaskframe"
+			"animatedtextureframerate" 		"40"
+		}
+		"Sine"
+		{
+			"resultVar" $selfillumtint
+			"sinemin" .6
+			"sinemax" 2.1
+			"sineperiod" 3
+		}
+	}
+}
+

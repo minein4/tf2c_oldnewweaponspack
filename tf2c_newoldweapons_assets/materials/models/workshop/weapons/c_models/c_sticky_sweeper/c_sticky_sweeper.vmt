@@ -1,0 +1,75 @@
+SDK_VertexLitGeneric
+{
+	"$baseTexture" "models/workshop/weapons/c_models/c_sticky_sweeper/c_sticky_sweeper"
+
+	"$phongtint"	"[.9 1 .8]"
+	"$phong" "1"
+	"$phongexponent" "25"
+	"$phongboost" "2"	
+	"$lightwarptexture" "models\lightwarps\weapon_lightwarp"
+  //"$lightwarptexture" "models/weapons/c_items/c_ambassador_lightwarp"
+  //"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
+	//"$phongfresnelranges"	"[1.5 3 1]"
+  "$phongfresnelranges"	"[1 2 1]"
+  //"$phongfresnelranges"	"[.25 .5 1]"
+	"$basemapalphaphongmask" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "25"	
+	"$rimlightboost" ".125"
+  
+  "$selfillum" "1"
+  "$selfillummask" "models/workshop/weapons/c_models/c_sticky_sweeper/c_sticky_sweeper_selfillum"
+	"$selfillumtint" "[1.5 1.5 1.5]"
+
+	//---------------
+	// Visual Effects
+	//---------------
+	"$glowcolor" 		"1"
+	"$cloakPassEnabled" 	"1"
+	"$yellow" 		"0"
+	"$sheenPassEnabled" "1"
+
+	"$sheenmap" 		"cubemaps/cubemap_sheen001"
+	"$sheenmapmask" 		"Effects/AnimatedSheen/animatedsheen0"
+	"$sheenmaptint" 		"[ 1 1 1 ]"
+	"$sheenmapmaskframe" 	"0"
+	"$sheenindex" 		"0"
+
+	"Proxies"
+	{
+		"ModelGlowColor"
+		{
+			"resultVar" 	"$glowcolor"
+		}
+		"Equals"
+		{
+			"srcVar1"  	"$glowcolor"
+			"resultVar" 	"$selfillumtint"
+		}
+		"Equals"
+		{
+			"srcVar1"  	"$glowcolor"
+			"resultVar" 	"$color2"
+		}
+		"invis"
+		{
+		}
+		"YellowLevel"
+		{
+			"resultVar" 	"$yellow"
+		}
+		"Multiply"
+		{
+			"srcVar1" 	"$color2"
+			"srcVar2" 	"$yellow"
+			"resultVar" 	"$color2"
+		}
+		"AnimatedWeaponSheen"
+		{
+			"animatedtexturevar" 		"$sheenmapmask"
+			"animatedtextureframenumvar" 	"$sheenmapmaskframe"
+			"animatedtextureframerate" 		"40"
+		}
+	}
+}

@@ -1,0 +1,7 @@
+#base "items_game_tf2c.txt"
+#base "custom_items/old_new_weapons_pack_weapons.txt"
+#base "custom_items/old_new_weapons_pack_attribs.txt"
+#base "custom_items/old_new_weapons_pack_prefab.txt"
+"items_game"
+{
+}

@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials/models/items/cardboard_colabox.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models/items/cardboard_colabox_blue"
+	}
+}

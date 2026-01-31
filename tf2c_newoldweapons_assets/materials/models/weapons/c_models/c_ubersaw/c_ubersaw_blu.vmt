@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials\models\weapons\c_models\c_ubersaw\c_ubersaw.vmt"
+	
+	insert
+	{
+	"$selfillumtint" "[.2 .4 1]"
+	}
+}

@@ -1,0 +1,7 @@
+SDK_UnlitGeneric
+{
+	"$baseTexture"	 "backpack/workshop/weapons/c_models/c_demo_cannon/c_demo_cannon_large"
+	"$translucent"	"1"
+	"$vertexcolor"	"1"
+	"$ignorez"	"1"
+}

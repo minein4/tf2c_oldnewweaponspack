@@ -1,0 +1,74 @@
+// ### Written by TF2 Item Material Writer (http://www.hamaloo.co.uk/tf2matwrite/). This file should be in the directory "materials\models\weapons\c_items\" and named "c_smg_sterling.vmt". ###
+SDK_VertexLitGeneric
+{
+	$baseTexture models\weapons\c_items\c_smg_sterling
+	$bumpMap models\weapons\c_items\c_smg_sterling_normal
+	
+	$lightWarpTexture models\lightwarps\weapon_lightwarp
+	
+	$phong 1
+	$phongExponentTexture models\weapons\c_items\c_smg_sterling_exponent
+	$phongBoost 5
+	$phongAlbedoTint 1
+	$phongFresnelRanges "[0.25 0.5 1]"
+	
+	$rimLight 1
+	$rimLightExponent 4
+	$rimLightBoost 2
+	$rimMask 1
+	
+	$basePhongExponent 0
+	$basePhongBoost 5
+	$tempVar 0
+	
+	//---------------
+	// Visual Effects
+	//---------------
+	"$glowcolor" 		"1"
+	"$cloakPassEnabled" 	"1"
+	"$yellow" 		"0"
+	"$sheenPassEnabled" "1"
+
+	"$sheenmap" 		"cubemaps/cubemap_sheen001"
+	"$sheenmapmask" 		"Effects/AnimatedSheen/animatedsheen0"
+	"$sheenmaptint" 		"[ 1 1 1 ]"
+	"$sheenmapmaskframe" 	"0"
+	"$sheenindex" 		"0"
+
+	"Proxies"
+	{
+		"ModelGlowColor"
+		{
+			"resultVar" 	"$glowcolor"
+		}
+		"Equals"
+		{
+			"srcVar1"  	"$glowcolor"
+			"resultVar" 	"$selfillumtint"
+		}
+		"Equals"
+		{
+			"srcVar1"  	"$glowcolor"
+			"resultVar" 	"$color2"
+		}
+		"invis"
+		{
+		}
+		"YellowLevel"
+		{
+			"resultVar" 	"$yellow"
+		}
+		"Multiply"
+		{
+			"srcVar1" 	"$color2"
+			"srcVar2" 	"$yellow"
+			"resultVar" 	"$color2"
+		}
+		"AnimatedWeaponSheen"
+		{
+			"animatedtexturevar" 		"$sheenmapmask"
+			"animatedtextureframenumvar" 	"$sheenmapmaskframe"
+			"animatedtextureframerate" 		"40"
+		}
+	}
+}

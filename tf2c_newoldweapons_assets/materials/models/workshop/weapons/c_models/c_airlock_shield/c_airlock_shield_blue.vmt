@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials/models/workshop/weapons/c_models/c_airlock_shield/c_airlock_shield_red.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models/workshop/weapons/c_models/c_airlock_shield/c_airlock_shield_blue"
+	}
+}

@@ -1,0 +1,4 @@
+"Patch"
+{
+	include "materials/models/buildables/mini_dispenser/minidisp_blueprint_build.vmt"
+}

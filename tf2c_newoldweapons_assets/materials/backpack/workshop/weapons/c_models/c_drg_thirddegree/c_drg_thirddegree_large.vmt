@@ -1,0 +1,7 @@
+SDK_UnlitGeneric
+{
+	"$baseTexture" 	"backpack/workshop/weapons/c_models/c_drg_thirddegree/c_drg_thirddegree_large"
+	"$translucent"	"1"
+	"$vertexcolor"	"1"
+	"$ignorez"	"1"
+}

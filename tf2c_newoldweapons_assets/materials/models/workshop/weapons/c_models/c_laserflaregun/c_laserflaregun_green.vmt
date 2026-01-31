@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials/models/workshop/weapons/c_models/c_laserflaregun/c_laserflaregun.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models/workshop/weapons/c_models/c_laserflaregun/c_laserflaregun_green"
+	}
+}

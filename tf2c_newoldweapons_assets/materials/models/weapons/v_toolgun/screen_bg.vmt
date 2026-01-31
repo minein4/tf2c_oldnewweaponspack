@@ -1,0 +1,33 @@
+SDK_VertexLitGeneric
+{
+	"$basetexture"	"models/weapons/v_toolgun/screen_bg"
+//	"$detail"	"models/weapons/v_toolgun/screen_text_remover"
+//	"$detail"	"models/weapons/v_toolgun/screen_text_explodeintosharks"
+	"$detail"	"models/weapons/v_toolgun/screen_text_multitool"
+	"$detailscale" "[1 1]"
+	"$detailblendfactor" 1	// 0.2 for unlitgeneric
+	"$detailblendmode" 2
+
+	"$model" "1"
+//	"$nocull" "1"
+
+	"$selfillum"		"1"
+	"$selfillumtint"		"[3 3 3]"
+
+	//---------------
+	// Visual Effects
+	//---------------
+	"$cloakPassEnabled" 	"1"
+
+	"Proxies"
+	{
+		"invis"
+		{
+		}
+		"TextureScroll"
+		{
+			"texturescrollvar" "$detailtexturetransform"
+			"texturescrollrate" 0.5
+		}
+	}
+}

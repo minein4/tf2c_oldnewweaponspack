@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials/models/workshop/weapons/c_models/c_sticky_sweeper/c_sticky_sweeper.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models/workshop/weapons/c_models/c_sticky_sweeper/c_sticky_sweeper_blue"
+	}
+}

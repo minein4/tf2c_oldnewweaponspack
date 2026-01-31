@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials\models\weapons\c_models\c_morningstar\c_morningstar.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models\weapons\c_models\c_morningstar\c_morningstar_blue"
+	}
+}

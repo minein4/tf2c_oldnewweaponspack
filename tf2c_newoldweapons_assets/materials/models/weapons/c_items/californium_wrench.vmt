@@ -1,0 +1,10 @@
+"Patch"
+{
+	include "materials/models/weapons/c_items/gold_wrench.vmt"
+
+	insert
+	{
+	"$envmap"		"cubemaps/cubemap_newzealium"
+	"$envmaptint" 	"[3.5 1.25 1.1]"		// Rose Gold
+	}
+}

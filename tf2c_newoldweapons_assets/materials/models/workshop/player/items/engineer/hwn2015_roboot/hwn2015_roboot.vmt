@@ -1,0 +1,81 @@
+SDK_VertexLitGeneric
+{
+	"$basetexture"		"models/workshop/player/items/engineer/hwn2015_roboot/hwn2015_roboot_color"
+	"$bumpmap"		"models/workshop/player/items/engineer/hwn2015_roboot/hwn2015_roboot_normal"
+//	"$lightwarptexture"		"models/player/pyro/pyro_lightwarp"
+	"$lightwarptexture"		"models/lightwarps/softened_weapon_lightwarp"
+	"$phongexponenttexture"		"models/workshop/player/items/engineer/hwn2015_roboot/hwn2015_roboot_phongexponent"
+	"$phong"		"1"
+	"$phongexponent"		"15.000000"
+	"$phongboost"		"5.000000"
+	"$phongfresnelranges"		"[.25 .5 1]"
+	"$rimlight"		"1"
+	"$rimlightexponent"		"4"
+	"$rimlightboost"		"1.500000"
+	"$rimmask"		"0"
+	"$blendtintbybasealpha"		"1"
+	"$blendtintcoloroverbase"		"1.000000"
+	"$colortint_base"		"{ 102 32 26 }"
+	"$color2"		"{ 102 32 26 }"
+	"$colortint_tmp"		"[0 0 0]"
+	"$bumpmapalphaphongmask"		"1"
+	"$cloakPassEnabled"		"1"
+	"$detail"		"effects/tiledfire/fireLayeredSlowTiled512"
+	"$detailscale"		"5"
+	"$detailblendfactor"		"0"
+	"$detailblendmode"		"6"
+	"$yellow" 		"0"
+	"$sheenPassEnabled" "1"
+
+	"$sheenmap" 		"cubemaps/cubemap_sheen001"
+	"$sheenmapmask" 		"Effects/AnimatedSheen/animatedsheen0"
+	"$sheenmaptint" 		"[ 1 1 1 ]"
+	"$sheenmapmaskframe" 	"0"
+	"$sheenindex" 		"0"
+	">=DX90"
+	{
+		"$selfillum"		"0"
+	}
+	"proxies"
+	{
+		"invis"
+		{
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar"		"$detail"
+			"animatedtextureframenumvar"		"$detailframe"
+			"animatedtextureframerate"		"30"
+		}
+		"BurnLevel"
+		{
+			"resultVar"		"$detailblendfactor"
+		}
+		"ItemTintColor"
+		{
+			"resultVar"		"$colortint_tmp"
+		}
+		"SelectFirstIfNonZero"
+		{
+			"srcVar1"		"$colortint_tmp"
+			"srcVar2"		"$colortint_base"
+			"resultVar"		"$color2"
+		}
+		"YellowLevel"
+		{
+			"resultVar"		"$yellow"
+		}
+		"Multiply"
+		{
+			"srcVar1" 	"$color2"
+			"srcVar2" 	"$yellow"
+			"resultVar" 	"$color2"
+		}
+		"AnimatedWeaponSheen"
+		{
+			"animatedtexturevar" 		"$sheenmapmask"
+			"animatedtextureframenumvar" 	"$sheenmapmaskframe"
+			"animatedtextureframerate" 		"40"
+		}
+	}
+}

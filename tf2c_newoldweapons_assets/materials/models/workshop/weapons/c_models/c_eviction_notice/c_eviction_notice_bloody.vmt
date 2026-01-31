@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials\models\workshop\weapons\c_models\c_eviction_notice\c_eviction_notice.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models\workshop\weapons\c_models\c_eviction_notice\c_eviction_notice_bloody"
+	}
+}

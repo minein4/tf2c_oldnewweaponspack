@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials\models\weapons\w_grenade_heal\w_grenade_heal_red.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models\weapons\w_grenade_heal\w_grenade_heal_yellow"
+	}
+}

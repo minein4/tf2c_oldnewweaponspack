@@ -1,0 +1,8 @@
+SDK_UnlitGeneric
+{
+	"$basetexture"	"models/weapons/c_items/c_shredder_blueprint"
+	"$surfaceprop"	"no_decal"
+	"$translucent"	1
+	"$model"		1
+	"$nocull"		1
+}

@@ -1,0 +1,1098 @@
+//--------------------------------------------------------------------------------------------------------------------------------------- Kill Icons for the New-Old Weapons Pack!
+//--------------------------------------------------------------------------------------------------------------------------------------- Together with the extras + tweaks, these are all the icons I've made myself for all the new stuff!
+//-----------NEW-OLD WEAPONS PACK ICONS [v3.2.1] ---------------------------------------------------------------------------------------- As with other visible stuff in the pack, stuff here is listed in vaguely the order they got added.
+//---------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------- This is split into sections based on updates! Also, certain NOWP-only not-new-weapon things show up here, for consistency.
+"custom_kill_icons"
+{
+	TextureData
+	{
+//-- Update 1 (v1.0.0) --//
+		"crowbar"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"0"
+			"y"			"0"
+			"width"		"105"
+			"height"	"32"
+		}
+		"crowbar_backstab"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"896"
+			"y"			"256"
+			"width"		"64"
+			"height"	"32"
+		}
+		"fryingpan_backstab"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"960"
+			"y"			"256"
+			"width"		"64"
+			"height"	"32"
+		}
+		"nowpaagun"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"0"
+			"y"			"32"
+			"width"		"128"
+			"height"	"32"
+		}
+		"shotgun_incendiary"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"0"
+			"y"			"64"
+			"width"		"128"
+			"height"	"32"
+		}
+		"machinegun"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"0"
+			"y"			"96"
+			"width"		"128"
+			"height"	"32"
+		}
+		"sixshooter"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"0"
+			"y"			"128"
+			"width"		"66"
+			"height"	"32"
+		}
+		"grenadelauncher_dm"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"0"
+			"y"			"160"
+			"width"		"108"
+			"height"	"32"
+		}
+		"syringegun_bleed"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"0"
+			"y"			"192"
+			"width"		"90"
+			"height"	"32"
+		}
+		"wa2k_marker"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"0"
+			"y"			"224"
+			"width"		"128"
+			"height"	"32"
+		}
+		"wa2k_marker_headshot"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"896"
+			"y"			"0"
+			"width"		"95"
+			"height"	"32"
+		}
+		"sten_nailgun"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"0"
+			"y"			"256"
+			"width"		"128"
+			"height"	"32"
+		}
+
+//-- Update 2 (v1.5.0) --//
+		"freedom_staff_short"
+		{
+			"dfile"		"HUD/d_images_v3"
+			"dnegfile"	"HUD/dneg_images_v3"
+			"x"			"321"
+			"y"			"224"
+			"width"		"60"
+			"height"	"32"
+		}
+		"knife_gun"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"0"
+			"y"			"288"
+			"width"		"56"
+			"height"	"32"
+		}
+		"knife_gun_backstab"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"896"
+			"y"			"288"
+			"width"		"64"
+			"height"	"32"
+		}
+		"rocket_flaregun"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"0"
+			"y"			"320"
+			"width"		"120"
+			"height"	"32"
+		}
+
+//-- Update 3 (v1.7.5) --//
+		"derringer"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"0"
+			"y"			"352"
+			"width"		"64"
+			"height"	"32"
+		}
+		"chainsaw"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"0"
+			"y"			"384"
+			"width"		"100"
+			"height"	"32"
+		}
+		"cyclops_bouncer"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"0"
+			"y"			"416"
+			"width"		"100"
+			"height"	"32"
+		}
+		"what"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"960"
+			"y"			"480"
+			"width"		"64"
+			"height"	"32"
+		}
+		"how"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"896"
+			"y"			"480"
+			"width"		"128"
+			"height"	"32"
+		}
+
+//-- Update 4 (v2.0.0) --//
+		"firehose"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"0"
+			"y"			"448"
+			"width"		"85"
+			"height"	"32"
+		}
+		"nonnonviolent_protest_backstab"	// This name might be too long to actually trigger in-game? Need to shorten it to picket_backstab
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"960"
+			"y"			"288"
+			"width"		"64"
+			"height"	"32"
+		}
+		"aa12_repeater"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"0"
+			"y"			"480"
+			"width"		"100"
+			"height"	"32"
+		}
+		"glock"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"128"
+			"y"			"0"
+			"width"		"50"
+			"height"	"32"
+		}
+		"ump45"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"128"
+			"y"			"32"
+			"width"		"70"
+			"height"	"32"
+		}
+		"snubnose_melee"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"128"
+			"y"			"64"
+			"width"		"58"
+			"height"	"32"
+		}
+		"leadpipe"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"128"
+			"y"			"96"
+			"width"		"105"
+			"height"	"32"
+		}
+
+//-- Update 5 (v2.1.5) --//
+		"revolver_rifle"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"128"
+			"y"			"128"
+			"width"		"118"
+			"height"	"32"
+		}
+		"revolver_rifle_headshot"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"896"
+			"y"			"96"
+			"width"		"110"
+			"height"	"32"
+		}
+		"revolver_quickdraw"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"128"
+			"y"			"160"
+			"width"		"48"
+			"height"	"32"
+		}
+		"nailgun_metal"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"128"
+			"y"			"192"
+			"width"		"78"
+			"height"	"32"
+		}
+		"railgun_dm"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"128"
+			"y"			"224"
+			"width"		"128"
+			"height"	"32"
+		}
+		"quake_gl"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"128"
+			"y"			"256"
+			"width"		"100"
+			"height"	"32"
+		}
+		"dartgun_wood"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"128"
+			"y"			"288"
+			"width"		"105"
+			"height"	"32"
+		}
+		"panic_attack_noballs"	// Note: This icon was moved over an older, unused icon, so it's not in the right spot. Too lazy to shift everything over JUST for this...
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"384"
+			"y"			"64"
+			"width"		"128"
+			"height"	"32"
+		}
+		"mob_shotgun"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"128"
+			"y"			"320"
+			"width"		"112"
+			"height"	"32"
+		}
+		"rpg_tracker"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"128"
+			"y"			"352"
+			"width"		"120"
+			"height"	"32"
+		}
+		"dm_ssg"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"128"
+			"y"			"384"
+			"width"		"128"
+			"height"	"32"
+		}
+		"eosd_knife"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"128"
+			"y"			"416"
+			"width"		"88"
+			"height"	"32"
+		}
+		"eosd_knife_backstab"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"896"
+			"y"			"320"
+			"width"		"64"
+			"height"	"32"
+		}
+		"leverrifle"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"128"
+			"y"			"448"
+			"width"		"102"
+			"height"	"32"
+		}
+
+//-- Update 6 (v2.2.5) --//
+		"lmg"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"128"
+			"y"			"480"
+			"width"		"85"
+			"height"	"32"
+		}
+		"chemthrower"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"256"
+			"y"			"0"
+			"width"		"110"
+			"height"	"32"
+		}
+		"flechettegun"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"256"
+			"y"			"32"
+			"width"		"88"
+			"height"	"32"
+		}
+		"syringe_shot"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"256"
+			"y"			"64"
+			"width"		"128"
+			"height"	"32"
+		}
+		"nowpbrick"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"256"
+			"y"			"96"
+			"width"		"54"
+			"height"	"32"
+		}
+		"nowpbrick_brickkill"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"256"
+			"y"			"96"
+			"width"		"100"
+			"height"	"32"
+		}
+		"grenadejumper"	// Note: This icon was moved over an older, unused icon, so it's not in the right spot. Too lazy to shift everything over JUST for this...
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"384"
+			"y"			"192"
+			"width"		"120"
+			"height"	"32"
+		}
+		"combat_smg"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"256"
+			"y"			"128"
+			"width"		"75"
+			"height"	"32"
+		}
+		"supernailgun"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"256"
+			"y"			"160"
+			"width"		"95"
+			"height"	"32"
+		}
+		"dm_fists"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"256"
+			"y"			"192"
+			"width"		"64"
+			"height"	"32"
+		}
+		"dm_fists_backstab"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"960"
+			"y"			"320"
+			"width"		"64"
+			"height"	"32"
+		}
+		"tripmine"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"256"
+			"y"			"224"
+			"width"		"96"
+			"height"	"32"
+		}
+		"dispenserizer"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"256"
+			"y"			"256"
+			"width"		"128"
+			"height"	"32"
+		}
+		"mini_dispenser"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"256"
+			"y"			"288"
+			"width"		"70"
+			"height"	"32"
+		}
+		"dm_crossbow"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"256"
+			"y"			"320"
+			"width"		"123"
+			"height"	"32"
+		}
+		"bricklauncher"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"256"
+			"y"			"352"
+			"width"		"115"
+			"height"	"32"
+		}
+
+//-- Update 7 (v2.3.5) --//
+		"baseball_gun"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"256"
+			"y"			"384"
+			"width"		"115"
+			"height"	"32"
+		}
+		"soul_snatcher"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"256"
+			"y"			"416"
+			"width"		"64"
+			"height"	"32"
+		}
+		"radiogun"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"256"
+			"y"			"448"
+			"width"		"92"
+			"height"	"32"
+		}
+		"spanner_civ"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"256"
+			"y"			"480"
+			"width"		"80"
+			"height"	"32"
+		}
+		"skullbuster"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"384"
+			"y"			"0"
+			"width"		"105"
+			"height"	"32"
+		}
+		"skullbuster_headshot"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"896"
+			"y"			"32"
+			"width"		"95"
+			"height"	"32"
+		}
+		"ukulele"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"384"
+			"y"			"32"
+			"width"		"95"
+			"height"	"32"
+		}
+		"ironside"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"384"
+			"y"			"96"
+			"width"		"100"
+			"height"	"32"
+		}
+		"battlerifle_fl"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"384"
+			"y"			"128"
+			"width"		"128"
+			"height"	"32"
+		}
+		"acidlauncher"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"384"
+			"y"			"160"
+			"width"		"115"
+			"height"	"32"
+		}
+
+//-- Update 8 (v2.5.0) --//
+		"incendiarycannon"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"384"
+			"y"			"224"
+			"width"		"128"
+			"height"	"32"
+		}
+		"heligun"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"384"
+			"y"			"256"
+			"width"		"75"
+			"height"	"32"
+		}
+		"autogrinder"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"384"
+			"y"			"288"
+			"width"		"96"
+			"height"	"32"
+		}
+		"combatknife"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"384"
+			"y"			"320"
+			"width"		"78"
+			"height"	"32"
+		}
+		"krankensage"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"384"
+			"y"			"352"
+			"width"		"80"
+			"height"	"32"
+		}
+		"ambassador_headshot"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"896"
+			"y"			"128"
+			"width"		"110"
+			"height"	"32"
+		}
+		"flintlock"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"384"
+			"y"			"384"
+			"width"		"106"
+			"height"	"32"
+		}
+		"shortfuse"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"384"
+			"y"			"416"
+			"width"		"108"
+			"height"	"32"
+		}
+		"c4bat"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"384"
+			"y"			"448"
+			"width"		"98"
+			"height"	"32"
+		}
+		"boomerang"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"384"
+			"y"			"480"
+			"width"		"62"
+			"height"	"32"
+		}
+		"punchomatic"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"512"
+			"y"			"0"
+			"width"		"75"
+			"height"	"32"
+		}
+		"jackalstaff"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"512"
+			"y"			"32"
+			"width"		"80"
+			"height"	"32"
+		}
+		"pdqslinger"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"512"
+			"y"			"64"
+			"width"		"75"
+			"height"	"32"
+		}
+		"flarelauncher_nowp"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"512"
+			"y"			"96"
+			"width"		"128"
+			"height"	"32"
+		}
+		"councilman"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"512"
+			"y"			"128"
+			"width"		"85"
+			"height"	"32"
+		}
+		"councilman_headshot"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"896"
+			"y"			"64"
+			"width"		"110"
+			"height"	"32"
+		}
+		"bowlingball"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"512"
+			"y"			"160"
+			"width"		"60"
+			"height"	"32"
+		}
+		"bowlingball_explosion"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"585"
+			"y"			"160"
+			"width"		"55"
+			"height"	"32"
+		}
+		"afterburner"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"512"
+			"y"			"192"
+			"width"		"128"
+			"height"	"32"
+		}
+
+//-- Update 9 (v2.6.5) --//
+		"grenadebox"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"512"
+			"y"			"224"
+			"width"		"64"
+			"height"	"32"
+		}
+		"grenadebox_explosion"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"585"
+			"y"			"224"
+			"width"		"55"
+			"height"	"32"
+		}
+
+//-- Update 10 (v2.7.5) --//
+		"toolgun"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"512"
+			"y"			"256"
+			"width"		"77"
+			"height"	"32"
+		}
+		"toolgun_remove"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"512"
+			"y"			"256"
+			"width"		"128"
+			"height"	"32"
+		}
+		"blahaj_blast"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"512"
+			"y"			"288"
+			"width"		"77"
+			"height"	"32"
+		}
+		"explosive_arrow"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"512"
+			"y"			"320"
+			"width"		"112"
+			"height"	"32"
+		}
+		"blunderbuss_sct"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"512"
+			"y"			"352"
+			"width"		"102"
+			"height"	"32"
+		}
+		"gold_machinegun"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"512"
+			"y"			"384"
+			"width"		"72"
+			"height"	"32"
+		}
+		"stickyroller"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"512"
+			"y"			"416"
+			"width"		"108"
+			"height"	"32"
+		}
+		"sgtplushie"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"512"
+			"y"			"448"
+			"width"		"80"
+			"height"	"32"
+		}
+		"infiltrator"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"512"
+			"y"			"480"
+			"width"		"70"
+			"height"	"32"
+		}
+		"juryrig"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"640"
+			"y"			"0"
+			"width"		"40"
+			"height"	"32"
+		}
+		"mobilegun"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"680"
+			"y"			"0"
+			"width"		"88"
+			"height"	"32"
+		}
+
+//-- Update 11 (v2.8.0) --//
+		"shield_ironclad"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"640"
+			"y"			"32"
+			"width"		"80"
+			"height"	"32"
+		}
+		"chevalier"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"640"
+			"y"			"64"
+			"width"		"95"
+			"height"	"32"
+		}
+		"chevalier_burst"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"896"
+			"y"			"352"
+			"width"		"102"
+			"height"	"32"
+		}
+
+//-- Update 12 (v3.0.0) --//
+		"pso_spreadneedle"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"640"
+			"y"			"96"
+			"width"		"100"
+			"height"	"32"
+		}
+		"techpistol"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"640"
+			"y"			"128"
+			"width"		"88"
+			"height"	"32"
+		}
+		"pocketrocket"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"640"
+			"y"			"160"
+			"width"		"85"
+			"height"	"32"
+		}
+		"cyclops_dbl"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"640"
+			"y"			"192"
+			"width"		"110"
+			"height"	"32"
+		}
+		"acidflask"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"640"
+			"y"			"224"
+			"width"		"52"
+			"height"	"32"
+		}
+		"stingray"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"640"
+			"y"			"256"
+			"width"		"95"
+			"height"	"32"
+		}
+		"teslaneedle"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"640"
+			"y"			"288"
+			"width"		"85"
+			"height"	"32"
+		}
+		"newsupernailgun"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"640"
+			"y"			"320"
+			"width"		"88"
+			"height"	"32"
+		}
+		"buildingminigun"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"640"
+			"y"			"352"
+			"width"		"66"
+			"height"	"32"
+		}
+		"microphone"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"640"
+			"y"			"384"
+			"width"		"96"
+			"height"	"32"
+		}
+
+//-- Update 13 (v3.2.1) --//
+		"cardboardcow"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"640"
+			"y"			"416"
+			"width"		"111"
+			"height"	"32"
+		}
+		"cow"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"695"
+			"y"			"416"
+			"width"		"56"
+			"height"	"32"
+		}
+		"welder"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"640"
+			"y"			"448"
+			"width"		"50"
+			"height"	"32"
+		}
+		"pressurelauncher"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"640"
+			"y"			"480"
+			"width"		"105"
+			"height"	"32"
+		}
+		"fisherrifle"
+		{
+			"dfile"		"HUD/d_images_custom_nowp"
+			"dnegfile"	"HUD/dneg_images_custom_nowp"
+			"x"			"768"
+			"y"			"0"
+			"width"		"125"
+			"height"	"32"
+		}
+	}
+}

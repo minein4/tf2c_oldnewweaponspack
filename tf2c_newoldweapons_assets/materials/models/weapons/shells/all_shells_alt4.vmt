@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials/models/weapons/shells/all_shells.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models/weapons/shells/all_shells_alt4"
+	}
+}

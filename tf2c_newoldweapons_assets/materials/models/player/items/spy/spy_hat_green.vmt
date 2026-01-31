@@ -1,0 +1,11 @@
+"Patch"
+{
+	include "materials/models/player/items/spy/spy_hat.vmt"
+	
+	insert
+	{
+	"$baseTexture" "models/player/items/spy/spy_hat_blue"
+	"$color2" "{67 103 50}"
+	"$colortint_base" "{67 103 50}"
+	}
+}

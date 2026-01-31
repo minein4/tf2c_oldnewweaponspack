@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials\models\weapons\Skull_Buster\hat_scout_red.vmt"
+	
+	insert
+	{
+	"$basetexture"	"models\player\scout\scout_blue"
+	}
+}

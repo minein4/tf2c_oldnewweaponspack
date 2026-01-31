@@ -1,0 +1,9 @@
+"Patch"
+{
+	include "materials/models/workshop/weapons/c_models/c_nail_minigun/c_nail_minigun.vmt"
+	
+	insert
+	{
+	"$baseTexture""models/weapons/w_models/w_nail_minigun_nail/w_nail_minigun_nail"
+	}
+}
