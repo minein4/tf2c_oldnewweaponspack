@@ -3962,137 +3962,6 @@ In one shot, preferably."
 
 
 
-// 		"3375"
-// 		{
-// 			"mod_item"					"1"
-// 			"name"						"TF_WEAPON_CLEAVER"
-// 			"item_class"				"tf_weapon_throwable"									// TF2C v2.1.0 - This uses the same throwable class as the Brick (official) now!
-// 			"show_in_armory"			"1"
-// 			"item_slot"					"secondary"
-// 			"anim_slot"					"melee"
-			
-// 			"image_inventory_size_w"	"128"
-// 			"image_inventory_size_h"	"82"
-
-// 			"propername"				"1"
-// 			"item_name_color"			"255 240 183 255"
-// 			"item_name"					"Flying Guillotine"
-// 			"item_type_name"			"Cleaver"
-// 			"item_description"			"Item recharge: (6s)
-// 
-//			“Oh, dat's a skull fracture, for sure!”"
-// 			"item_logname"				"guillotine"
-// 			"item_iconname"				"guillotine"
-// 			"image_inventory"			"backpack/workshop_partner/weapons/c_models/c_sd_cleaver/c_sd_cleaver"
-// 			"model_world"				"models/weapons/w_models/w_sd_cleaver.mdl"
-// 			"model_player"				"models/weapons/v_models/v_sd_cleaver_scout.mdl"
-// 			"attach_to_hands"			"2"
-// 			"extra_wearable"			"models/player/items/scout_tourniquet.mdl"				// Might improve in the future
-// 			"drop_type"					"drop"
-// 			"used_by_classes"
-// 			{
-// 				"scout"					"1"
-// 			}
-// 			"static_attrs"
-// 			{
-// 				"override projectile type"				"33"									// NOWP v2.7.5 - Finally changed to a brick - not because I want it to, but because the damage inconsistency really annoys me...
-// 				"damage bonus hidden"					"1.15"									// Does about 50 dmg? excl bleed
-// 				"mult dmg crit multiplier"				"0.67"
-// 				"allowed in medieval mode"				"1"
-// 				"min_viewmodel_offset"					"10 0 -10"								// Same deal as the gas can.
-// 				"custom rampup"							"0.67"									// Inverted rampup so it does more damage further away!
-// 				"longer damage falloff distance"		"2.5"									// Rampup takes effect from further away...
-// 				"chargeweapon no extra speed"			"1"
-// 				"meter_label"							"#TF_Cleaver"
-// 			}
-// 			"attributes"
-// 			{
-// 				"cleaver desc simple"															// Merge trick, also restores a facsimile of the original description!
-// 				{
-// 					"attribute_class"	"bleeding_duration"
-// 					"value"				"5"
-// 				}
-// 				"damage at range increased"
-// 				{
-// 					"attribute_class"	"DISPLAY_ONLY"
-// 					"value"				"1.5"
-// 				}
-// 				"crit mod disabled"
-// 				{
-// 					"attribute_class"	"mult_crit_chance"
-// 					"value"				"0"
-// 				}
-// 				"custom projectile model"														// Guillotine. I notice this and the Gas Can sorta have shoddy aerodynamics... might need to fix.
-// 				{
-// 					"attribute_class"	"custom_projectile_model"
-// 					"value"				"models/weapons/w_models/w_sd_cleaver.mdl"
-// 				}
-// 				// Backend stuff
-// 				"hide_attrib_percentage"	
-// 				{
-// 					"attribute_class"	"mult_projectile_speed"
-// 					"value"				"1.25"													// Tweak to make it more reliable
-// 				}
-// 				"hide_attrib_percentage"	
-// 				{
-// 					"attribute_class"	"stickybomb_charge_rate"
-// 					"value"				"0.75"
-// 				}
-// 				"hide_attrib_additive"															// New with TF2C v2.1.0: Changable Pipebomb states! 2 for shattering, 3 for explode on hit
-// 				{
-// 					"attribute_class"	"set_detonate_mode"
-// 					"value"				"2"
-// 				}
-// 				"hide_attrib_percentage"	
-// 				{
-// 					"attribute_class"	"blast_dmg_to_self"
-// 					"value"				"0"
-// 				}
-// 				"self dmg push force hidden"
-// 				{
-// 					"attribute_class"	"mult_dmgself_push_force"
-// 					"value"				"0"
-// 				}
-// 				"hide_attrib_percentage"														// When did this start working!?
-// 				{
-// 					"attribute_class"	"mult_explosion_radius"
-// 					"value"				"0.05"
-// 				}
-// 			}
-// 			"visuals"
-// 			{
-// 				"sound_single_shot"		"Cleaver.Single"
-// 				"sound_burst"			"Cleaver.SingleCrit"
-// 				"sound_special1"		"Cleaver.ImpactFlesh"
-// 				"sound_special2"		"Cleaver.ImpactWorld"
-// 				"sound_special3"		"Cleaver.Single"
-// 				"sound_double_shot"		"Weapon_Throwable.ChargeUpFast"
-// 				"explosion_effect"		"blood_headshot"										// As a result of the new internals, it makes sparks when it hits a surface, and makes a blood-cloud when it hits a player!
-// 			}
-// 			"visuals_red"
-// 			{
-// 				"trail_effect"			"peejar_trail_red_glow"									// Added the cleaver glowy trail back for NOWP v2.7.5! From Chaofanatic's TIP particles
-// 				"trail_effect_crit"		"throwable_trail_red_crit"
-// 			}
-// 			"visuals_blu"
-// 			{
-// 				"trail_effect"			"peejar_trail_blu_glow"
-// 				"trail_effect_crit"		"throwable_trail_blue_crit"
-// 			}
-// 			"visuals_grn"
-// 			{
-// 				"trail_effect"			"peejar_trail_grn_glow"
-// 				"trail_effect_crit"		"throwable_trail_green_crit"
-// 			}
-// 			"visuals_ylw"
-// 			{
-// 				"trail_effect"			"peejar_trail_ylw_glow"
-// 				"trail_effect_crit"		"throwable_trail_yellow_crit"
-// 			}
-// 			"mouse_pressed_sound"		"#ui/item_knife_small_pickup.wav"
-// 			"drop_sound"				"#ui/item_knife_small_drop.wav"
-// 		}
-
  		"812"
 		{
 			"name"	"The Flying Guillotine"
@@ -7389,93 +7258,16 @@ I'll make those wounds of yours even worse!"
 			"drop_sound"				"#ui/item_metal_weapon_drop.wav"
 		}
 
-// 		"3442"
-// 		{
-// 			"mod_item"					"1"
-// 			"name"						"TF_WEAPON_ENERGY_DRINK"
-// 			"item_class"				"tf_weapon_lunchbox"									// Technically a Sandvich, with a bunch of complex functions handled off-house by taunts.txt
-// 			"show_in_armory"			"1"
-// 			"item_slot"					"secondary"
-// 			"anim_slot"					"melee"
-// 			"equip_region"				"scout_backpack"
-// 
-// 			"image_inventory_size_w"	"128"
-// 			"image_inventory_size_h"	"82"
-// 
-// 			"item_name_color"			"255 240 183 255"
-// 			"item_name"					"Bonk! Atomic Punch"									// As before, "Bonk! Atomic Punch" refers to the radioactive drink inside the can, not the can itself. For similar reasons the phrases "The Toxic Sludge" and "The Mountain Dew" are also awkward to use in similar context of naming!
-// 			"item_type_name"			"Energy Drink"
-// 			"item_description"			"Alt-Fire: Share a Drink with a friend!
-// Small health kit, grants Def. Buff)
-// 
-// Too. Much. Caffeine.”"
-// 			"image_inventory"			"backpack/weapons/c_models/c_energy_drink/c_energy_drink"
-// 			"model_world"				"models/weapons/w_models/w_energy_drink.mdl"
-// 			"model_player"				"models/weapons/v_models/v_energy_drink_scout.mdl"		// Has a "bite" bodygroup, in the form of an opened pull-tab on the can!
-// 			"attach_to_hands"			"2"
-// 			"extra_wearable"			"models/player/items/scout_bonkcooler.mdl"
-// 			"used_by_classes"
-// 			{
-// 				"scout"					"1"
-// 			}
-// 			"static_attrs"
-// 			{
-// 				"item_meter_charge_type"				"1"
-// 				"item_meter_charge_rate"				"22"									// 22s cooldown, like in Live (this doesn't work, though...)
-// 				"meter_label"							"#TF_EnergyDrink"
-// 				"min_viewmodel_offset"					"0 0 -5"
-// 				"allowed in medieval mode"				"1"
-// 				"special taunt"							"1"
-// 				"mod lunchbox critboostable"			"1"										// Tried it, it doesn't really have a reason to want to work with this though
-// 
-// 				"apply cond on pickup wearer"			"10 111 3.33"							// NOWP v3.0.0 - I just realized this works! Might be an interesting slant to this and similar weapons, unsure! For now, I reckon having it apply the effect for 1/3rd of the time is fair, not much time to really use it...
-// 			}
-// 			"attributes"
-// 			{
-// 				"defense boost on eat with time"
-// 				{
-// 					"attribute_class"	"DISPLAY_ONLY"
-// 					"value"				"10"
-// 				}
-// 				"lunchbox add condition on eat"													// This WOULD be good for the invuln... but has two issues. One, is that you can still attack while invulnerable.
-// 				{
-// 					"attribute_class"	"lunchbox_addcond"										// Two, TF2C's Sandvich doesn't ever get consumed unless you throw it, or use a CVar ("tf2c_old_sandvich 0"). These are both dealbreakers to me, on-demand no-cooldown Uber is just too much. 
-// 					"value"				"111 10"												// Until that's fixed, I'm just this weaker cond instead. Even this, though, might have big issues...
-// 				}
-// 				"lunchbox consumed on use"														// THIS IS A CUSTOM ATTRIBUTE - THIS DOESN'T NORMALLY HAVE AN ENTRY! Make sure to copy it or splice it if you want to use it!
-// 				{
-// 					"attribute_class"	"lunchbox_force_cooldown"
-// 					"value"				"1"
-// 				}
-// 				"custom lunchbox throwable model"
-// 				{
-// 					"attribute_class"	"custom_lunchbox_throwable_model"
-// 					"value"				"models/items/plate_energy_drink.mdl"					// Made a rudimentary new model for this, since Bonk was never intended to be droppable in Live
-// 				}
-// 				"custom lunchbox throwable type"
-// 				{
-// 					"attribute_class"	"custom_lunchbox_throwable_type"
-// 					"value"				"1"														// Small health in lieu of not being able to prevent Scout from throwing it
-// 				}
-// 				// Backend stuff
-// 				"hide_attrib_percentage"	
-// 				{
-// 					"attribute_class"	"lunchbox_healing_scale"
-// 					"value"				"0"
-// 				}
-// 			}
-// 			"visuals"
-// 			{
-// 				"player_bodygroups"
-// 				{
-// 					"backpack"			"1"
-// 					"medic_backpack"	"1"
-// 				}
-// 			}
-// 			"mouse_pressed_sound"		"#ui/item_soda_can_pickup.wav"
-// 			"drop_sound"				"#ui/item_soda_can_drop.wav"
-// 		}
-// 
+		"46"
+		{
+			"name"	"Bonk! Atomic Punch"
+			"prefab"	"valve weapon_bonk"
+			"first_sale_date"	"2010/09/29"
+			"item_name"	"#TF_Unique_Achievement_EnergyDrink"
+			"item_description" "#TF_Unique_Achievement_EnergyDrink_desc"
+			"image_inventory"	"backpack/weapons/c_models/c_energy_drink/c_energy_drink"
+			"attach_to_hands"			"2"
+		}
 		"3443"
 		{
 			"mod_item"					"1"
@@ -14503,103 +14295,41 @@ It's da second best way to kill with sugar!
 			"mouse_pressed_sound"		"#ui/item_wood_weapon_pickup.wav"
 			"drop_sound"				"#ui/item_wood_weapon_drop.wav"
 		}
-//		"3543"
-//		{
-//			"mod_item"					"1"
-//			"name"						"TF_WEAPON_ENERGY_DRINK_CRIT"
-//			"item_class"				"tf_weapon_lunchbox"
-//			"show_in_armory"			"1"
-//			"item_slot"					"secondary"
-//			"anim_slot"					"melee"
-//			"equip_region"				"scout_backpack"
-//
-//			"image_inventory_size_w"	"128"
-//			"image_inventory_size_h"	"82"
-//
-//			"item_name_color"			"255 240 183 255"
-//			"item_name"					"Crit-a-Cola"
-//			"item_type_name"			"Energy Drink"
-//			"item_description"			"Alt-Fire: Share a Drink with a friend!
-//(Small health kit, grants mini-crits)
-//
-//“There ain't enough crits
-//in the world to kill me!”"
-//			"image_inventory"			"backpack/weapons/c_models/c_energy_drink/c_critcola"
-//			"model_world"				"models/weapons/w_models/w_critcola.mdl"				// I decided to add the unique critglow from the Soda Popper and adjust it to also work here! I think it's appropriate...
-//			"model_player"				"models/weapons/v_models/v_critcola_scout.mdl"			// This also uses a different cola splash from the normal Bonk!
-//			"attach_to_hands"			"2"
-//			"extra_wearable"			"models/player/items/scout_bonkcooler_critcola.mdl"		// ALSO has the Bonk Cooler, since hey, I was already using it!
-//			"used_by_classes"
-//			{
-//				"scout"					"1"
-//			}
-//			"static_attrs"																		// Mostly copied from Bonk!, pretty obviously...
-//			{
-//				"item_meter_charge_type"				"1"
-//				"item_meter_charge_rate"				"22"									// 22s cooldown, like in Live (this doesn't work, though...)
-//				"meter_label"							"#TF_EnergyDrink"
-//				"min_viewmodel_offset"					"0 0 -5"
-//				"allowed in medieval mode"				"1"
-//				"special taunt"							"1"
-//				"mod lunchbox critboostable"			"1"										// This only really affects health while on the ground
-//				
-//				"apply cond on pickup wearer"			"10 112 2.66"							// Like the Bonk!, this only applies for about 1/3rd of the time!
-//			}
-//			"attributes"
-//			{
-//				"minicrits on eat with time"
-//				{
-//					"attribute_class"	"DISPLAY_ONLY"
-//					"value"				"8"
-//				}
-//				"lunchbox add condition on eat"													// For now, this only adds the minicrit boost, but not the duration-limited vuln. TO-DO: Make vulns time-limited somehow!!
-//				{
-//					"attribute_class"	"lunchbox_addcond"
-//					"value"				"112 8"
-//				}
-//				"dmg taken from crit increased"													// I wanted to make a more interesting vuln, so let's try this! You simultaneously take 10% more damage from all crits, and also minicrits from melees (which also count as crits)
-//				{
-//					"attribute_class"	"mult_dmgtaken_from_crit"
-//					"value"				"1.1"
-//				}
-//				"melee taken becomes minicrit on active"
-//				{
-//					"attribute_class"	"melee_taken_becomes_minicrit_active"					// For normal melee strikes, average 35 - 65 hits rise to a staggering 52 - 97 dmg!
-//					"value"				"1"
-//				}
-//				"lunchbox consumed on use"														// THIS IS A CUSTOM ATTRIBUTE - THIS DOESN'T NORMALLY HAVE AN ENTRY! Make sure to copy it or splice it if you want to use it!
-//				{
-//					"attribute_class"	"lunchbox_force_cooldown"
-//					"value"				"1"
-//				}
-//				"custom lunchbox throwable model"
-//				{
-//					"attribute_class"	"custom_lunchbox_throwable_model"
-//					"value"				"models/items/plate_critcola.mdl"
-//				}
-//				"custom lunchbox throwable type"
-//				{
-//					"attribute_class"	"custom_lunchbox_throwable_type"
-//					"value"				"1"														// Small health in lieu of not being able to prevent Scout from throwing it
-//				}
-//				// Backend stuff
-//				"hide_attrib_percentage"	
-//				{
-//					"attribute_class"	"lunchbox_healing_scale"
-//					"value"				"0"
-//				}
-//			}
-//			"visuals"
-//			{
-//				"player_bodygroups"
-//				{
-//					"backpack"			"1"
-//					"medic_backpack"	"1"
-//				}
-//			}
-//			"mouse_pressed_sound"		"#ui/item_soda_can_pickup.wav"
-//			"drop_sound"				"#ui/item_soda_can_drop.wav"
-//		}
+		"163"
+		{
+			"name"	"Crit-a-Cola"
+			"prefab"	"valve weapon_scout_drink"
+			"first_sale_date"	"2010/09/29"
+			"item_name"	"#TF_Unique_EnergyDrink_CritCola"
+			"item_description"	"#TF_Unique_EnergyDrink_CritCola_Desc"
+			"image_inventory"	"backpack/weapons/c_models/c_energy_drink/c_critcola"
+			"inspect_panel_dist" 			"20"
+			"model_world"				"models/weapons/w_models/w_critcola.mdl"				// I decided to add the unique critglow from the Soda Popper and adjust it to also work here! I think it's appropriate...
+			"model_player"				"models/weapons/v_models/v_critcola_scout.mdl"			// This also uses a different cola splash from the normal Bonk!
+			"attach_to_hands"			"2"
+			"visuals"
+			{
+				"skin" "2"
+				"custom_particlesystem"
+				{
+					"system"	"energydrink_cola_splash"
+				}
+				"sound_deploy"	"Scout.DodgeCanOpen"
+			}
+			"attributes"
+			{
+				"lunchbox adds minicrits"
+				{
+					"attribute_class"	"set_weapon_mode"
+					"value"	"2"
+				}
+				"mod_mark_attacker_for_death"
+				{
+					"attribute_class"	"mod_mark_attacker_for_death"
+					"value"	"5.0"
+				}
+			}
+		}
 
 		"3544"
 		{
@@ -20677,7 +20407,7 @@ does by using it for a while..."
 				// Backend stuff (& Splicing Practice!)
 				"hide_attrib_additive"															// Use this to splice for Additive conds (ie: Heal yourself +5 health on hit)
 				{
-					"attribute_class"	"DISPLAY_ONLY"											// DISPLAY_ONLY can be used for either Additive or Percentage since it's, well, display only!
+					"attribute_class"	"DISPLAY_ONLY"											
 					"value"				"1"
 				}
 				"hide_attrib_percentage"														// Use this to splice for Percentage conds (ie: Heal yourself 5% health on hit)
@@ -20710,9 +20440,5 @@ does by using it for a while..."
 			"mouse_pressed_sound"		"#ui/item_bag_pickup.wav"
 			"drop_sound"				"#ui/item_bag_drop.wav"
 		}
-	}
-
-
-
 	}
 }

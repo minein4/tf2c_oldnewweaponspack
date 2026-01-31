@@ -9,6 +9,10 @@ All credits to the original authors to the project.
 
 Some weapons have been changed due to crash issues or have been changed to their modern tf2 version.
 
+## Issues
+
+Please report issues via github.
+
 
 ## Installation
 
