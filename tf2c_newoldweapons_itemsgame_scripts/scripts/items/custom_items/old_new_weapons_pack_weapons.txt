@@ -5646,8 +5646,10 @@ won't be the only thing you'll extinguish."
 			"item_name_color"			"255 240 183 255"
 			"item_name"					"Baby-Face's Blaster"
 			"item_type_name"			"#TF_Weapon_Scattergun"
-			"item_description"			"
-“You can't hit what ain't there!”"
+			"item_description"			"On Kill: Gain Haste for 4 seconds
+On Hit: Mark Yourself for Death! (2s)
+
+''You can't hit what ain't there''"
 			"item_logname"				"pep_brawlerblaster"
 			"item_iconname"				"pep_brawlerblaster"
 			"image_inventory"			"backpack/workshop/weapons/c_models/c_pep_scattergun/c_pep_scattergun"
@@ -5670,7 +5672,7 @@ won't be the only thing you'll extinguish."
 					"attribute_class"	"add_onkill_addcond_self"								// It took long enough to add an addcond on kill...
 					"value"				"32 4"													// Haste! This affects not just your move-speed, but also your firerate and reload speed
 				}
-				"add condition on hit"															// NOWP v3.0.0 - Since I can finally take the prov on active off, this is swapped over to being a conditional damage vuln! Dish out damage fast, but be wary while shooting at foes to do said damage!
+				"add condition on hit self weapon"															// NOWP v3.0.0 - Since I can finally take the prov on active off, this is swapped over to being a conditional damage vuln! Dish out damage fast, but be wary while shooting at foes to do said damage!
 				{
 					"attribute_class"	"add_onhit_addcond_self_weapon"
 					"value"				"30 2"
@@ -9559,6 +9561,8 @@ Hohoho, vhat a stroke of medical genius!"
 			"item_name"					"B.R. Base-Hitter"										// Named after The Bambino himself
 			"item_type_name"			"Baseball Gun"
 			"item_description"			"
+Fires baseball projectiles
+
 Perfect for baseball practice at home,
 or for free concussions on the battlefield."
 			"item_logname"				"baseball_gun"
