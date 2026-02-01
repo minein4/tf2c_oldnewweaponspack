@@ -11033,93 +11033,84 @@ and hiding the evidence."
 			"drop_sound"				"#ui/item_metal_weapon_drop.wav"
 		}
 
-
-
-
-
-
 		"3493"
 		{
-			"mod_item"					"1"
+			"name"			"The Tide Turner"
+			"first_sale_date"		"2014/06/18"
+			"item_class"		"tf_wearable_demoshield"
+			"craft_class"	"weapon"
+			"craft_material_type"	"weapon"
+			"capabilities"
+			{
+				"nameable"		"1"
+			}
 			"tags"
 			{
+				"can_deal_damage"			"1"
+				"can_be_equipped_by_soldier_or_demo"	"1"
 			}
-			"name"						"TF_WEARABLE_SHIELD_TIDETURNER"							// It's finally here! Been waiting for a while to finally make a TF2C v2.1.0 exclusive weapon, so here's this!
-			"item_class"				"tf_wearable"											// This was INITIALLY the Chargin' Targe, but at the suggestion of a friend, changed it to the Tide Turner. You'll see why momentarily...
-			"show_in_armory"			"1"
-			"item_slot"					"secondary"
-
-			"image_inventory_size_w"	"128"
-			"image_inventory_size_h"	"82"
-			"act_as_wearable"			"1"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Tide-Turner"
-			"item_type_name"			"Broken Steering Wheel"
-			"item_description"			"Alt-Fire: Charge toward your enemies! (8s)
-Gain mini-crits near the start of a Charge
-
-You had best start running, laddie."
-			"item_logname"				"tide_turner"
-			"item_iconname"				"tide_turner"
-			"image_inventory"			"backpack/workshop/weapons/c_models/c_wheel_shield/c_wheel_shield"
-			"model_player"				"models/player/items/tide_turner.mdl"
+			"show_in_armory"	"1"
+			"item_type_name" 	"#TF_Wearable_Shield"
+			"item_name"		"#TF_TideTurner"
+			"item_description"	"#TF_TideTurner_Desc"
+			"item_slot"		"secondary"
+			"equip_region"	"arms"
+			"anim_slot"		"FORCE_NOT_USED"
+			"item_quality"		"unique"
+			"propername"	"1"
+			"min_ilevel"	"1"
+			"max_ilevel"	"100"
+			"item_logname"	"tide_turner"
+			"item_iconname"	"tide_turner"
+			"image_inventory"	"backpack/workshop/weapons/c_models/c_wheel_shield/c_wheel_shield"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"inspect_panel_dist" 			"45"
+			"model_player"	"models/player/items/tide_turner.mdl"
+			"act_as_wearable" "1"
+			"attach_to_hands"	"1"
+			"attach_to_hands_vm_only"	"1"
+			"drop_type"	"drop"
 			"used_by_classes"
 			{
-				"demoman"				"1"
+				"demoman"	"1"
 			}
-			"static_attrs"
-			{
-				"custom hand viewmodel"					"models/weapons/c_models/c_demo_arms_tideturner.mdl"	// NOWP v2.7.5 - FINALLY gave the shields custom viewmodels! It won't work on certain melees, but hey, that was a problem to begin with.
-				"meter_label"							"#TF_Charge"							// DOESN'T WORK AARGH
-				"class select override slot"			"melee"									// This might work sooner or later? TO-DO: Edit ALL melees if it does!
-			}
+
 			"attributes"
 			{
-				"wearable add cond on right click"
-				{
-					"attribute_class"	"add_wearable_cond_on_secondary_attack"
-					"value"				"17 1.5 8.0"											// This has REALLY weird syntax... but this add the charge cond, for 1.5s, and has it recharge in 8s
-				}
-				"wearable cond on effect percent"
-				{
-					"attribute_class"	"add_wearable_cond_on_effect_percent"
-					"value"				"112 0.75"												// Now only triggers at below 75% charge (oh right TT has no crits at 40%) | After transfer this is Minicrit (112) instead of crit (35)
-				}
-				"full charge turn control neutral"												// Look at that. Indeed - it doesn't have a turn speed penalty... at ALL. This may be a visual only attribute, but the charging condition itself has no turn limiters...
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"50"													// Given how powerful some of the shields are, I felt this was the least egregious, especially since its gimmick already concerns no turn penalties and it's already very wacky in Live TF2
-				}
-				"mult shield bash damage"
-				{
-					"attribute_class"	"mult_shield_bash_damage"
-					"value"				"0.75"													// TECHNICALLY this does less base damage (37 DMG), but shield bash is affected by minicrits, so that brings it back up to 50 DMG - the normal max dmg. This helps replicate the damage increasing over distance...
-				}
 				"dmg taken from fire reduced"
 				{
 					"attribute_class"	"mult_dmgtaken_from_fire"
-					"value"				"0.85"
+					"value"			"0.85"
 				}
 				"dmg taken from blast reduced"
 				{
 					"attribute_class"	"mult_dmgtaken_from_explosions"
-					"value"				"0.85"
+					"value"			"0.85"
 				}
-				"charge recharge rate increased"
+				"lose demo charge on damage when charging"
 				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"1.5"
+					"attribute_class"	"lose_demo_charge_on_damage_when_charging"
+					"value"				"1"
 				}
 				"allowed in medieval mode"
 				{
 					"attribute_class"	"allowed_in_medieval_mode"
-					"value"				"1"
+					"value"	"1"
+				}
+				"full charge turn control"
+				{
+					"attribute_class"	"charge_turn_control"
+					"value"			"50"
+				}
+				"kill refills meter"
+				{
+					"attribute_class"	"kill_refills_meter"
+					"value"			"0.75"
 				}
 			}
-			"mouse_pressed_sound"		"#ui/item_wood_weapon_pickup.wav"
-			"drop_sound"				"#ui/item_wood_weapon_drop.wav"
+			"mouse_pressed_sound"	"ui/item_wood_pole_pickup.wav"
+			"drop_sound"		"ui/item_wood_pole_drop.wav"
 		}
 		"3494"
 		{
@@ -14017,10 +14008,10 @@ You're clearly all struggling without me."
 			{
 			}
 			"name"						"TF_WEARABLE_SHIELD_IRONCLAD"							// I was meaning to make a new shield after NOWP v2.7.5's shield overhauls, but it has to be one that fundamentally one that works with full turn control. Let's try thiiss..
-			"item_class"				"tf_wearable"
+			"item_class"				"tf_wearable_demoshield"
 			"show_in_armory"			"1"
 			"item_slot"					"secondary"
-
+			"equip_region"	"arms"
 			"image_inventory_size_w"	"128"
 			"image_inventory_size_h"	"82"
 			"act_as_wearable"			"1"
@@ -14043,9 +14034,9 @@ Gain a Def. Buff while actively charging
 			}
 			"static_attrs"
 			{
-				"custom hand viewmodel"					"models/weapons/c_models/c_demo_arms_ironclad.mdl"
-				"meter_label"							"#TF_Charge"
-				"class select override slot"			"melee"									// This might work sooner or later? TO-DO: Edit ALL melees if it does!
+				// "custom hand viewmodel"					"models/weapons/c_models/c_demo_arms_ironclad.mdl"
+				// "meter_label"							"#TF_Charge"
+				// "class select override slot"			"melee"									// This might work sooner or later? TO-DO: Edit ALL melees if it does!
 			}
 			"attributes"																		// I noticed most other Demoman shields tend to be focused on offense with some defenses for flavor (Targe having very strong ones at that). Since I'm uncomfortable with bring those back as-is, let's try this...
 			{
