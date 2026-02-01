@@ -1719,5 +1719,110 @@
 			"attach_to_hands"			"2"
 		}
 
+		"weapon_shortstop"
+		{
+			"enabled"	"1"
+			"item_class"	"tf_weapon_handgun_scout_primary"
+			"craft_class"	"weapon"
+			"craft_material_type"	"weapon"
+			"capabilities"
+			{
+				"nameable"		"1"
+			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"					"10 0 -11"
+				"weapon_stattrak_module_scale"				"0.66"
+
+			}
+			"tags"
+			{
+				"can_deal_damage"			"1"
+				"can_deal_critical_damage"	"1"
+				"can_deal_mvm_penetration_damage"	"1"
+				"can_deal_long_distance_damage"	"1"
+			}
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_Peppergun"
+			"item_description"	"#TF_TheShortstop_Desc"
+			"item_name"	"#TF_TheShortstop"
+			"item_slot"	"primary"
+			"anim_slot"	"secondary"
+			"item_quality"	"unique"
+			"item_logname"	"shortstop"
+			"item_iconname"	"shortstop"
+			"propername"	"1"
+			"min_ilevel"	"1"
+			"max_ilevel"	"1"
+			"image_inventory"	"backpack/workshop/weapons/c_models/c_shortstop/c_shortstop"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"model_world"				"models/weapons/w_models/w_shortstop.mdl"
+			"model_player"				"models/weapons/v_models/v_shortstop_scout_db.mdl"		// Fixed for Scattergun internals! Also, this started ejecting shells again, but shotgun shells now. Eh. Close enough. Fits the high burst damage
+			"attach_to_hands"			"2"
+			"inspect_panel_dist" "27"
+			"used_by_classes"
+			{
+				"scout"	"1"
+			}
+			"attributes"
+			{
+				"health from packs increased on active"											// These are from a 2014 version of the Shortstop, beside the reload penalty because fuck that
+				{
+					"attribute_class"	"mult_health_frompacks_active"
+					"value"				"1.2"
+				}
+				"damage force increase text"
+				{
+					"attribute_class"	"DISPLAY_ONLY"
+					"value"				"1"
+				}
+				"damage force increase hidden"
+				{
+					"attribute_class"	"damage_force_reduction"
+					"value"				"1.4"
+				}
+				"airblast vulnerability multiplier hidden"
+				{
+					"attribute_class"	"airblast_vulnerability_multiplier"
+					"value"				"1.4"
+				}
+				// Backend stuff
+				"hide_attrib_percentage"														// Hidden as of NOWP v2.2.5
+				{
+					"attribute_class"	"mult_bullets_per_shot"
+					"value"				"0.4"
+				}
+				"scattergun no reload single"
+				{
+					"attribute_class"	"set_scattergun_no_reload_single"
+					"value"				"1"
+				}
+			}
+			"visuals"
+			{
+				"sound_single_shot"		"Weapon_Short_Stop.Single"
+				"sound_burst"			"Weapon_Short_Stop.SingleCrit"
+				"sound_empty"			"Weapon_Null"
+				"sound_reload"			"Weapon_Pistol.WorldReload"
+				"muzzle_flash"			"muzzle_scattergun"										// A little-used feature even in live TF2 - you can set custom Muzzle and Tracer effects.
+				"tracer_effect"			"bullet_scattergun_tracer01"							// It's strict, though, so don't expect much out of these.
+
+				"animation_replacement"
+				{
+					
+					"ACT_MP_ATTACK_STAND_SECONDARYFIRE" "ACT_MP_PUSH_STAND_SECONDARY"
+					"ACT_MP_ATTACK_CROUCH_SECONDARYFIRE""ACT_MP_PUSH_CROUCH_SECONDARY"
+					"ACT_MP_ATTACK_SWIM_SECONDARYFIRE"	"ACT_MP_PUSH_SWIM_SECONDARY"					
+					"ACT_MP_RELOAD_STAND"	"ACT_MP_RELOAD_STAND_SECONDARY_2"
+					"ACT_MP_RELOAD_CROUCH"	"ACT_MP_RELOAD_CROUCH_SECONDARY_2"
+					"ACT_MP_RELOAD_SWIM"	"ACT_MP_RELOAD_SWIM_SECONDARY_2"
+					"ACT_MP_RELOAD_AIRWALK"	"ACT_MP_RELOAD_AIRWALK_SECONDARY_2"
+				}
+			}
+			"mouse_pressed_sound"	"ui/item_light_gun_pickup.wav"
+			"drop_sound"		"ui/item_light_gun_drop.wav"
+		}
+
 	}
 }

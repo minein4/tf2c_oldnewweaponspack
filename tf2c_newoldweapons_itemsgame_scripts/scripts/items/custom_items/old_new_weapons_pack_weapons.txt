@@ -1400,85 +1400,33 @@ Isn't this quite a violent anti-violence rally!?"
 		}
 		"3340"
 		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_SHORTSTOP"									// This is a NEW (take II) version of the Shortstop! If you want to see what the old version(s) were like, they're still in some older versions.
-			"prefab"					"weapon_pistol"
-			"item_class"				"tf_weapon_scattergun"									// Okay. THIS TIME, based on a Scattergun
-			"show_in_armory"			"1"
-			"item_slot"					"primary"												// Note: Some weapons in a certain slot behave strangely if you shove them in another slot, like having a Primary SMG and a Pistol equipped. Huh.
-			"anim_slot"					"secondary"												// Even if this is a Primary weapon, force Scout to use his Secondary anims (which in this case would be Pistol anims)
-
-			"propername"				"1"														// For non-stocks, this adds "The " to the item's name. Simple, but gets the job done.
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Shortstop"
-			"item_type_name"			"Derringer"												// I always go back and forth on this, both Peppergun and Derringer seem appropriate. Aaargh!
-			"item_description"			"Holds a 4-shot clip and
-reloads its entire clip at once
-
-The latest in high-attitude personal defense!"
-			"item_logname"				"shortstop"
-			"item_iconname"				"shortstop"
-			"image_inventory"			"backpack/workshop/weapons/c_models/c_shortstop/c_shortstop" // This is a bit of an odd place to mention it, but if you don't have your Backpack Icon .vmts set up right, they show up invisible on the main menu! To fix, look at how I did some of my .vmts
-			"model_world"				"models/weapons/w_models/w_shortstop.mdl"
-			"model_player"				"models/weapons/v_models/v_shortstop_scout_db.mdl"		// Fixed for Scattergun internals! Also, this started ejecting shells again, but shotgun shells now. Eh. Close enough. Fits the high burst damage
-			"attach_to_hands"			"2"
-			"used_by_classes"
+			"name"	"The Shortstop"
+			"prefab" "weapon_shortstop "
+			"first_sale_date"	"2010/09/29"
+			"particle_suffix"	"shortstop"
+			"tags"
 			{
-				"scout"					"1"
-			}
-			"static_attrs"																		// Static attributes! To keep things semi-short, I'll shove backend stuff up here if I can possibly do so.
-			{
-				"class select override vcd"				"class_select_nailgun"					// The Nailgun select looks a lot more neutral than his Scattergun one - it's good for this wep.
-				"clip size penalty hidden"				"0.7"									// 4 shots!
-				"fire rate penalty hidden"				"0.576"									// Boost fire rate to match Shortstop's
-				"damage bonus hidden"					"1.73"									// If all pellets hit, point-blank, does about 72 damage, give or take.
-				"reload time increased hidden"			"2.4"									// Slightly faster reload, to match the Pistol's! I still resent Valve for nuking it and never going back on it ever
-			}
-			"attributes"																		// Generally speaking, I tend to put the "visible" attributes down here, but Static Attrs works just fine too!
-			{
-				"health from packs increased on active"											// These are from a 2014 version of the Shortstop, beside the reload penalty because fuck that
-				{
-					"attribute_class"	"mult_health_frompacks_active"
-					"value"				"1.2"
-				}
-				"damage force increase text"
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"1"
-				}
-				"damage force increase hidden"
-				{
-					"attribute_class"	"damage_force_reduction"
-					"value"				"1.4"
-				}
-				"airblast vulnerability multiplier hidden"
-				{
-					"attribute_class"	"airblast_vulnerability_multiplier"
-					"value"				"1.4"
-				}
-				// Backend stuff
-				"hide_attrib_percentage"														// Hidden as of NOWP v2.2.5
-				{
-					"attribute_class"	"mult_bullets_per_shot"
-					"value"				"0.4"
-				}
-				"scattergun no reload single"
-				{
-					"attribute_class"	"set_scattergun_no_reload_single"
-					"value"				"1"
-				}
+				"can_be_festivized"		"1"
 			}
 			"visuals"
 			{
-				"sound_single_shot"		"Weapon_Short_Stop.Single"
-				"sound_burst"			"Weapon_Short_Stop.SingleCrit"
-				"sound_empty"			"Weapon_Null"
-				"sound_reload"			"Weapon_Pistol.WorldReload"
-				"muzzle_flash"			"muzzle_scattergun"										// A little-used feature even in live TF2 - you can set custom Muzzle and Tracer effects.
-				"tracer_effect"			"bullet_scattergun_tracer01"							// It's strict, though, so don't expect much out of these.
+				"styles"
+				{
+					"0"
+					{
+						"skin_red"	"0"
+						"skin_blu"	"1"
+						"selectable"	"0"
+					}
+				}
+				"attached_models_festive"
+				{
+					"0"
+					{
+						"model"	"models/workshop/weapons/c_models/c_shortstop/c_shortstop_festivizer.mdl"
+					}
+				}
 			}
-			"mouse_pressed_sound"		"#items/pickup_small.wav"								// NOWP v2.5.0 - Some things use these variants, most don't. I envision it as, these have either more equipment carried on their person / more moving parts than usual, explaining the clicky noises! Some exceptions, of course!!
-			"drop_sound"				"#ui/item_light_gun_drop.wav"
 		}
 
 		"3341"
@@ -3186,7 +3134,7 @@ Oh, don't be such a baby... Ribs grow back!"
 			"mouse_pressed_sound"		"#ui/item_heavy_gun_pickup.wav"
 			"drop_sound"				"#ui/item_heavy_gun_drop.wav"
 		}
-		"3366"
+		"1180"
 		{
 			"name"	"The Gas Passer"
 			"item_class"	"tf_weapon_jar_gas"
@@ -5720,12 +5668,12 @@ won't be the only thing you'll extinguish."
 				"add condition on kill"
 				{
 					"attribute_class"	"add_onkill_addcond_self"								// It took long enough to add an addcond on kill...
-					"value"				"121 4"													// Haste! This affects not just your move-speed, but also your firerate and reload speed
+					"value"				"32 4"													// Haste! This affects not just your move-speed, but also your firerate and reload speed
 				}
 				"add condition on hit"															// NOWP v3.0.0 - Since I can finally take the prov on active off, this is swapped over to being a conditional damage vuln! Dish out damage fast, but be wary while shooting at foes to do said damage!
 				{
 					"attribute_class"	"add_onhit_addcond_self_weapon"
-					"value"				"48 2"
+					"value"				"30 2"
 				}
 				"self mfd on hit"
 				{
@@ -9629,16 +9577,21 @@ or for free concussions on the battlefield."
 				"Reload time start additive"			"-0.325"
 				"hidden primary max ammo bonus"			"2"
 				"damage bonus hidden"					"0.4"
-				"custom rampup"							"1.75"									// Rampup / falloff on a projectile weapon feels very scuffed
-				"custom falloff"						"0.5"									// I don't think this actually works yet????
+	//			"custom rampup"							"1.75"									// Rampup / falloff on a projectile weapon feels very scuffed
+	//			"custom falloff"						"0.5"									// I don't think this actually works yet????
 			}
 			"attributes"
 			{
 				"weapon fires baseballs"
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"1"
-				}
+			{
+				"attribute_class"	"DISPLAY_ONLY"
+				"value"				"1"
+			}
+	//		"damage bonus"
+	//		{
+	//			"attribute_class"	"mult_dmg"
+	//			"value"				"0.4"
+	//		}
 				"tmp dmgbuff on hit"
 				{
 					"attribute_class"	"DISPLAY_ONLY"
@@ -9654,11 +9607,11 @@ or for free concussions on the battlefield."
 					"attribute_class"	"mult_projectile_speed"
 					"value"				"2.35"
 				}
-				"clip size penalty"
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"0.67"
-				}
+			//	"clip size penalty"
+			//	{
+			//		"attribute_class"	"DISPLAY_ONLY"
+			//		"value"				"0.67"
+			//	}
 				// Backend stuff
 				"hide_attrib_percentage"														// Mostly removes the blast radius - you have to score a direct hit for this to do anything.
 				{
@@ -9683,13 +9636,13 @@ or for free concussions on the battlefield."
 				"add condition on hit weapon"													// Copied from TF_WEAPON_CYCLOPS_DBL for convenience
 				{
 					"attribute_class"	"add_onhit_addcond_weapon"
-					"value"				"106 1.0"												// Add TF_COND_PASSTIME_INTERCEPTION for about a sec, which does nothing on its own
+					"value"				"30 1.0"												// Add TF_COND_PASSTIME_INTERCEPTION for about a sec, which does nothing on its own
 				}
-				"minicrit vs cond no dot"
-				{
-					"attribute_class"	"single_minicrit_vs_playercond_no_dot"
-					"value"				"107"													// ...and then, if the successive hit lands, deal minicrits! Same cond as Cyclops, since they're mutually exclusive
-				}
+		//		"minicrit vs cond no dot"
+		//		{
+		//			"attribute_class"	"single_minicrit_vs_playercond_no_dot"
+		//			"value"				"30"													// ...and then, if the successive hit lands, deal minicrits! Same cond as Cyclops, since they're mutually exclusive
+		//		}
 			}
 			"visuals"
 			{
@@ -15839,7 +15792,7 @@ Let this be the hair o' the dog that bit ye."
 			"drop_sound"				"#ui/item_heavy_gun_drop.wav"
 		}
 
-		"4202"
+		"1179"
 		{
 			"name"	"The Thermal Thruster"
 			"tags"
