@@ -659,8 +659,11 @@ bites will heal 300% more and can overheal"
         		"15039"
 		{
 			"name"					"haste on kill with time"
+			"attribute_class"		"display_only"
 			"description_string"	"On Kill: Gain Haste for %s1 seconds"
 			"description_format"	"value_is_additive"
+			"hidden"	"0"
+			"stored_as_integer"	"1"
 			"effect_type"			"positive"
 		}
         		"15200"
@@ -1891,6 +1894,18 @@ soul of a twitchy hooligan"
 			"description_format"	"value_is_additive"
 			"effect_type"			"neutral"
 		}
+
+				"64401"
+		{
+			"name"					"haste on kill with time DISPLAY ONLY"
+			"attribute_class"		"haste_on_kill_with_time_DISPLAY_ONLY"
+			"description_string"	"On Kill: Gain Haste for 4 Seconds"
+			"hidden"				"0"
+			"effect_type"	"positive"
+			"stored_as_integer"	"0"
+
+		}
+
 
     }
     
