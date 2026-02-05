@@ -2419,7 +2419,7 @@ Do not think you can run forever, babies!"
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_REVOLVER_ENGI"								// An Engi revolver! It's nothing to write home about, it's just a revolver!
-			"prefab"					"weapon_pistol"											// Engineer doesn't support getting Revolvers since the game auto-translates the entity to "tf_weapon_revolver_secondary", which doesn't exist so the game freaks out about it.
+			"item_class"				"tf_weapon_pistol"								// Engineer doesn't support getting Revolvers since the game auto-translates the entity to "tf_weapon_revolver_secondary", which doesn't exist so the game freaks out about it.
 			"show_in_armory"			"1"														// As a result, I opted to modify a Pistol -into- a Revolver...!
 
 			"item_name_color"			"204 204 250 255"
@@ -4629,7 +4629,7 @@ You cannot run from Katherine forever!"
 				"mod weapon chainsaw"															// TF2C v2.1.0 - Working hitscan-hull modifiers! This is set to use collision hulls that also pass through teammates.
 				{
 					"attribute_class"	"mod_bullet_impact_collision_mode"
-					"value"				"5"
+					"value"				"4"
 				}
 				"aiming movespeed fullspeed"													// Surprisingly works. Increases your move speed while you're revved up
 				{
@@ -4672,17 +4672,17 @@ You cannot run from Katherine forever!"
 					"value"				"0.4"
 				}
 				// Backend stuff
-				"bullet is a hull"
-				{
-					"attribute_class"	"bullet_is_a_hull"
-					"value"				"64"													// Slightly bigger box-hull to help with detection
-				}
-				"hide_attrib_percentage"														// Tweak to bring it in line with the old Chainsaw...
+				//  "bullet is a hull"
+				//  {
+				//  	"attribute_class"	"bullet_is_a_hull"
+				//  	"value"				"64"													// Slightly bigger box-hull to help with detection
+				//  }
+				"bullets per shot penalty"														// Tweak to bring it in line with the old Chainsaw...
 				{
 					"attribute_class"	"mult_bullets_per_shot"
 					"value"				"0.25"													// Now only fires 1 pellet at a time instead of 4, this is really semantics but ah well
 				}
-				"hide_attrib_percentage"														// This is the main mechanic of the Chainsaw - this attribute somehow works on hitscan, so his effective range is shortened by a large amount!
+				"Projectile range decreased"														// This is the main mechanic of the Chainsaw - this attribute somehow works on hitscan, so his effective range is shortened by a large amount!
 				{
 					"attribute_class"	"mult_projectile_range"
 					"value"				"0.00985"
@@ -5151,7 +5151,7 @@ How about another drink this time, eh?
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_GLOCK"										// IS THAT (another) HALF LIFE REFERENCE!?!?!?!?!?
-			"prefab"					"weapon_pistol"								
+			"item_class"				"tf_weapon_pistol"					
 			"show_in_armory"			"1"
 
 			"propername"				"1"
@@ -5930,7 +5930,7 @@ Ah, zhe lost art of hiding right in plain sight."
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_REVOLVER_ENGI_Quickdraw"								// Another returning friend! It's the original Engi Revolver from my old videos, as old viewers might also remember.
-			"prefab"					"weapon_pistol"											// Think of it like Hoxton in PD2 though. It's back, but it's changed since something took its place!
+			"item_class"				"tf_weapon_pistol"								// Think of it like Hoxton in PD2 though. It's back, but it's changed since something took its place!
 			"show_in_armory"			"1"
 
 			"propername"				"1"
@@ -6779,7 +6779,7 @@ These two barrels are named U.S. and A! Better learn them real fast, creampuff."
 			"static_attrs"
 			{
 				"class select override vcd"				"taunt07"
-				"damage bonus hidden"					"8.6"
+				"damage bonus"					"8.6"
 				"hidden primary max ammo bonus"			"0.5"
 				"reload time increased hidden"			"2.8666"
 				"min_viewmodel_offset"					"7 -6 -5"								// IS THAT A DOOM 2 REFERENCE???!?!?!?!??
@@ -6794,22 +6794,22 @@ These two barrels are named U.S. and A! Better learn them real fast, creampuff."
 					"attribute_class"	"set_burstfire"	
 					"value"				"2"
 				}
-				"explosive bullets"																// TO-DO: For explosive hitscan, check (Range, Blast Dmg, Self Blast Dmg / Force. SSG has highest for all of these.)
-				{
-					"attribute_class"	"explosive_bullets"										// The main crux! However, blast jumping is a little strange with this weapon...
-					"value"				"1"
-				}
+			//	"explosive bullets"																// TO-DO: For explosive hitscan, check (Range, Blast Dmg, Self Blast Dmg / Force. SSG has highest for all of these.)
+			//	{
+			//		"attribute_class"	"explosive_bullets"										// The main crux! However, blast jumping is a little strange with this weapon...
+			//		"value"				"1"
+			//	}
 				"fire rate bonus hidden"
 				{
 					"attribute_class"	"mult_postfiredelay"
 					"value"				"0.6"
 				}
-				"hide_attrib_percentage"	
+				"fire rate burst"	
 				{
 					"attribute_class"	"mult_burstfiredelay"	
 					"value"				"0.6"
 				}
-				"hide_attrib_percentage"	
+				"spread penalty"	
 				{
 					"attribute_class"	"mult_spread_scale"
 					"value"				"0.34"													// FIX FOR TF2C v2.1.0 BREAKING INTERNALS
@@ -6819,7 +6819,7 @@ These two barrels are named U.S. and A! Better learn them real fast, creampuff."
 					"attribute_class"	"mult_clipsize"
 					"value"				"0.4"
 				}
-				"hide_attrib_percentage"	
+				"Projectile range decreased"	
 				{
 					"attribute_class"	"mult_projectile_range"
 					"value"				"0.15"
@@ -6835,7 +6835,7 @@ These two barrels are named U.S. and A! Better learn them real fast, creampuff."
 					"value"				"5"
 				}
 				// Backend stuff
-				"hide_attrib_percentage"	
+				"bullets per shot penalty"	
 				{
 					"attribute_class"	"mult_bullets_per_shot"									// To explain, with TF2C's new internals, only one pellet of multi-pellet weapons explode or even deal damage. The others are visible, they just don't do anythin.
 					"value"				"0.1"
@@ -7921,7 +7921,8 @@ I don't need yer bloody “depth perception” for some afternoon golf, I'll hav
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_COMBATSMG"
-			"prefab"					"weapon_pistol"
+			//"prefab"					"weapon_pistol"
+			"item_slot"					"secondary"
 			"item_class"				"tf_weapon_smg"
 			"show_in_armory"			"1"
 			"anim_slot"					"ITEM2"
@@ -11508,7 +11509,7 @@ Haunted, Hand-me-down Headtaker!"																// I can make it more obnoxious
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_WINGER"
-			"prefab"					"weapon_pistol"								
+			"item_class"				"tf_weapon_pistol"					
 			"show_in_armory"			"1"
 
 			"propername"				"1"
@@ -16233,7 +16234,7 @@ war crimes against would-be crime-doers."														// Let's not kid ourselve
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_TTG_MAX_GUN"
-			"prefab"					"weapon_pistol"								
+			"item_class"				"tf_weapon_pistol"					
 			"show_in_armory"			"1"
 
 			"propername"				"1"
@@ -16283,7 +16284,7 @@ I'll knock ya teeth out if ya do it again."
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_TTG_MAX_GUN_ENGI"
-			"prefab"					"weapon_pistol"								
+			"item_class"				"tf_weapon_pistol"					
 			"show_in_armory"			"1"
 
 			"propername"				"1"
