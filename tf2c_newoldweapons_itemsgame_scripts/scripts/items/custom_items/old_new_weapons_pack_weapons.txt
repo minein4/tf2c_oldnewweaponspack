@@ -1531,7 +1531,7 @@ through a frickin' windshield, huh, pal?"
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_RAYGUN"
-			"prefab"					"weapon_shotgun"										// In previous versions, this was a Coilgun reskin, but that changed to make it closer to the Live TF2 counterpart.
+			"item_class"				"tf_weapon_shotgun"										// In previous versions, this was a Coilgun reskin, but that changed to make it closer to the Live TF2 counterpart.
 			"item_slot"					"secondary"
 			"show_in_armory"			"1"
 
@@ -1619,7 +1619,7 @@ Taste the power of American Space Magic!"
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_SHOTGUN_INCENDIARY"
-			"prefab"					"weapon_shotgun"
+			"item_class"				"tf_weapon_shotgun"
 			"show_in_armory"			"1"
 			"item_slot"					"secondary"
 
@@ -1966,138 +1966,146 @@ For when I ain't got time to just 'sit back'!"
 			"drop_sound"				"#ui/item_metal_weapon_drop.wav"
 		}
 
-				"3350"
-		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_FIREBALL_LAUNCHER"
-			"prefab"					"weapon_flamethrower"
-			"item_class"				"tf_weapon_rocketlauncher"								// Fun fact; the Dragon's Fury in live TF2 is -also- a heavily modified Rocket Launcher.
-			"show_in_armory"			"1"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Dragon's Fury"
-			"item_type_name"			"Flame Launcher"										// NOWP v3.0.0 - I didn't realize it before, but Live DF has an item type of "Flame Launcher"... let's use that, it's more general-purpose!
-			"item_description"			"
-For a more 'personal' touch to arson."															// This is a very messy fix, but I wanna let people know so they can plan accordingly...
-			"item_logname"				"dragons_fury"
-			"item_iconname"				"dragons_fury_fireball"
-			"image_inventory"			"backpack/weapons/c_models/c_flameball/c_flameball"
-			"model_world"				"models/weapons/w_models/w_flameball.mdl"				// A newer change for NOWP v2.0.0, this is one of the weapons that makes prominent use of so-called "procedural bones" to do some animation stuff in world view! It's really sorcery.
-			"model_player"				"models/weapons/v_models/v_flameball_pyro_RL.mdl"
-			"attach_to_hands"			"2"
-			"used_by_classes"
-			{
-				"pyro"					"1"
-			}
-			"static_attrs"																		// How to convert a Rocket Launcher into... whatever this is!!
-			{
-				"mod max primary clip override"			"-1"									// SORCERY!! Thanks to Yakibomb for this. Seriously, how the hell did I go without this!?
-				"rocket limited lifetime"				"0.5"									// Rockets explode after about 0.45s, vaguely the range of where it usually went.
-				"hidden primary max ammo bonus"			"2"										// Doubles the ammo capacity to about 40
-				"fire rate penalty hidden"				"0.8125"								// Boosts the fire rate just a bit to make up for, well, not having the boost. 0.65 is fast enough to crit Pyros, but eeehhh.
-				"damage bonus hidden"					"0.2775"								// Nerfs the damage to about 25-ish, same a Live
-				"custom rampup"							"1.2"
-				"punch angle mod add hidden"			"2"
-			}
-			"attributes"
-			{
-				"dragons fury fireballs"														// NOWP v2.5.0 - moved the description text over to a stat to take up less space overall! Experimental...
-				{
-					"attribute_class"	"set_dmgtype_ignite"									// You know. This is a Pyro weapon. Of course it lights people on fire!
-					"value"				"1"
-				}
-				"crit vs burning players"
-				{
-					"attribute_class"	"single_crit_vs_playercond_no_dot"
-					"value"				"23"
-				}
-				"weapon burn time reduced"
-				{
-					"attribute_class"	"mult_wpn_burntime"
-					"value"				"0.25"													// 2.5s should be... decent? This is GLOBAL, but fuck, for a weapon that can burn AND crit burning, fine, so be it!
-				}
-				"crit mod disabled"																// Only hidden since apparently it says this thing can't random crit. Weird but reasonable.
-				{
-					"attribute_class"	"mult_crit_chance"
-					"value"				"0"
-				}
-				"airblast disabled"																// Display Only! Since this is a modified Rocket Launcher, it can't, well... airblast.
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"1"
-				}
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"mult_explosion_radius"
-					"value"				"0.34"
-				}
-				"custom projectile model"														// Technique from the Cow Mangler! Makes it so they look like fireballs (again)
-				{
-					"attribute_class"	"custom_projectile_model"
-					"value"				"models/weapons/w_models/w_drg_ball.mdl"
-				}
-				// Backend stuff
-				"hide_attrib_percentage"														// HACKY WORKAROUND. Sometimes, you can set a completely different attribute name to force different text to appear. Or not appear.
-				{
-					"attribute_class"	"blast_dmg_to_self"
-					"value"				"0"														// 0.65 for old dmg
-				}
-				"self dmg push force hidden"													// And, if that one happens to be hidden... then it means you can hide otherwise unhidable info!
-				{
-					"attribute_class"	"mult_dmgself_push_force"
-					"value"				"0"														// 0.25 for old knockback
-				}
-				"add condition on hit weapon"
-				{
-					"attribute_class"	"add_onhit_addcond_weapon"								// Copied from TF_WEAPON_CYCLOPS_DBL for convenience.
-					"value"				"124 0.75"												// This one adds and checks for TF_COND_BURNING_PYRO, somewhat restoring behavior from Live (only Minicrits tho)
-				}
-				"minicrit vs cond no dot"
-				{
-					"attribute_class"	"single_minicrit_vs_playercond_no_dot"
-					"value"				"125"
-				}
-			}
-			"visuals"
-			{
-				"sound_single_shot"		"Weapon_DragonsFury.Single"
-				"sound_burst"			"Weapon_DragonsFury.SingleCrit"
-				"sound_empty"			"Weapon_DragonsFury.PressureBuildStop"
-				"sound_reload"			"Weapon_DragonsFury.PressureBuildStop"
-				"sound_special1"		"Weapon_Airstrike.Explosion"
-				"explosion_effect"		"explosion_shrapnel_PARENT"
-				"trail_effect"			"rockettrail_firey"										// Just the fire, no smoke, to suggest it's shooting fire directly
-				"animation_replacement"															// These would be the Airblast animations, for visual consistency!
-				{
-					"ACT_MP_ATTACK_STAND_PRIMARY"				"ACT_MP_ATTACK_STAND_SECONDARYFIRE"
-					"ACT_MP_ATTACK_CROUCH_PRIMARY"				"ACT_MP_ATTACK_CROUCH_SECONDARYFIRE"
-					"ACT_MP_ATTACK_SWIM_PRIMARY"				"ACT_MP_ATTACK_SWIM_SECONDARYFIRE"
-				}
-			}
-			"visuals_red"
-			{
-				"trail_effect_crit"		"critical_rocket_red"
-				"explosion_effect_crit"	"explosion_shrapnel_PARENT_red_crit"
-			}
-			"visuals_blu"
-			{
-				"trail_effect_crit"		"critical_rocket_blue"
-				"explosion_effect_crit"	"explosion_shrapnel_PARENT_blue_crit"
-			}
-			"visuals_grn"
-			{
-				"trail_effect_crit"		"critical_rocket_green"
-				"explosion_effect_crit"	"explosion_shrapnel_PARENT_green_crit"
-			}
-			"visuals_ylw"
-			{
-				"trail_effect_crit"		"critical_rocket_yellow"
-				"explosion_effect_crit"	"explosion_shrapnel_PARENT_yellow_crit"
-			}
-			"mouse_pressed_sound"		"#ui/item_flamethrower_pickup.wav"
-			"drop_sound"				"#ui/item_heavy_gun_drop.wav"
-		}
+//				"3350"
+//		{
+//			"mod_item"					"1"
+//			"name"						"TF_WEAPON_FIREBALL_LAUNCHER"
+//			"prefab"					"weapon_flamethrower"
+//			"item_class"				"tf_weapon_rocketlauncher_fireball"								// Fun fact; the Dragon's Fury in live TF2 is -also- a heavily modified Rocket Launcher.
+//			"show_in_armory"			"1"
+//
+//			"propername"				"1"
+//			"item_name_color"			"255 240 183 255"
+//			"item_name"					"Dragon's Fury"
+//			"item_type_name"			"Flame Launcher"										// NOWP v3.0.0 - I didn't realize it before, but Live DF has an item type of "Flame Launcher"... let's use that, it's more general-purpose!
+//			"item_description"			"
+//For a more 'personal' touch to arson."															// This is a very messy fix, but I wanna let people know so they can plan accordingly...
+//			"item_logname"				"dragons_fury"
+//			"item_iconname"				"dragons_fury_fireball"
+//			"image_inventory"			"backpack/weapons/c_models/c_flameball/c_flameball"
+//			"model_world"				"models/weapons/w_models/w_flameball.mdl"				// A newer change for NOWP v2.0.0, this is one of the weapons that makes prominent use of so-called "procedural bones" to do some animation stuff in world view! It's really sorcery.
+//			"model_player"				"models/weapons/v_models/v_flameball_pyro_RL.mdl"
+//			"attach_to_hands"			"2"
+//			"used_by_classes"
+//			{
+//				"pyro"					"1"
+//			}
+//			"static_attrs"																		// How to convert a Rocket Launcher into... whatever this is!!
+//			{
+//				"mod max primary clip override"			"-1"									// SORCERY!! Thanks to Yakibomb for this. Seriously, how the hell did I go without this!?
+//				"rocket limited lifetime"				"0.5"									// Rockets explode after about 0.45s, vaguely the range of where it usually went.
+//				"hidden primary max ammo bonus"			"2"										// Doubles the ammo capacity to about 40
+//				"fire rate penalty hidden"				"0.8125"								// Boosts the fire rate just a bit to make up for, well, not having the boost. 0.65 is fast enough to crit Pyros, but eeehhh.
+//				"damage bonus hidden"					"0.2775"								// Nerfs the damage to about 25-ish, same a Live
+//				"custom rampup"							"1.2"
+//				"punch angle mod add hidden"			"2"
+//			}
+//			"attributes"
+//			{
+//				"add condition on hit weapon"
+//				{
+//					"attribute_class"	"add_onhit_addcond_weapon"								
+//					"value"				"22 3.0"	
+//				} 
+//
+//
+//
+//				"Set DamageType Ignite"														// NOWP v2.5.0 - moved the description text over to a stat to take up less space overall! Experimental...
+//				{
+//					"attribute_class"	"set_dmgtype_ignite"									// You know. This is a Pyro weapon. Of course it lights people on fire!
+//					"value"				"1"
+//				}
+//				"crit vs burning players"
+//				{
+//					"attribute_class"	"single_crit_vs_playercond_no_dot"
+//					"value"				"23"
+//				}
+//				"weapon burn time reduced"
+//				{
+//					"attribute_class"	"mult_wpn_burntime"
+//					"value"				"0.25"													// 2.5s should be... decent? This is GLOBAL, but fuck, for a weapon that can burn AND crit burning, fine, so be it!
+//				}
+//				"crit mod disabled"																// Only hidden since apparently it says this thing can't random crit. Weird but reasonable.
+//				{
+//					"attribute_class"	"mult_crit_chance"
+//					"value"				"0"
+//				}
+//				"airblast disabled"																// Display Only! Since this is a modified Rocket Launcher, it can't, well... airblast.
+//				{
+//					"attribute_class"	"DISPLAY_ONLY"
+//					"value"				"1"
+//				}
+//				"hide_attrib_percentage"	
+//				{
+//					"attribute_class"	"mult_explosion_radius"
+//					"value"				"0.34"
+//				}
+//				"custom projectile model"														// Technique from the Cow Mangler! Makes it so they look like fireballs (again)
+//				{
+//					"attribute_class"	"custom_projectile_model"
+//					"value"				"models/weapons/w_models/w_drg_ball.mdl"
+//				}
+//				// Backend stuff
+//				"hide_attrib_percentage"														// HACKY WORKAROUND. Sometimes, you can set a completely different attribute name to force different text to appear. Or not appear.
+//				{
+//					"attribute_class"	"blast_dmg_to_self"
+//					"value"				"0"														// 0.65 for old dmg
+//				}
+//				"self dmg push force hidden"													// And, if that one happens to be hidden... then it means you can hide otherwise unhidable info!
+//				{
+//					"attribute_class"	"mult_dmgself_push_force"
+//					"value"				"0"														// 0.25 for old knockback
+//				}
+//				"add condition on hit weapon"
+//				{
+//					"attribute_class"	"add_onhit_addcond_weapon"								// Copied from TF_WEAPON_CYCLOPS_DBL for convenience.
+//					"value"				"124 0.75"												// This one adds and checks for TF_COND_BURNING_PYRO, somewhat restoring behavior from Live (only Minicrits tho)
+//				}
+//				"minicrit vs cond no dot"
+//				{
+//					"attribute_class"	"single_minicrit_vs_playercond_no_dot"
+//					"value"				"125"
+//				}
+//			}
+//			"visuals"
+//			{
+//				"sound_single_shot"		"Weapon_DragonsFury.Single"
+//				"sound_burst"			"Weapon_DragonsFury.SingleCrit"
+//				"sound_empty"			"Weapon_DragonsFury.PressureBuildStop"
+//				"sound_reload"			"Weapon_DragonsFury.PressureBuildStop"
+//				"sound_special1"		"Weapon_Airstrike.Explosion"
+//				"explosion_effect"		"explosion_shrapnel_PARENT"
+//				"trail_effect"			"rockettrail_firey"										// Just the fire, no smoke, to suggest it's shooting fire directly
+//				"animation_replacement"															// These would be the Airblast animations, for visual consistency!
+//				{
+//					"ACT_MP_ATTACK_STAND_PRIMARY"				"ACT_MP_ATTACK_STAND_SECONDARYFIRE"
+//					"ACT_MP_ATTACK_CROUCH_PRIMARY"				"ACT_MP_ATTACK_CROUCH_SECONDARYFIRE"
+//					"ACT_MP_ATTACK_SWIM_PRIMARY"				"ACT_MP_ATTACK_SWIM_SECONDARYFIRE"
+//				}
+//			}
+//			"visuals_red"
+//			{
+//				"trail_effect_crit"		"critical_rocket_red"
+//				"explosion_effect_crit"	"explosion_shrapnel_PARENT_red_crit"
+//			}
+//			"visuals_blu"
+//			{
+//				"trail_effect_crit"		"critical_rocket_blue"
+//				"explosion_effect_crit"	"explosion_shrapnel_PARENT_blue_crit"
+//			}
+//			"visuals_grn"
+//			{
+//				"trail_effect_crit"		"critical_rocket_green"
+//				"explosion_effect_crit"	"explosion_shrapnel_PARENT_green_crit"
+//			}
+//			"visuals_ylw"
+//			{
+//				"trail_effect_crit"		"critical_rocket_yellow"
+//				"explosion_effect_crit"	"explosion_shrapnel_PARENT_yellow_crit"
+//			}
+//			"mouse_pressed_sound"		"#ui/item_flamethrower_pickup.wav"
+//			"drop_sound"				"#ui/item_heavy_gun_drop.wav"
+//		}
 
 		"3351"																					// Another unused weapon! This one lets you deploy buildings remotely, either by hitting it with a Wrench, or activating "Build" again.
 		{
@@ -2612,80 +2620,13 @@ me back in time to kick it!”"
 
 		"3360"																					// The cursed weapon returns.
 		{
-			"name"						"TF_WEAPON_CLAYMORE"
-			"prefab"					"weapon_bottle"
-			"item_class"				"tf_weapon_fireaxe"										// DECAPITATIOOOONNNN!!
-			"show_in_armory"			"1"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Eyelander"
-			"item_type_name"			"Cursed Sword"
-			"item_description"			"
-Don't be next on me head-count, lad!"
-			"item_logname"				"claymore"
-			"item_iconname"				"sword"
-			"image_inventory"			"backpack/weapons/c_models/c_claymore/c_claymore"
-			"model_world"				"models/weapons/w_models/w_claymore.mdl"
-			"model_player"				"models/weapons/v_models/v_claymore_demoman.mdl"
-			"attach_to_hands"			"2"
-			"extra_wearable"			"models/player/items/demo_swordsheath_claymore.mdl"		// This used to be the Targe model, but changed it in anticipation of a future split
-			"extra_wearable_bodygroup_toggle_on_active" "sword"
-			"used_by_classes"
-			{
-				"demoman"				"1"
-			}
+			"name"	"The Eyelander"
+			"prefab"	"valve weapon_eyelander"
+			"first_sale_date"	"2010/09/29"
 			"static_attrs"
 			{
-				"melee range multiplier"				"1.35"									// These two extend your melee range. I think.
-				"melee bounds multiplier"				"1.55"									// They just, work, okay!?
-				"particle on melee hit"					"repair_claw_heal_green2"				// Supposed to be spirit energies... medic_explosion_wisps_green might also work?
-				"extra wearable bodygroup toggle active"	"sword"
+				"min_viewmodel_offset"		"10 0 -11"				
 			}
-			"attributes"																		// TF2C v2.1.0 - You might be thinkin' what I'm thinkin. No, PS damage combo mechanic doesn't work for anything beside its specific item_class. Darn shame...
-			{
-				"speed on kill with time"
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"5"
-				}
-				"add condition on kill"
-				{
-					"attribute_class"	"add_onkill_addcond_self"
-					"value"				"32 5"
-				}
-				"heal on kill"
-				{
-					"attribute_class"	"heal_on_kill"											// TO-DO: This leaks if getting a delayed kill with another weapon. VERY BAD ON EXPLOSIVE CLASSES
-					"value"				"30"
-				}
-				"max health additive penalty"
-				{
-					"attribute_class"	"add_maxhealth"
-					"value"				"-25"
-				}
-				"crit mod disabled"
-				{
-					"attribute_class"	"mult_crit_chance"
-					"value"				"0"
-				}
-				// Backend stuff
-				"mod melee crit swing custom damage"											// NEW AS OF TF2C v2.1.0 - CRIT MELEE KILL MODIFIERS!! There's only a few of interest, but man, a lot of options now!
-				{
-					"attribute_class"	"mod_melee_crit_swing_custom_damage"
-					"value"				"27"													// DECAPITATIOOOONNNN!!
-				}
-			}
-			"visuals"
-			{
-				"sound_melee_miss"		"Weapon_Sword.Swing"
-				"sound_melee_hit"		"Weapon_Sword.HitFlesh"
-				"sound_melee_hit_world"	"Weapon_Sword.HitWorld"
-				"sound_burst"			"Weapon_Sword.SwingCrit"
-				"sound_special1"		"Weapon_Sword.HitHeads"
-			}
-			"mouse_pressed_sound"		"#ui/item_knife_large_pickup.wav"
-			"drop_sound"				"#ui/item_metal_weapon_drop.wav"
 		}
 
 		"3361"
@@ -2694,6 +2635,7 @@ Don't be next on me head-count, lad!"
 			"name"						"TF_WEAPON_GRENADELAUNCHER_DM"
 			"prefab"					"weapon_grenade_launcher"
 			"show_in_armory"			"1"
+			"item_class"	"tf_weapon_rocketlauncher"
 
 			"propername"				"1"
 			"item_name_color"			"204 204 250 255"
@@ -2718,40 +2660,52 @@ T'is me lucky day!"																				// IS THAT A FUCKIN' 「OPEN FORTRESS」 
 			"static_attrs"
 			{
 				"class select override vcd"				"class_select_cyclops"					// TF2C v2.2.0 - NEW CLASS SELECT ANIMS! Finally!! For the rest of Demoman's arsenel that isn't a rotating GL, there's new animations!
+				"projectile speed increased"			"2" 
+			
 			}
 			"attributes"
 			{
-				"explode on world"
+				"rocket gravity"
 				{
-					"attribute_class"	"set_detonate_mode"
-					"value"				"3"
+					"attribute_class"	"mod_rocket_gravity"
+					"value"				"1.55"
 				}
-				"rocket jump damage reduction"
-				{
-					"attribute_class"	"rocket_jump_dmg_reduction"								// Copied from LL - I think it's appropriate here!
-					"value"				"0.67"
-				}
-				"blast radius decreased"
-				{
-					"attribute_class"	"mult_explosion_radius"
-					"value"				"0.5"
-				}
-				"damage penalty"
-				{
-					"attribute_class"	"mult_dmg"
-					"value"				"0.8"
-				}
-				"fire rate penalty"
-				{
-					"attribute_class"	"mult_postfiredelay"
-					"value"				"1.2"
-				}
+
+
+
+
+
+			//	"explode on world"
+			//	{
+			//		"attribute_class"	"set_detonate_mode"
+			//		"value"				"1"
+			//	}
+					"rocket jump damage reduction"
+					{
+						"attribute_class"	"rocket_jump_dmg_reduction"								// Copied from LL - I think it's appropriate here!
+						"value"				"0.67"
+					}
+					"blast radius decreased"
+					{
+						"attribute_class"	"mult_explosion_radius"
+						"value"				"0.5"
+					}
+					"damage penalty"
+					{
+						"attribute_class"	"mult_dmg"
+						"value"				"0.8"
+					}
+					"fire rate penalty"
+					{
+						"attribute_class"	"mult_postfiredelay"
+						"value"				"1.2"
+					}
 				"custom projectile model"
 				{
 					"attribute_class"	"custom_projectile_model"
 					"value"				"models/weapons/w_models/w_grenade_grenadelauncher_dm.mdl" // Older versions used a "rocket" variant of this projectile due to technical constraints, but since TF2C v2.1.0, that hasn't been needed
 				}
-				// Backend stuff
+					// Backend stuff
 				"self dmg push force hidden"													// Nerfs Grenade Jumping, since you got absolutely insane air. You still get mad height, just slightly less
 				{
 					"attribute_class"	"mult_dmgself_push_force"
@@ -3415,7 +3369,7 @@ Blunt force, for Sapper and Spy removal."
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_RESCUE_RANGER"
-			"prefab"					"weapon_shotgun"
+			"item_class"				"tf_weapon_shotgun"
 			"show_in_armory"			"1"
 			"item_slot"					"primary"
 
@@ -3599,7 +3553,7 @@ overheating when the goin' gets tough."
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_FAMILY_BUSINESS"
-			"prefab"					"weapon_shotgun"
+			"item_class"				"tf_weapon_shotgun"
 			"show_in_armory"			"1"
 			"item_slot"					"secondary"
 
@@ -4982,7 +4936,7 @@ I shall live to harm another day!"
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_AA12_REPEATER"
-			"prefab"					"weapon_shotgun"
+			"item_class"				"tf_weapon_shotgun"
 			"item_class"				"tf_weapon_scattergun"									// So it ejects Shotgun shells and generally acts like a Shotgun. Bonus of having great rampup + higher damage!
 			"show_in_armory"			"1"
 			"item_slot"					"primary"
@@ -5259,7 +5213,7 @@ lookin' for a new home in your ribcage!"
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_RESERVE_SHOOTER"
-			"prefab"					"weapon_shotgun"								
+			"item_class"				"tf_weapon_shotgun"								
 			"show_in_armory"			"1"
 			"item_slot"					"secondary"
 
@@ -5428,7 +5382,7 @@ Now, if only you knew how to use a gun..."														// I find it important t
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_RESERVE_SHOOTER_PYRO"
-			"prefab"					"weapon_shotgun"								
+			"item_class"				"tf_weapon_shotgun"								
 			"show_in_armory"			"1"
 			"item_slot"					"secondary"
 
@@ -6186,7 +6140,7 @@ enough bullet for entire coward team!"
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_RAILGUN_DM"									// Yet another OF Weapon! They make good weapon material tbf.
-			"prefab"					"weapon_shotgun"										// The internals for the Railgun are kinda strange, I might need to refactor it in a future update?
+			"item_class"				"tf_weapon_shotgun"										// The internals for the Railgun are kinda strange, I might need to refactor it in a future update?
 			"show_in_armory"			"1"
 			"item_slot"					"primary"
 
@@ -6409,7 +6363,7 @@ zhis will only sting for a moment.”"
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_TRENCHGUN"
-			"prefab"					"weapon_shotgun"								
+			"item_class"				"tf_weapon_shotgun"								
 			"show_in_armory"			"1"
 			"item_slot"					"secondary"
 
@@ -6465,7 +6419,7 @@ Addressed to be mailed right to your ass!"
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_TRENCHGUN_PYRO"
-			"prefab"					"weapon_shotgun"								
+			"item_class"				"tf_weapon_shotgun"								
 			"show_in_armory"			"1"
 			"item_slot"					"secondary"
 
@@ -6525,7 +6479,7 @@ is fighting back a little... 'too' hard."
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_TRENCHGUN_HEAVY"
-			"prefab"					"weapon_shotgun"								
+			"item_class"				"tf_weapon_shotgun"								
 			"show_in_armory"			"1"
 			"item_slot"					"secondary"
 
@@ -6585,7 +6539,7 @@ trying to outsmart all these bullets at once!"
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_TRENCHGUN_ENGI"
-			"prefab"					"weapon_shotgun"								
+			"item_class"				"tf_weapon_shotgun"								
 			"show_in_armory"			"1"
 			"item_slot"					"primary"
 
@@ -6642,7 +6596,7 @@ Somebody's gonna meet their maker, today,
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_MOB_SHOTGUN_HWG"
-			"prefab"					"weapon_shotgun"
+			"item_class"				"tf_weapon_shotgun"
 			"show_in_armory"			"1"
 			"item_slot"					"secondary"
 
@@ -7781,7 +7735,7 @@ Weapon reloads its entire clip at once
 		"3450"																					// TO-DO: REPLACE WITH THE ORIGINAL PRE-TF2C v2.2.0 VERSIONS ASAP!! These are only holdovers until they get it together!
 		{
 			"name"						"TF_WEAPON_SYRINGE_SHOT"								// NOWP v2.7.5 - IT FINALLY FIRES SYRINGES!!! WE ARE SO BACK
-			"prefab"					"weapon_shotgun"
+			"item_class"				"tf_weapon_shotgun"
 			"show_in_armory"			"1"
 			"item_slot"					"primary"
 
@@ -9264,7 +9218,7 @@ Pack bags and run. We are coming for you!"
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_FRONTIERJUSTICE"
-			"prefab"					"weapon_shotgun"
+			"item_class"				"tf_weapon_shotgun"
 			"show_in_armory"			"1"
 			"item_slot"					"primary"
 
@@ -10351,7 +10305,7 @@ It's illegal how good at mass-murder this is."
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_IRONSIDE"									// I wasn't terribly happy with the Bombshot, so let's try this.
-			"prefab"					"weapon_shotgun"										// I was deliberating for a bit on what I... "wanted" this to be. I liked the individual ideas of TF_WEAPON_CYCLOPS_DBL and Lever Rifle, which reward you for getting kills, but their specific benefits are done better elsewhere.
+			"item_class"				"tf_weapon_shotgun"										// I was deliberating for a bit on what I... "wanted" this to be. I liked the individual ideas of TF_WEAPON_CYCLOPS_DBL and Lever Rifle, which reward you for getting kills, but their specific benefits are done better elsewhere.
 			"show_in_armory"			"1"														// Let's try this. Heavy has a clip-size sustain option, as does he a better damage option, but maybe this will work?
 			"item_slot"					"secondary"
 
@@ -10423,7 +10377,7 @@ and you will make every bullet count."
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_BATTLERIFLE_FL"
-			"prefab"					"weapon_shotgun"								
+			"item_class"				"tf_weapon_shotgun"								
 			"show_in_armory"			"1"
 			"item_slot"					"secondary"
 
@@ -10993,8 +10947,9 @@ and hiding the evidence."
 			"image_inventory_size_h"		"82"
 			"inspect_panel_dist" 			"45"
 			"model_player"	"models/player/items/tide_turner.mdl"
-			"act_as_wearable" "1"
-			"attach_to_hands"	"1"
+			"extra_wearable"	"models/player/items/tide_turner.mdl"
+			"act_as_wearable" "0"
+			"attach_to_hands"	"0"
 			"attach_to_hands_vm_only"	"1"
 			"drop_type"	"drop"
 			"used_by_classes"
@@ -11118,7 +11073,7 @@ So, fling yerself at those two-eyed bastards!"
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_INCENDIARYCANNON"
 			"prefab"					"weapon_flamethrower"
-			"item_class"				"tf_weapon_syringegun_medic"
+			"item_class"				"tf_weapon_rocketlauncher_fireball"
 			"show_in_armory"			"1"
 
 			"item_name_color"			"204 204 250 255"
@@ -11136,65 +11091,33 @@ Throw some flames, the old-fashioned way."
 			{
 				"pyro"					"1"
 			}
-			"static_attrs"																		// NOWP v3.0.0 - Okay, I think it being an AA Gun is doing more harm than it is good. Let's try this, a SG-base variant...
-			{
-				"mod max primary clip override"			"-1"
-				"override projectile type"				"2"
-				"custom projectile origin offset"		"23.5 0 -3"								// TF2C v2.1.0 - Manual Projectile Offset! This really helps makes certain guns look / feel less janky to use
-				"custom projectile model"				"models/weapons/w_models/w_drg_ball.mdl"
-
-				"damage bonus hidden"					"1.33"									// Does like 13-16 DMG? Very weak, but the fire rate is amped WAY up (thanks to it being a heavily modified Syringe Gun!)
-				"Projectile speed increased hidden"		"0.825"									// Vaguely matches a flame particle's speed, takes a little under a second to reach a foe at max range.
-				"custom rampup"							"1.2"
-				"weapon enemy knockback mod mult decreased"	"0.25"
-				"hidden primary max ammo bonus"			"1.334"
-				"rocket limited lifetime"				"0.33"									// Just about similar to Pyro's FT range, but still very limited
-				"add condition on hit self weapon"		"68 0.0000005"							// JANKY HACK - You gain a microsecond of blast immunity when hitting a foe, but it's so short that enemy Soldiers / Demomen can still attack you!
+			"static_attrs"
+			{				
+				"item_meter_charge_type"							"1"
+				"item_meter_charge_rate"				"0.2"
+				"meter_label"							"#TF_Pressure"
+				"airblast disabled"						"1"
+				"hidden primary max ammo bonus"			"0.2"
 			}
 			"attributes"
 			{
-				"set weapon flamerocket"
-				{
-					"attribute_class"	"set_dmgtype_ignite"
-					"value"				"1"
-				}
-				"projectile spread angle penalty"
-				{
-					"attribute_class"	"projectile_spread_angle"
-					"value"				"5"
-				}
-				"hide_attrib_percentage"
-				{
-					"attribute_class"	"mult_spread_scale"
-					"value"				"3.3"													// from beggars for projectile spread. amped up for really unreliable spread
-				}
-				"hide_attrib_percentage"
-				{
-					"attribute_class"	"mult_explosion_radius"
-					"value"				"0.67"
-				}
-				"airblast disabled"
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"1"
-				}
-				// Backup stuff
-				"hide_attrib_additive"		
-				{
-					"attribute_class"	"mod_rocket_gravity"
-					"value"				"-0.075"												// Rockets go UPWARD, to mimic the behavior of flame particles...
-				}
-				"blast dmg to self increased hidden"
-				{
-					"attribute_class"	"blast_dmg_to_self"
-					"value"				"0.75"													// NOWP v3.0.0 - Re-enabled the blast damage aND force, for funnies. It's great for minor mobility, if you can stomach having your health be halved...
-				}
-				"self dmg push force hidden"
-				{
-					"attribute_class"	"mult_dmgself_push_force"
-					"value"				"0.975"													// JUST enough to hover above the ground if you jump right. Old was 1.175
-				}
+			"hidden primary max ammo bonus"
+			{
+				"attribute_class"	"mult_maxammo_primary"
+				"value"				"5"
 			}
+			"projectile spread angle penalty"
+			{
+				"attribute_class"	"projectile_spread_angle"
+				"value"				"5"
+			}
+			"damage penalty"
+			{
+				"attribute_class"	"mult_dmg"
+				"value"				"0.3"
+			}
+			}
+
 			"visuals"
 			{
 				"sound_single_shot"		"Weapon_IncendiaryCannon.Fire"
@@ -12614,7 +12537,7 @@ into that thick skull of yours, string bean."
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_WIDOWMAKER"									// Been wanting to tackle this thing for a while, but figured I'd take a crack at it now that we have more attributes
-			"prefab"					"weapon_shotgun"
+			"item_class"				"tf_weapon_shotgun"
 			"show_in_armory"			"1"
 			"item_slot"					"primary"
 
@@ -12686,7 +12609,8 @@ More where that came from!”"
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_MOB_SHOTGUN"									// I was actually considering making this for Soldier and Engi too, but decided given its role (good ranged option with not much ammo) it fits best on Heavy and Pyro, who have difficulty fighting at range.
-			"prefab"					"weapon_shotgun"
+			// "item_class"				"tf_weapon_shotgun"
+			"item_class"				"tf_weapon_shotgun"
 			"show_in_armory"			"1"
 			"item_slot"					"secondary"
 
@@ -13954,6 +13878,8 @@ Gain a Def. Buff while actively charging
 			"item_iconname"				"shield_ironclad"										// Totally unused rn, but theoretically should work if they ever fix this
 			"image_inventory"			"backpack/player/items/shield_ironclad"
 			"model_player"				"models/player/items/shield_ironclad.mdl"
+			"attach_to_hands_vm_only"	"1"
+			"act_as_wearable" "1"
 			"used_by_classes"
 			{
 				"demoman"				"1"
@@ -14227,13 +14153,13 @@ It's da second best way to kill with sugar!
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_TECHPISTOL"									// A NEW COILGUN!! I was having a discussion with azzy some months back about a certain coilgun-slant they made for KOCW, and it got the gears a-tickin' for making one of my own. Let's try this... a more offense-focused variant of the TF2C Coilgun!
 			"prefab"					"weapon_pistol"
-			"item_class"				"tf_weapon_coilgun"
+			"item_class"				"tf2c_weapon_coilgun"
 			"show_in_armory"			"1"
 
 			"propername"				"1"														// TO-DO: This follows the EXACT same rules as the Coilgun. So, if they ever get rid of the propername for the Coilgun, get rid of it for the Mass Driver! Both describe what they are.
 			"item_name_color"			"204 204 250 255"
 			"item_name"					"Mass Driver"
-			"item_type_name"			"#TF_Weapon_Coilgun"									// Technically this is probably a gauss pistol or something, but coilgun probably also works and keeps it concise enough
+			"item_type_name"			"#tf2c_weapon_coilgun"									// Technically this is probably a gauss pistol or something, but coilgun probably also works and keeps it concise enough
 			"item_description"			"
 There's mighty few problems a high-speed
 electromagnetic projectile can't solve."
@@ -14788,7 +14714,7 @@ Easy, this ain't any old moonshine."
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_STINGRAY"									// Another new Flaregun, after 5000 years! It's ALSO not actually a proper flaregun! But, you gotta do what you gotta do, for interesting gameplay...
-			"item_class"				"tf_weapon_coilgun"										// This weapon is actually somewhat based off of an idea I've seen a very long time ago on TF2C's discord...
+			"item_class"				"tf_weapon_flaregun"										// This weapon is actually somewhat based off of an idea I've seen a very long time ago on TF2C's discord...
 			"show_in_armory"			"1"
 			"item_slot"					"secondary"
 			"anim_slot"					"item1"
@@ -14819,10 +14745,10 @@ Light 'em up, with shocking efficiency."
 				"charge damage altfire generic"			"1"
 				"crit vs wet players"					"1"
 				"crit vs cond no dot"					"25"									// From Neon Annihilator, ALSO crits against Jarate Overlay if somebody somehow has that.
-				"no afterburn weapon"					"1"
+				// "no afterburn weapon"					"1"
 				// "crits become minicrits"				"1"
 
-				"hidden separator"						"1"										// NOWP v3.0.0 - For crowded weapons, let's try this to clear up some space since azzy finally fixed this! Thanks, azzy~ <3
+				 "hidden separator"						"1"										// NOWP v3.0.0 - For crowded weapons, let's try this to clear up some space since azzy finally fixed this! Thanks, azzy~ <3
 
 				// Weapon properties
 				"mod max primary clip override"			"-1"									// Tweaks for Coilgun to match Flaregun internals, rest is mostly copied from Firecannon
@@ -14838,9 +14764,9 @@ Light 'em up, with shocking efficiency."
 				"override mult deploy weapon time animation"	"1.0"
 
 				// Combat properties
-				"override projectile type"				"2"										// I really wish they'd invent a kind of flare that exploded on surfaces already, I'm getting very tired of retrofitting rockets for it...!!
-				"fire rate penalty hidden"				"5"
-				"damage bonus hidden"					"1.2"									// 30 DMG, 90 charged. Does very scary damage charged AND crit, but I'm sure you knew that.
+				//  "override projectile type"				"2"										// I really wish they'd invent a kind of flare that exploded on surfaces already, I'm getting very tired of retrofitting rockets for it...!!
+				//"fire rate penalty hidden"				"5"
+				"damage bonus hidden"					"1"									// 30 DMG, 90 charged. Does very scary damage charged AND crit, but I'm sure you knew that.
 				"no damage falloff over distance"		"1.0"
 				"custom rampup"							"1.0"
 
@@ -14851,6 +14777,12 @@ Light 'em up, with shocking efficiency."
 			}
 			"attributes"
 			{
+				"weapon burn time reduced"
+				{
+					"attribute_class"	"mult_wpn_burntime"
+					"value"				"0"
+				}
+
 				// Backend stuff
 				"hide_attrib_additive"															// NOWP v3.0.0 - For ALL flareguns that need a colliding projectile... this is a better approximation of the flare than before!
 				{
@@ -15799,124 +15731,23 @@ Let this be the hair o' the dog that bit ye."
 
 		"4203"
 		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_LOOSECANNON"									// This weapon is by Colrot! Revised and all, they made a very solid framework, I just tidied it up and made assets for it!
-			"item_class"				"tf_weapon_grenade_mirv2"								// HAS to be MIRV2 since Demoman has a MIRV type already
-			"item_slot"					"primary"
-			"anim_slot"					"secondary"
-			"show_in_armory"			"1"
-			"bucket"					"0"														// Makes it show up in Primary even with another MIRV-type
-
-			"image_inventory_size_w"	"128"
-			"image_inventory_size_h"	"82"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Loose Cannon"
-			"item_type_name"			"Cannon"
-			"item_description"			"Double Donk! Bomb explosions after
-a cannonball hit will deal mini-crits!
-
-If ye think I'm done with you, lad...
-...then you've got another thing comin'!"
-			"item_logname"				"loose_cannon"
-			"item_iconname"				"loose_cannon_explosion"
-			"image_inventory"			"backpack/workshop/weapons/c_models/c_demo_cannon/c_demo_cannon"
-			"model_world"				"models/weapons/w_models/w_loosecannon.mdl"
-			"model_player"				"models/weapons/v_models/v_loosecannon_demo.mdl"		// This does support fixed reload animations, but this weapon can't currently do that... TO-DO: Fix the cannonballs' dynamic loading models, too!
-			"attach_to_hands"			"2"
-			"drop_type"					"drop"
-			"used_by_classes"
+			"name"			"The Loose Cannon"
+			"prefab"		"weapon_demo_cannon"
+			"first_sale_date"	"2012/12/19"
+			"particle_suffix" 	"loose_cannon"
+			"tags"
 			{
-				"demoman"				"1"
-			}
-			"attributes"
-			{
-				"comm weapon colrot"
-				{
-					"attribute_class"	"set_reload_single"
-					"value"				"1"
-				}
-				"weapon cook projectile mode"
-				{
-					"attribute_class"	"grenade_cook"											// We're going to be running VERY low on space, so gotta get things compressed ASAP
-					"value"				"1"
-				}
-				"hide_attrib_percentage"
-				{
-					"attribute_class"	"stickybomb_charge_rate"
-					"value"				"0.5"													// Charge rate modifier - charges for about 1s
-				}
-				"Projectile speed increased"
-				{
-					"attribute_class"	"mult_projectile_speed"
-					"value"				"1.2"
-				}
-				"fuse time bonus"																// Unhidden since it's useful information!
-				{
-					"attribute_class"	"fuse_mult"
-					"value"				"0.75"
-				}
-				"cannonball push back"
-				{
-					"attribute_class"	"apply_z_velocity_on_damage"
-					"value"				"250"													// Knocks enemies upwards slightly, also helps blast force
-				}
-				"grenade not explode on impact"
-				{
-					"attribute_class"	"mirv_impact"
-					"value"				"1"
-				}
-				"weapon explodes"
-				{
-					"attribute_class"	"mod_use_custom_ammo_type"
-					"value"				"1"														// Uses primary ammo, so you hafta pick ammo up like everyone else!
-				}
-				// Backend stuff
-				"hide_attrib_percentage"
-				{
-					"attribute_class"	"effectbar_recharge_rate"
-					"value"				"999"													// Effect bar NEVER regenerates on its own, so you have to pick up ammo packs like everyone else!
-				}
-				"add condition on hit weapon"													// Copied from TF_WEAPON_CYCLOPS_DBL for convenience
-				{
-					"attribute_class"	"add_onhit_addcond_weapon"
-					"value"				"100 0.5"												// Add TF_COND_GRAPPLINGHOOK_LATCHED for about half a sec, which does nothing on its own
-				}
-				"minicrit vs cond no dot"
-				{
-					"attribute_class"	"single_minicrit_vs_playercond_no_dot"
-					"value"				"101"													// ...and then, if the successive hit lands, deal minicrits! Same cond as Cyclops, since they're mutually exclusive
-				}
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"blast_dmg_to_self"
-					"value"				"1.5"													// INCREASES it since it does too low selfdmg, surprisingly
-				}
-			}
-			"static_attrs"
-			{
-				"hidden separator"						"1"										// NOWP v3.0.0 - For crowded weapons, let's try this to clear up some space since azzy finally fixed this! Thanks, azzy~ <3
-
-				"hidden primary max ammo bonus"			"1.25"									// Adds the old clip size into the old reserves
-				"damage penalty hidden"					"0.3"									// Does 60 DMG max, but usually does less
-				"bomblets count mod mult hidden"		"0"										// No Bomblets
-				"mult mirv impact damage"				"1.67"									// Does 50 on a direct hit, just like the Live variant
-
-				"min_viewmodel_offset"					"10 0 -10"
-				"custom projectile model"				"models/weapons/w_models/w_cannonball.mdl"
-				"meter_label"							" "										// "Fix" to make it so no name renders - for compatibility with Demoman's other meter-throwables
-
-				"Reload time start additive"			"0.45"									// Since LC is right at the attribute limit, you'll have to disable primary maxammo and vm offset for the description.
-				"class select override vcd"				"class_select_cyclops"
+				"can_be_festivized"		"1"
 			}
 			"visuals"
 			{
-				"sound_single_shot"		"Weapon_LooseCannon.Shoot"
-				"sound_burst"			"Weapon_LooseCannon.ShootCrit"
-				"sound_double_shot"		"Weapon_LooseCannon.Charge"
-				"sound_special1"		"Weapon_LooseCannon.Explode"
-				"sound_reload"			"Weapon_GrenadeLauncher.WorldReload"					// Probably actually needs to be here, since MIRV2 doesn't usually reload (who woulda guessed!)
+				"attached_models_festive"
+				{
+					"0"
+					{
+						"model"	"models/workshop/weapons/c_models/c_demo_cannon/c_demo_cannon_festivizer.mdl"
+					}
+				}
 			}
 			"visuals_red"
 			{
@@ -16121,8 +15952,9 @@ body parts than I'm already missing!"
 			}
 			"name"						"TF_WEAPON_GRENADE_JUMPER"
 			"prefab"					"weapon_grenade_launcher"
+			"item_class"	"tf_weapon_grenadelauncher"
 			"show_in_armory"			"1"
-
+			"item_slot"	"primary"
 			"propername"				"1"
 			"item_name_color"			"204 204 250 255"
 			"item_name"					"Grenade Jumper"										// Note: For all intents and purposes, the GJ Grenades SHOULD have identical physics and timing to normal Grenades
@@ -16145,15 +15977,15 @@ entire trap o' bombs, just ta bloody jump!?"
 				"custom rampup"							"1.0"
 				"custom falloff"						"1.0"
 				"no damage falloff over distance"		"1.0"
-				"weapon enemy knockback mod mult hidden"	"75"
+				"weapon enemy knockback mod mult increased"	"75"
 			}
 			"attributes"
 			{
-				"no self blast dmg"																// As an aside - yes, normal Pill Grenade blasts ARE this strong, you just usually take like 100 DMG from it
-				{
-					"attribute_class"	"no_self_blast_dmg"
-					"value"				"1"
-				}
+			//	"no self blast dmg"																// As an aside - yes, normal Pill Grenade blasts ARE this strong, you just usually take like 100 DMG from it
+			//	{
+			//		"attribute_class"	"no_self_blast_dmg"
+			//		"value"				"1"
+			//	}
 				"maxammo primary increased"
 				{
 					"attribute_class"	"mult_maxammo_primary"
@@ -16164,11 +15996,16 @@ entire trap o' bombs, just ta bloody jump!?"
 					"attribute_class"	"mult_dmg"
 					"value"				"0.01"
 				}
-				"hide_attrib_percentage"	
+				"blast splash damage decreased"
 				{
 					"attribute_class"	"mult_explosion_splash_damage"
-					"value"				"0.001"
+					"value"				"0.01"
 				}
+		//	"hide_attrib_percentage"	
+		//	{
+		//		"attribute_class"	"mult_explosion_splash_damage"
+		//		"value"				"0.001"
+		//	}
 				"jumper disable flags"
 				{
 					"attribute_class"	"cannot_pick_up_intelligence"
@@ -20215,5 +20052,114 @@ does by using it for a while..."
 			"mouse_pressed_sound"		"#ui/item_bag_pickup.wav"
 			"drop_sound"				"#ui/item_bag_drop.wav"
 		}
+
+		"1178"
+		{
+			"name"	"The Dragon's Fury"
+			"prefab"	"paintkit_base"
+			"item_class"	"tf_weapon_rocketlauncher_fireball"
+			"craft_class"	"weapon"
+			"craft_material_type"	"weapon"
+			"capabilities"
+			{
+				"nameable"		"1"
+			}
+			"tags"
+			{
+				"can_deal_damage"		"1"
+				"can_deal_posthumous_damage"	"1"
+				"can_be_festivized"		"1"
+			}
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_FireballLauncher"
+			"particle_suffix"	"dragons_fury"
+			"propername"	"1"
+			"item_name"	"#TF_Weapon_DragonsFury"
+			"item_description"	"#TF_Weapon_DragonsFury_Desc"
+			"item_slot"	"primary"
+			"anim_slot"		"primary"
+			"item_quality"	"unique"
+			"min_ilevel"	"1"
+			"max_ilevel"	"100"
+			"item_logname"	"dragons_fury"
+			"item_iconname"	"dragons_fury"
+			"image_inventory"	"backpack/weapons/c_models/c_flameball/c_flameball"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"model_player"	"models/weapons/c_models/c_flameball/c_flameball.mdl"
+			"attach_to_hands" "1"
+			"inspect_panel_dist" "91"
+			"used_by_classes"
+			{
+				"pyro"	"1"
+			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"					"10 -3 -10"
+				"item_meter_charge_type"							"1"
+				"item_meter_charge_rate"				"0.8"
+				"meter_label"							"#TF_Pressure"
+				"hidden primary max ammo bonus"			"0.2"
+				"airblast cost scale hidden"			"0.25"
+				"dragons fury neutral properties"		"1"
+				"dragons fury positive properties"		"1"
+				"dragons fury negative properties"		"1"
+				"extinguish restores health"			"20"
+			}
+			"visuals"
+			{
+				"attached_models_festive"
+				{
+					"0"
+					{
+						"model"	"models/weapons/c_models/c_flameball/c_flameball_festivizer.mdl"
+					}
+				}
+				"sound_single_shot"		"Weapon_Airstrike.AltFire"
+				"sound_special1"		"Weapon_Airstrike.Explosion"
+				"animation_replacement"
+				{
+					"ACT_VM_PRIMARYATTACK"		"ACT_PRIMARY_VM_PRIMARYATTACK_3"
+
+					"ACT_PRIMARY_VM_INSPECT_START"		"ACT_ITEM4_VM_INSPECT_START"
+					"ACT_PRIMARY_VM_INSPECT_IDLE"		"ACT_ITEM4_VM_INSPECT_IDLE"
+					"ACT_PRIMARY_VM_INSPECT_END"		"ACT_ITEM4_VM_INSPECT_END"
+
+					"ACT_MP_ATTACK_CROUCH_PRIMARY"		"ACT_MP_ATTACK_CROUCH_PRIMARY_ALT"
+					"ACT_MP_ATTACK_STAND_PRIMARY"		"ACT_MP_ATTACK_STAND_PRIMARY_ALT"
+					"ACT_MP_ATTACK_SWIM_PRIMARY"		"ACT_MP_ATTACK_SWIM_PRIMARY_ALT"
+
+					"ACT_MP_ATTACK_CROUCH_SECONDARYFIRE"	"ACT_MP_ATTACK_CROUCH_PRIMARY_ALT"
+					"ACT_MP_ATTACK_STAND_SECONDARYFIRE"		"ACT_MP_ATTACK_STAND_PRIMARY_ALT"
+					"ACT_MP_ATTACK_SWIM_SECONDARYFIRE"		"ACT_MP_ATTACK_SWIM_PRIMARY_ALT"
+				}
+				"visuals_red"
+				{
+					"trail_effect_crit"		"critical_rocket_red"
+					"explosion_effect_crit"	"explosion_shrapnel_PARENT_red_crit"
+				}
+				"visuals_blu"
+				{
+					"trail_effect_crit"		"critical_rocket_blue"
+					"explosion_effect_crit"	"explosion_shrapnel_PARENT_blue_crit"
+				}
+				"visuals_grn"
+				{
+					"trail_effect_crit"		"critical_rocket_green"
+					"explosion_effect_crit"	"explosion_shrapnel_PARENT_green_crit"
+				}
+				"visuals_ylw"
+				{
+					"trail_effect_crit"		"critical_rocket_yellow"
+					"explosion_effect_crit"	"explosion_shrapnel_PARENT_yellow_crit"
+				}
+			}
+			"mouse_pressed_sound"	"ui/item_heavy_gun_pickup.wav"
+			"drop_sound"		"ui/item_heavy_gun_drop.wav"
+		}
+
+		
+
+
 	}
 }
