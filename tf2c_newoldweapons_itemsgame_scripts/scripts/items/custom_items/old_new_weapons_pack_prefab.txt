@@ -1,6 +1,8 @@
 "Old_New_Weapons_Pack_prefab"
 {
-		"prefabs"
+
+
+	"prefabs"
 	{
 		// For a custom Item Schema wishing to remove any of our weapons.
 		"remove"
@@ -709,7 +711,8 @@
 				"can_deal_mvm_penetration_damage"		"1"
 				"can_deal_long_distance_damage"			"1"
 			}
-			"item_class"				"tf_weapon_aagun"
+			"prefab"					""
+			"item_class"				"tf2c_weapon_aagun"
 			"item_type_name"			"#TF_Weapon_AAGun"
 			"item_name"					"#TF_Weapon_AAGun"
 			"item_slot"					"primary"
@@ -2133,6 +2136,103 @@
 			}
 		}
 
+		"weapon_eternal_reward"
+		{
+			"prefab"	"weapon_knife"
+			"capabilities"
+			{
+				"nameable"		"1"
+			}
+			"tags"
+			{
+				"can_deal_damage"			"1"
+				"can_deal_taunt_damage"		"1"
+			}
+			"item_name"	"#TF_EternalReward"
+			"propername"	"0"
+			"item_logname"	"eternal_reward"
+			"item_iconname"	"eternal_reward"
+			"image_inventory"	"backpack/workshop/weapons/c_models/c_eternal_reward/c_eternal_reward"
+			"static_attrs"
+			{
+				"min_viewmodel_offset"					"5 0 -4"
+			}
+			"attributes"
+			{
+				"disguise on backstab"
+				{
+					"attribute_class"	"set_disguise_on_backstab"
+					"value" "1"
+				}
+				"silent killer"
+				{
+					"attribute_class"	"set_silent_killer"
+					"value" "1"
+				}
+				"lunchbox adds minicrits"
+				{
+					"attribute_class"	"set_weapon_mode"
+					"value" "1"
+				}
+				"special taunt"
+				{
+					"attribute_class"	"special_taunt"
+					"value" "1"
+				}
+				"mult cloak meter consume rate"
+				{
+					"attribute_class"	"mult_cloak_meter_consume_rate"
+					"value" "1.33"
+				}
+				"mod_disguise_consumes_cloak"
+				{
+					"attribute_class"	"mod_disguise_consumes_cloak"
+					"value"				"1"
+				}
+			}
+		}
+
+
+		"weapon_spy_knife_item2"
+		{
+			"enabled"	"1"
+			"item_class"	"tf_weapon_knife"
+			"craft_class"	"weapon"
+			"craft_material_type"	"weapon"
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_Knife"
+			"item_slot"	"melee"
+			"item_quality"	"unique"
+			"min_ilevel"	"1"
+			"max_ilevel"	"1"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"attach_to_hands" "1"
+			"used_by_classes"
+			{
+				"spy"	"1"
+			}
+			"visuals"
+			{
+				"animation_replacement"
+				{
+					"ACT_VM_DRAW"	"ACT_ITEM2_VM_DRAW"
+					"ACT_VM_IDLE"	"ACT_ITEM2_VM_IDLE"
+					"ACT_VM_HITCENTER"	"ACT_ITEM2_VM_HITCENTER"
+					"ACT_VM_SWINGHARD"	"ACT_ITEM2_VM_SWINGHARD"
+					"ACT_BACKSTAB_VM_UP"	"ACT_ITEM2_BACKSTAB_VM_UP"
+					"ACT_BACKSTAB_VM_DOWN"	"ACT_ITEM2_BACKSTAB_VM_DOWN"
+					"ACT_BACKSTAB_VM_IDLE"	"ACT_ITEM2_BACKSTAB_VM_IDLE"
+					"ACT_MELEE_VM_STUN"	"ACT_MELEE_VM_ITEM2_STUN"
+					"ACT_MELEE_VM_INSPECT_START"	"ACT_ITEM2_VM_INSPECT_START"
+					"ACT_MELEE_VM_INSPECT_IDLE"		"ACT_ITEM2_VM_INSPECT_IDLE"
+					"ACT_MELEE_VM_INSPECT_END"		"ACT_ITEM2_VM_INSPECT_END"
+				}
+			}
+			"mouse_pressed_sound"	"ui/item_knife_small_pickup.wav"
+			"drop_sound"		"ui/item_light_gun_drop.wav"
+			
+		}
 
 	}
 }

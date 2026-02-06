@@ -3667,87 +3667,41 @@ In one shot, preferably."
 
 		"3374"
 		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_DNA_KNIFE"
-			"prefab"					"weapon_knife"
-			"show_in_armory"			"1"
-
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Your Eternal Reward"									// Kinda an extra-unique exception, Your Eternal Reward is just a really strange object name to begin with. I switch back and forth between Your Eternal Reward, and just, The Eternal Reward
-			"item_type_name"			"#TF_Weapon_Knife"
-			"item_description"			"
-“Everyone back to the base, pardner.”"
-			"item_logname"				"eternal_reward"
-			"item_iconname"				"eternal_reward"
-			"image_inventory"			"backpack/workshop/weapons/c_models/c_eternal_reward/c_eternal_reward"
-			"model_world"				"models/weapons/w_models/w_eternal_reward.mdl"			// As an aside, the knife has proper bloodied skins for killing someone - even though it probably won't.
-			"model_player"				"models/weapons/v_models/v_eternal_reward_spy.mdl"		// Makes a little twirl sound when drawn!
-			"attach_to_hands"			"2"
-			"used_by_classes"
+			"name"	"Your Eternal Reward"
+			"first_sale_date"	"2010/09/29"
+			"prefab"	"weapon_eternal_reward"
+			"capabilities"
 			{
-				"spy"					"1"
+				"nameable"		"1"
 			}
+			"tags"
+			{
+				"can_deal_damage"			"1"
+				"can_deal_taunt_damage"		"1"
+				"can_be_festivized"		"1"
+			}
+			"item_name"	"#TF_EternalReward"
+			"propername"	"0"
+			"item_logname"	"eternal_reward"
+			"item_iconname"	"eternal_reward"
+			"inspect_panel_dist" "38"
+			"image_inventory"	"backpack/workshop/weapons/c_models/c_eternal_reward/c_eternal_reward"
+			"model_player"				"models/weapons/v_models/v_eternal_reward_spy.mdl"	
+			"attach_to_hands"			"2"
 			"static_attrs"
 			{
-				"special taunt"							"1"
-				"ragdolls become ash"					"1"	
+				"min_viewmodel_offset"		"5 0 -4"
 			}
-			"attributes"
+			"visuals"
 			{
-				"hide_attrib_additive"															// HOW AND WHY DO THESE KEEP ESCAPING!!
+				"attached_models_festive"
 				{
-					"attribute_class"	"provide_on_active"
-					"value"				"1"
-				}
-				"bodydouble transform text"
-				{
-					"attribute_class"	"mod_onhit_copy_victim"									// THIS ATTRIBUTE IS EXTREMELY JANK. Also, sadly, doesn't exist in "onkill" form
-					"value"				"1"														// Funny behavior: All classes have disguise kits in their loadout, and Civilian has whatever Revolver you had equipped prior to transformation! Touching a resupply gives you your own normal loadout as-is. Dying returns you to Spy.
-				}
-				"silent killer"																	// This doesn't actually work, BUT, the below three attribs MOSTLY restore its functionality!
-				{
-					"attribute_class"	"set_silent_killer_no_killfeed"
-					"value"				"1"
-				}
-				"hide_attrib_additive"		
-				{
-					"attribute_class"	"set_silent_killer_no_scream"
-					"value"				"1"
-				}
-				"hide_attrib_additive"		
-				{
-					"attribute_class"	"ragdolls_become_ash"
-					"value"				"1"
-				}
-				"mult cloak meter consume rate"													// Holdover from Live, remove for Body Double
-				{
-					"attribute_class"	"mult_cloak_meter_consume_rate"
-					"value"				"1.33"
-				}
-				"self mfd short"
-				{
-					"attribute_class"	"self_mark_for_death"
-					"value"				"1"
-				}
-				"dna transform debuff"
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"3"
-				}
-				// Backend stuff
-				"hide_attrib_additive"															// So you don't start with totally full health on transforming - more impactful for light classes
-				{
-					"attribute_class"	"add_onhit_addhealth"
-					"value"				"-60"
-				}
-				"add condition on hit self weapon"
-				{
-					"attribute_class"	"add_onhit_addcond_self_weapon"
-					"value"				"109 3"
+					"0"
+					{
+						"model"	"models/workshop/weapons/c_models/c_eternal_reward/c_eternal_reward_festivizer.mdl"
+					}
 				}
 			}
-			"mouse_pressed_sound"		"#ui/item_knife_small_pickup.wav"
-			"drop_sound"				"#ui/item_knife_small_drop.wav"
 		}
 
 
@@ -6173,6 +6127,16 @@ plasma there, goes a mighty long ways."
 			}
 			"attributes"																		// The stats here are kinda weird, for now
 			{
+				"mod max primary clip override"
+				{
+					"attribute_class"	"mod_max_primary_clip_override"
+					"value"				"-1"
+				}
+				"bullets per shot penalty"
+				{
+					"attribute_class"	"mult_bullets_per_shot"
+					"value"				"0.1"
+				}
 				"weapon fires lasers"
 				{
 					"attribute_class"	"DISPLAY_ONLY"
@@ -6753,7 +6717,7 @@ giving you permission to stand on my point!"
 			"show_in_armory"			"1"
 			"item_slot"					"primary"
 			"anim_slot"					"secondary"
-
+	
 			"image_inventory_size_w"	"128"
 			"image_inventory_size_h"	"82"
 
@@ -7334,71 +7298,77 @@ You call it “uncontrollable recoil”, I call it
 
 		"3445"
 		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_MARKET_GARDENER"
-			"prefab"					"weapon_shovel"
-			"item_class"				"tf_weapon_anchor"										// TF2C v2.2.0 - Decided to switch the MG over to the Anchor - but mostly for aesthetics, the Anchor's actual mechanical stuff only really does anything with earthquake attack added as a stat...!
-			"anim_slot"					"melee"
-			"show_in_armory"			"1"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Market Gardener"
-			"item_type_name"			"#TF_Weapon_Shovel"
-			"item_description"			"
-Boots on the ground won't cut it, soldier.
-Blast off, and give 'em hell!"
-			"item_logname"				"market_gardener"
-			"item_iconname"				"market_gardener"
-			"image_inventory"			"backpack/workshop/weapons/c_models/c_market_gardener/c_market_gardener"
-			"model_world"				"models/weapons/w_models/w_market_gardener.mdl"
-			"model_player"				"models/weapons/v_models/v_market_gardener_soldier.mdl"
-			"attach_to_hands"			"2"
+			"name"	"The Market Gardener"
+			"first_sale_date"	"2011/03/23"
+			"item_class"	"tf_weapon_shovel"
+			"craft_class"	"weapon"
+			"craft_material_type"	"weapon"
+			"capabilities"
+			{
+				"nameable"		"1"
+				"can_craft_count"	"1"
+			}
+			"tags"
+			{
+				"can_deal_damage"			"1"
+				"can_be_equipped_by_soldier_or_demo"	"1"
+				"can_deal_critical_damage"	"1"
+				"can_be_festivized"		"1"
+			}
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_Shovel"
+			"item_name"	"#TF_MarketGardener"
+			"item_logname"	"market_gardener"
+			"item_iconname"	"market_gardener"
+			"item_slot"	"melee"
+			"item_quality"	"unique"
+			"propername"	"1"
+			"min_ilevel"	"10"
+			"max_ilevel"	"10"
+			"image_inventory" "backpack/workshop/weapons/c_models/c_market_gardener/c_market_gardener"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"inspect_panel_dist" 				"45"
+			"model_player"	"models/workshop/weapons/c_models/c_market_gardener/c_market_gardener.mdl"
+			"attach_to_hands" "1"
 			"used_by_classes"
 			{
-				"soldier"				"1"
+				"soldier"	"1"
 			}
 			"static_attrs"
 			{
-				"meter_label"							"#TF_Airtime"
+				"min_viewmodel_offset"					"10 -3 -11"
 			}
 			"attributes"
 			{
-				"hide_attrib_additive"															// NOWP v3.3.0 - At the suggestion of a friend, added a prov. on active juuust to be sure. Take crits while airborne seems to be global, so it affects you even without the shovel out. I don't think I'm bold enough to offer THAT as a downside, so just while it's being held out!
-				{
-					"attribute_class"	"provide_on_active"
-					"value"				"1"
-				}
-				"mod crit while airborne short"													// IT'S BACK, BABY!! As a bonus, this also triggers when you're in the air from Jump Pads, too!
-				{
-					"attribute_class"	"crit_while_airborne"									// Also triggers for: SSG Jump, Musket Jump, Pocket Rocket Jump, Brick Jump
-					"value"				"1"														// Does NOT trigger for: LMG Boost Jump, Bucket Jump
-				}
-				"take projectile crits during jump short"										// NOWP v3.0.0 - Okay, I know it's already otherwise identical to Live, but I think having another downside is direly needed, its existing 2 downsides are very... nothing. So, being shot will MOST likely kill you!
-				{
-					"attribute_class"	"take_crits_projectile_blast_jump"
-					"value"				"1"
-				}
 				"fire rate penalty"
 				{
 					"attribute_class"	"mult_postfiredelay"
-					"value"				"1.2"
+					"value"	"1.2"
+				}
+				"mod crit while airborne"
+				{
+					"attribute_class"	"crit_while_airborne"
+					"value"	"1"
 				}
 				"crit mod disabled"
 				{
 					"attribute_class"	"mult_crit_chance"
-					"value"				"0"
+					"value"	"0"
 				}
 			}
 			"visuals"
 			{
-				"sound_melee_miss"		"Weapon_Shovel.Miss"
-				"sound_melee_hit"		"Weapon_Shovel.HitFlesh"
-				"sound_melee_hit_world"	"Weapon_Shovel.HitWorld"
-				"sound_burst"			"Weapon_Shovel.MissCrit"
+				"attached_models_festive"
+				{
+					"0"
+					{
+						"model"	"models/workshop/weapons/c_models/c_market_gardener/c_market_gardener_festivizer.mdl"
+					}
+				}
 			}
-			"mouse_pressed_sound"		"#ui/item_shovel_pickup.wav"
-			"drop_sound"				"#ui/item_shovel_drop.wav"
+			"mouse_pressed_sound"	"ui/item_shovel_pickup.wav"
+			"drop_sound"		"ui/item_shovel_drop.wav"
 		}
 
 		"3446"
@@ -9606,7 +9576,7 @@ A bunch a' bloody freeloaders, this lot..."
 			"static_attrs"
 			{
 				"particle on melee hit"					"medic_explosion_wisps_green"
-				"custom hand viewmodel"					"models/weapons/c_models/c_demo_arms_gauntlet.mdl"	// NOWP v2.7.5 - THIS FINALLY WORKS!! It's a bit scuffed with shields, though - rest assured, it DOES have new shield anims!
+				// "custom hand viewmodel"					"models/weapons/c_models/c_demo_arms_gauntlet.mdl"	// NOWP v2.7.5 - THIS FINALLY WORKS!! It's a bit scuffed with shields, though - rest assured, it DOES have new shield anims!
 				"special taunt"							"1"
 			}
 			"attributes"
@@ -9626,11 +9596,11 @@ A bunch a' bloody freeloaders, this lot..."
 					"attribute_class"	"mult_dmg"
 					"value"				"0.7545"
 				}
-				"add condition on hit weapon"
-				{
-					"attribute_class"	"add_onhit_addcond_weapon"								// Copied from TF_WEAPON_CYCLOPS_DBL for convenience.
-					"value"				"76 1.5"												// This one adds and checks for TF_COND_HALLOWEEN_IN_HELL. For long enough to whiff / delay one swing and still get a Minicrit, otherwise it resets
-				}
+				//"add condition on hit weapon"
+				//{
+				//	"attribute_class"	"add_onhit_addcond_weapon"								// Copied from TF_WEAPON_CYCLOPS_DBL for convenience.
+				//	"value"				"76 1.5"												// This one adds and checks for TF_COND_HALLOWEEN_IN_HELL. For long enough to whiff / delay one swing and still get a Minicrit, otherwise it resets
+				//}
 				"minicrit vs cond no dot"
 				{
 					"attribute_class"	"single_minicrit_vs_playercond_no_dot"
@@ -11405,106 +11375,46 @@ devices... as well as itself. Ach, imbeciles..."
 
 		"3502"
 		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_HEADTAKER"									// With the long-awaited Targe Split, I figured it's finally time to take a proper stab at this weapon!
-			"prefab"					"weapon_bottle"
-			"item_class"				"tf_weapon_beacon"										// Unlike other weapons, this actully NEEDS the Beacon's passive effects to work!
-			"show_in_armory"			"1"
-
-			"item_quality"				"rarity4"												// IT'S UNUSUAL, BAYBEE! I figure it's blasphemy to have it be normal quality like everything else, it's just too funny
-			"item_name"					"Unusual Horseless Headless Horsemann's Headtaker"		// This DOES break formatting in most text boxes, but it's too funny of a name not to keep. Beside, the "Unusual " prefix isn't doing it favors for length... If you'd like a shorter variant, Horsemann's Headtaker or H.H.H. Headtaker works
-			"item_type_name"			"Cursed Battleaxe"
-			"item_description"			"Afterburn lasts for 3s, and does no damage
-
-Harness the Harrowing, Hallowed Horrors
-of the Horseless Headless Horsemann's
-Haunted, Hand-me-down Headtaker!"																// I can make it more obnoxious if you want
-			"item_logname"				"headtaker"
-			"item_iconname"				"headtaker"
-			"image_inventory"			"backpack/weapons/c_models/c_headtaker/c_headtaker"
-			"model_world"				"models/weapons/w_models/w_headtaker.mdl"				// This glows purple like the HHH's variant when you get a crit kill, but I must say it was kinda complicated getting that to work...
-			"model_player"				"models/weapons/v_models/v_headtaker_demoman.mdl"
-			"attach_to_hands"			"2"
-			"extra_wearable"			"models/player/items/headtaker_wearable.mdl"			// NOWP v3.0.0 - Originally, this was HHH's cape, but I later replaced it with a visible weapon a-la the Harvester, since this works the same way.
-			"extra_wearable_hide_on_active"	"1"
+			"name"	"The Horseless Headless Horseman's Headtaker"
+			"prefab"	"weapon_eyelander"
+			"capabilities"
+			{
+				"nameable"		"1"
+			}
+			"tags"
+			{
+				"can_deal_damage"			"1"
+				"can_be_equipped_by_soldier_or_demo"	"1"
+				"can_deal_critical_damage"	"1"
+				"can_deal_taunt_damage"		"1"
+			}
+			"item_type_name"	"#TF_Weapon_Axe"
+			"item_name"	"#TF_HalloweenBoss_Axe"
+			"item_description"	"#TF_HalloweenBoss_Axe_Desc"
+			"item_quality"	"rarity4"
+			"item_logname"	"headtaker"
+			"item_iconname"	"headtaker"
+			"propername"	"1"
+			"image_inventory"	"backpack/weapons/c_models/c_headtaker/c_headtaker"
+			"model_player"	"models/weapons/c_models/c_headtaker/c_headtaker.mdl"
 			"used_by_classes"
 			{
-				"demoman"				"1"
-			}
-			"static_attrs"
-			{
-				"min_viewmodel_offset"					"10 10 -14"								// Special offset since the HHHH is ungodly huge for a weapon
-				"melee range multiplier"				"1.35"
-				"melee bounds multiplier"				"1.55"
-				"particle on melee hit"					"medic_explosion_wisps_blue"	
-				"meter_label"							"SOUL"									// I forgot this had a meter until it showed up in Randomizer
-				"special taunt"							"1"
-			}
-			"attributes"
-			{
-				"burning targets charge crit DISPLAY ONLY"
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"1"
-				}
-				"Set DamageType Ignite"															// Some stuff copied from the CM5K
-				{
-					"attribute_class"	"set_dmgtype_ignite"
-					"value"				"1"
-				}
-				"remember targets remaining afterburn"											// This makes it a little easier to play around... somehow. What I know is that it keeps counting up for your magic afterburn meter even if someone died?
-				{
-					"attribute_class"	"remember_targets_afterburn"
-					"value"				"1"
-				}
-				"fire rate penalty"
-				{
-					"attribute_class"	"mult_postfiredelay"
-					"value"				"1.33"
-				}
-				"crit mod disabled"																// ACTUALLY important since crits are a vital part of this weapon!
-				{
-					"attribute_class"	"mult_crit_chance"
-					"value"				"0"
-				}
-				// Backend stuff
-				"hide_attrib_percentage"														// Don't worry, it only lasts for about 3s
-				{
-					"attribute_class"	"mult_wpn_burntime"
-					"value"				"0.3"													// Lasts for about 6 ticks... spooky number
-				}
-				"hide_attrib_percentage"
-				{
-					"attribute_class"	"mult_wpn_burndmg"
-					"value"				"0"
-				}
-				"special sound on afterburn heal attempt"										// Triggers Harvester ticking when counting progress toward crit
-				{
-					"attribute_class"	"afterburn_heal_attempt_sound"
-					"value"				"1"
-				}
-				"mod melee crit swing custom damage"											// Just in case....
-				{
-					"attribute_class"	"mod_melee_crit_swing_custom_damage"
-					"value"				"27"
-				}
-				"hide extra wearable on active"
-				{
-					"attribute_class"	"hide_extra_wearable_active"
-					"value"				"1"
-				}
+				"demoman"	"1"
 			}
 			"visuals"
 			{
-				"sound_melee_miss"		"Weapon_Sword.Swing"
-				"sound_melee_hit"		"Halloween.HeadlessBossAxeHitFlesh"
+				"sound_melee_miss"	"Weapon_Sword.Swing"
+				"sound_melee_hit"	"Halloween.HeadlessBossAxeHitFlesh"
 				"sound_melee_hit_world"	"Halloween.HeadlessBossAxeHitWorld"
-				"sound_burst"			"Weapon_Sword.SwingCrit"
-				"sound_special1"		"Weapon_Sword.HitHeads"
+				"sound_burst"		"Weapon_Sword.SwingCrit"
+				"sound_special1"	"Sword.Hit"
+				"sound_special2"	"Sword.Idle"
 			}
-			"mouse_pressed_sound"		"#ui/item_knife_large_pickup.wav"
-			"drop_sound"				"#ui/item_metal_weapon_drop.wav"
+			"mouse_pressed_sound"	"ui/item_knife_large_pickup.wav"
+			"drop_sound"		"ui/item_metal_weapon_drop.wav"
+			"xifier_class_remap"	"Horseman's Headtaker"
 		}
+
 		"3503"
 		{
 			"mod_item"					"1"
@@ -12325,7 +12235,8 @@ What more could ya ever want, eh?"
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_PUNCHOMATIC"
-			"prefab"					"weapon_fists"
+			"item_class"				"tf_weapon_fists"
+			"item_slot"					"melee"
 			"show_in_armory"			"1"
 
 			"propername"				"1"
@@ -12344,6 +12255,7 @@ and then finish them off with a Critical hit!
 			"extra_wearable"			"models/weapons/w_models/w_punchomatic.mdl"				// The pauldron on the right side is actually shifted up slightly, so it doesn't clip with Heavy's primary bandoliers (from the Ammo Bandolier or the AA12)
 			"extra_wearable_hide_on_active"	"1"
 			"attach_to_hands"			"2"
+			"attach_to_hands_vm_only"	"1"
 			"drop_type"					"none"
 			"used_by_classes"
 			{
@@ -12353,7 +12265,7 @@ and then finish them off with a Critical hit!
 			{
 				"special taunt"							"1"
 				"explode on death"	"1"
-				"custom hand viewmodel"					"models/weapons/c_models/c_heavy_arms_punchomatic.mdl"	// NOWP v2.7.5 - THIS FINALLY WORKS!! It's a bit scuffed with critglows, but it works, dammit!
+				//"custom hand viewmodel"					"models/weapons/c_models/c_heavy_arms_punchomatic.mdl"	// NOWP v2.7.5 - THIS FINALLY WORKS!! It's a bit scuffed with critglows, but it works, dammit!
 			}
 			"attributes"																		// This took a REALLY long time to figure out where to go with this! I wanted to make it a Chekhov's Punch slant, but there's not actually much you can do with those...
 			{																					// Eventually, I settled to make it still focused on crit storage, but in a different way!
@@ -12370,7 +12282,7 @@ and then finish them off with a Critical hit!
 				"add condition on hit self weapon"
 				{
 					"attribute_class"	"add_onhit_addcond_self_weapon"							// Technically TF_WEAPON_CYCLOPS_DBL + related combo weapon mechanics are cleaner, but I did want this weapon to look as if it was "storing charge", so this stays
-					"value"				"112 1"
+					"value"				"16 1"
 				}
 				"fire rate bonus"
 				{
@@ -16029,158 +15941,159 @@ entire trap o' bombs, just ta bloody jump!?"
 			"drop_sound"				"#ui/item_heavy_gun_drop.wav"
 		}
 
-		"32500"																					// Unique ID so it's at the VERY end if it does show up somehow
-		{
-			"tags"
-			{
-				"bots_cant_use"			"1"
-			}
-			"name"						"TF_WEAPON_ULTIMATE_JUMPER"								// FUNNY JOKE
-			"item_class"				"tf_weapon_brimstonelauncher"							// Give this to yourself with give_econ 4310! Don't enable it!
-			"item_slot"					"primary"												// Please leave this disabled unless you know exactly what you're doing - I generally only use this for testing or quick travel around maps!
-			"anim_slot"					"primary"
-			"testing"					"1"														
-			"hidden"					"1"
-			"image_inventory_size_w"	"128"
-			"image_inventory_size_h"	"82"
-
-			"item_quality"				"ancient"												// NOWP v2.5.0 - SO FUN FACT. APPARENTLY DECORATED WEAPON QUALITIES EXIST IN TF2C. HELL YEAH!!
-			"item_name"					"K.R. Fawkes Ultimate Jumper"							// I was deliberating on what quality to make this, so I eventually settled on making a new one. This is KRF quality, it's like Valve but not! I'd make it Eminoma quality, but I'm not part of their team, so I have no right to.
-			"item_type_name"			"Weapon of Mass Destruction"
-			"item_description"			"Wield the most explosive 'explosives' known
-to mankind - that money can buy, anyway
-
--(Warranty void for assault, homicide,
-manslaughter, and / or property damage)
--(Not suitable for use by humans, animals,
-aliens, androids, mutants, or children)
--(Not safety tested for sustained
-exposure to brick dust by the F.D.A.)
--(Not certified as a lethal weapon by
-the National Armaments Safety Board.)
--(User prone to sudden excruciating
-organ failure from any electrical shock.)"
-			"item_logname"				"ultimatejumper"
-			"item_iconname"				"bricklauncher"
-			"image_inventory"			"backpack/weapons/w_models/w_bricklauncher"
-			"model_world"				"models/weapons/w_models/w_bricklauncher.mdl"			// TO-DO: Make this a Shotgun? Everyone has some set of anims that work with that
-			"model_player"				"models/weapons/v_models/v_bricklauncher_scout.mdl"
-			"attach_to_hands"			"2"														// Critglow is broken like this - I ran into this with the Original. But, I'd rather that, than have clipping anims for everyone!
-			"used_by_classes"
-			{
-				"scout"					"1"
-				"civilian"				"melee"
-			}
-			"model_world_per_class"
-			{
-				"scout"					"models/weapons/w_models/w_bricklauncher.mdl"
-				"civilian"				"models/weapons/w_models/w_drg_ball.mdl"
-			}
-			"model_player_per_class"
-			{
-				"scout"					"models/weapons/v_models/v_bricklauncher_scout.mdl"
-				"civilian"				"models/weapons/w_models/w_drg_ball.mdl"
-			}
-			"static_attrs"																		// Finally, I get to cut loose and make a downright atrocious weapon. On purpose. This is gonna be fun.
-			{
-				"secret weapon"							"1"
-				"weapon fires bricks"					"1"
-				"infinite brick supply"					"1"
-				"haste on kill with time"				"2"
-				"heal on kill"							"50"
-				"crit instant kill user"				"9000"									// Since this is additive, this does 9000 more damage on the dot from what the crit would have been. Most attacks from any weapon do ~100-200 damage during crit, so this should have no problems with display
-				"fire rate bonus hidden"				"0.425"									// VERY fast fire rate!
-				"reload time increased hidden"			"0.45"									// ...and a very fast reload rate!
-				"clip size penalty hidden"				"2"										// 8 shots!
-				"damage bonus hidden"					"0.5"									// This doesn't really have "downsides", but I'm just gonna put stuff here that's thematically appropriate. This does the damage of a standard Brick (50 DMG)
-				"custom projectile model"				"models/weapons/w_models/w_brick.mdl"
-				"banned in medieval mode"				"1"										// For Civilian... lmao
-			}
-			"attributes"
-			{
-				"add condition on kill"
-				{
-					"attribute_class"	"add_onkill_addcond_self"
-					"value"				"121 2.25"												// Just for that extra fuck you energy
-				}
-				"hide_attrib_additive"		
-				{
-					"attribute_class"	"no_self_blast_dmg"
-					"value"				"2"														// Technically should make Jumper noises, but just kinda doesn't. Meh.
-				}
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"mult_player_movespeed"
-					"value"				"1.25"													// Fast move speed!!
-				}
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"mult_dmgtaken_from_fall"
-					"value"				"0"
-				}
-				"hide_attrib_additive"
-				{
-					"attribute_class"	"boots_falling_stomp"
-					"value"				"1"
-				}
-				"hide_attrib_additive"		
-				{
-					"attribute_class"	"set_detonate_mode"
-					"value"				"3"														// Bricks explode on impact with the world
-				}
-				"hide_attrib_additive"		
-				{
-					"attribute_class"	"use_ammo_meter"
-					"value"				"1"														// Uses "ammo meter", so it reloads semi-passively!
-				}
-				"hide_attrib_additive"		
-				{
-					"attribute_class"	"instant_reload_on_kill"
-					"value"				"4"														// Nevermind let's make it reload some of its clip on kill
-				}
-				"hide_attrib_additive"		
-				{
-					"attribute_class"	"energy_weapon_no_ammo"
-					"value"				"1"														// ...and has infinite reserve
-				}
-			}
-			"visuals"
-			{
-				"sound_single_shot"		"Weapon_BrickLauncher.Single"
-				"sound_burst"			"Weapon_BrickLauncher.SingleCrit"
-				"sound_special1"		"Weapon_Brick.Hit"
-				"sound_special2"		"Weapon_BrickLauncher.Single"
-				"sound_special3"		"Weapon_BrickLauncher.SingleCrit"
-				"sound_reload"			"Weapon_Scatter_Gun.WorldReload"
-				"explosion_effect"		"brick_explosion"
-			}
-			"visuals_red"
-			{
-				"trail_effect"			"throwable_trail_red_timer"
-				"trail_effect_crit"		"throwable_trail_red_crit"
-				"explosion_effect_crit"	"explosion_shrapnel_PARENT_red_crit"
-			}
-			"visuals_blu"
-			{
-				"trail_effect"			"throwable_trail_blue_timer"
-				"trail_effect_crit"		"throwable_trail_blue_crit"
-				"explosion_effect_crit"	"explosion_shrapnel_PARENT_blue_crit"
-			}
-			"visuals_grn"
-			{
-				"trail_effect"			"throwable_trail_green_timer"
-				"trail_effect_crit"		"throwable_trail_green_crit"
-				"explosion_effect_crit"	"explosion_shrapnel_PARENT_green_crit"
-			}
-			"visuals_ylw"
-			{
-				"trail_effect"			"throwable_trail_yellow_timer"
-				"trail_effect_crit"		"throwable_trail_yellow_crit"
-				"explosion_effect_crit"	"explosion_shrapnel_PARENT_yellow_crit"
-			}
-			"mouse_pressed_sound"		"#items/pickup_large.wav"
-			"drop_sound"				"#ui/item_heavy_gun_drop.wav"
-		}
+//	"32500"																					// Unique ID so it's at the VERY end if it does show up somehow
+//	{
+//		"tags"
+//		{
+//			"bots_cant_use"			"1"
+//		}
+//		"name"						"TF_WEAPON_ULTIMATE_JUMPER"								// FUNNY JOKE
+//		"item_class"				"tf_weapon_brimstonelauncher"							// Give this to yourself with give_econ 4310! Don't enable it!
+//		"item_slot"					"primary"												// Please leave this disabled unless you know exactly what you're doing - I generally only use this for testing or quick travel around maps!
+//		"anim_slot"					"primary"
+//		"testing"					"0"	
+//		"enabled"					"0"													
+//		"hidden"					"1"
+//		"image_inventory_size_w"	"128"
+//		"image_inventory_size_h"	"82"
+//
+//		"item_quality"				"ancient"												// NOWP v2.5.0 - SO FUN FACT. APPARENTLY DECORATED WEAPON QUALITIES EXIST IN TF2C. HELL YEAH!!
+//		"item_name"					"K.R. Fawkes Ultimate Jumper"							// I was deliberating on what quality to make this, so I eventually settled on making a new one. This is KRF quality, it's like Valve but not! I'd make it Eminoma quality, but I'm not part of their team, so I have no right to.
+//		"item_type_name"			"Weapon of Mass Destruction"
+//		"item_description"			"Wield the most explosive 'explosives' known
+//ankind - that money can buy, anyway
+//
+//rranty void for assault, homicide,
+//laughter, and / or property damage)
+//t suitable for use by humans, animals,
+//ns, androids, mutants, or children)
+//t safety tested for sustained
+//sure to brick dust by the F.D.A.)
+//t certified as a lethal weapon by
+//National Armaments Safety Board.)
+//er prone to sudden excruciating
+//n failure from any electrical shock.)"
+//		"item_logname"				"ultimatejumper"
+//		"item_iconname"				"bricklauncher"
+//		"image_inventory"			"backpack/weapons/w_models/w_bricklauncher"
+//		"model_world"				"models/weapons/w_models/w_bricklauncher.mdl"			// TO-DO: Make this a Shotgun? Everyone has some set of anims that work with that
+//		"model_player"				"models/weapons/v_models/v_bricklauncher_scout.mdl"
+//		"attach_to_hands"			"2"														// Critglow is broken like this - I ran into this with the Original. But, I'd rather that, than have clipping anims for everyone!
+//		"used_by_classes"
+//		{
+//			"scout"					"1"
+//			"civilian"				"melee"
+//		}
+//		"model_world_per_class"
+//		{
+//			"scout"					"models/weapons/w_models/w_bricklauncher.mdl"
+//			"civilian"				"models/weapons/w_models/w_drg_ball.mdl"
+//		}
+//		"model_player_per_class"
+//		{
+//			"scout"					"models/weapons/v_models/v_bricklauncher_scout.mdl"
+//			"civilian"				"models/weapons/w_models/w_drg_ball.mdl"
+//		}
+//		"static_attrs"																		// Finally, I get to cut loose and make a downright atrocious weapon. On purpose. This is gonna be fun.
+//		{
+//			"secret weapon"							"1"
+//			"weapon fires bricks"					"1"
+//			"infinite brick supply"					"1"
+//			"haste on kill with time"				"2"
+//			"heal on kill"							"50"
+//			"crit instant kill user"				"9000"									// Since this is additive, this does 9000 more damage on the dot from what the crit would have been. Most attacks from any weapon do ~100-200 damage during crit, so this should have no problems with display
+//			"fire rate bonus hidden"				"0.425"									// VERY fast fire rate!
+//			"reload time increased hidden"			"0.45"									// ...and a very fast reload rate!
+//			"clip size penalty hidden"				"2"										// 8 shots!
+//			"damage bonus hidden"					"0.5"									// This doesn't really have "downsides", but I'm just gonna put stuff here that's thematically appropriate. This does the damage of a standard Brick (50 DMG)
+//			"custom projectile model"				"models/weapons/w_models/w_brick.mdl"
+//			"banned in medieval mode"				"1"										// For Civilian... lmao
+//		}
+//		"attributes"
+//		{
+//			"add condition on kill"
+//			{
+//				"attribute_class"	"add_onkill_addcond_self"
+//				"value"				"121 2.25"												// Just for that extra fuck you energy
+//			}
+//			"hide_attrib_additive"		
+//			{
+//				"attribute_class"	"no_self_blast_dmg"
+//				"value"				"2"														// Technically should make Jumper noises, but just kinda doesn't. Meh.
+//			}
+//			"hide_attrib_percentage"	
+//			{
+//				"attribute_class"	"mult_player_movespeed"
+//				"value"				"1.25"													// Fast move speed!!
+//			}
+//			"hide_attrib_percentage"	
+//			{
+//				"attribute_class"	"mult_dmgtaken_from_fall"
+//				"value"				"0"
+//			}
+//			"hide_attrib_additive"
+//			{
+//				"attribute_class"	"boots_falling_stomp"
+//				"value"				"1"
+//			}
+//			"hide_attrib_additive"		
+//			{
+//				"attribute_class"	"set_detonate_mode"
+//				"value"				"3"														// Bricks explode on impact with the world
+//			}
+//			"hide_attrib_additive"		
+//			{
+//				"attribute_class"	"use_ammo_meter"
+//				"value"				"1"														// Uses "ammo meter", so it reloads semi-passively!
+//			}
+//			"hide_attrib_additive"		
+//			{
+//				"attribute_class"	"instant_reload_on_kill"
+//				"value"				"4"														// Nevermind let's make it reload some of its clip on kill
+//			}
+//			"hide_attrib_additive"		
+//			{
+//				"attribute_class"	"energy_weapon_no_ammo"
+//				"value"				"1"														// ...and has infinite reserve
+//			}
+//		}
+//		"visuals"
+//		{
+//			"sound_single_shot"		"Weapon_BrickLauncher.Single"
+//			"sound_burst"			"Weapon_BrickLauncher.SingleCrit"
+//			"sound_special1"		"Weapon_Brick.Hit"
+//			"sound_special2"		"Weapon_BrickLauncher.Single"
+//			"sound_special3"		"Weapon_BrickLauncher.SingleCrit"
+//			"sound_reload"			"Weapon_Scatter_Gun.WorldReload"
+//			"explosion_effect"		"brick_explosion"
+//		}
+//		"visuals_red"
+//		{
+//			"trail_effect"			"throwable_trail_red_timer"
+//			"trail_effect_crit"		"throwable_trail_red_crit"
+//			"explosion_effect_crit"	"explosion_shrapnel_PARENT_red_crit"
+//		}
+//		"visuals_blu"
+//		{
+//			"trail_effect"			"throwable_trail_blue_timer"
+//			"trail_effect_crit"		"throwable_trail_blue_crit"
+//			"explosion_effect_crit"	"explosion_shrapnel_PARENT_blue_crit"
+//		}
+//		"visuals_grn"
+//		{
+//			"trail_effect"			"throwable_trail_green_timer"
+//			"trail_effect_crit"		"throwable_trail_green_crit"
+//			"explosion_effect_crit"	"explosion_shrapnel_PARENT_green_crit"
+//		}
+//		"visuals_ylw"
+//		{
+//			"trail_effect"			"throwable_trail_yellow_timer"
+//			"trail_effect_crit"		"throwable_trail_yellow_crit"
+//			"explosion_effect_crit"	"explosion_shrapnel_PARENT_yellow_crit"
+//		}
+//		"mouse_pressed_sound"		"#items/pickup_large.wav"
+//		"drop_sound"				"#ui/item_heavy_gun_drop.wav"
+//		}
 
 		"4311"
 		{
@@ -17547,142 +17460,142 @@ it shoots strange needles made of pure light."													// There's more goin'
 			"drop_sound"				"#weapons/pso_wpn_holster.wav"
 		}
 
-		"4380"
-		{
-			"mod_item"					"1"
-			"tags"
-			{
-				"bots_cant_use"			"1"
-			}
-			"name"						"TF_ITEM_NOISEMAKER"									// This came to me pretty much out of nowhere on the commute home, and I knew I had to tackle it IMMEDIATELY!!
-			"item_class"				"tf_weapon_tranq"										// A lot of this stuff is copied off the C4Bat, if only since it's the closest I have to a melee that spawns a projectile...
-			"item_slot"					"melee"
-			"anim_slot"					"melee"													// This is all-class so this all has to be set to melee
-			"bucket"					"2"
-			"bucket_position"			"1"
-			"show_in_armory"			"0"
-			"testing"					"1"
-			"holiday_restriction"		"birthday"												// This doesn't work but I'm leaving it anyway
-
-			"image_inventory_size_w"	"128"
-			"image_inventory_size_h"	"82"
-
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Noise Maker - TF Birthday"								// I was debating switching it to "TF2C Birthday", but that already falls under the broad umbrella of just "TF"
-			"item_type_name"			"Party Favor"
-			"item_description"			"
-There's always time to celebrate!
-Don't let the judgmental stares of
-your teammates say otherwise..."
-			"item_logname"				"noisemaker"
-			"item_iconname"				"what"
-			"image_inventory"			"backpack/crafting/noisemaker_birthday"
-			"model_player"				"models/weapons/w_models/w_drg_ball.mdl"				// TO-DO: If I can hunt down the Noisemaker model, have it on Engi PDA anims with no arms...
-			"attach_to_hands"			"0"
-			"used_by_classes"
-			{
-				"scout"					"1"
-				"soldier"				"1"
-				"pyro"					"1"
-				"demoman"				"1"
-				"heavy"					"1"
-				"engineer"				"1"
-				"sniper"				"1"
-				"civilian"				"melee"
-			}
-			"static_attrs"
-			{
-				"override projectile type"				"2"										// Fires a rocket! Actually, this isn't perfect, since it BRIEFLY plays the rocket fly noise, but the other projectiles have their own quirks too (Pipes violently shake the screen, lasers / tranq plays a flesh hit sound)
-				"reload time increased hidden"			"0.6166"								// 0.925s refresh time for any one noise (using Tranq's 1.5s reload time)
-				"damage bonus hidden"					"0.001"
-				"mod use custom ammo type"				"5"										// Uses Grenades2 as ammo, so as to not interfere with other items like Bonk or etc...
-
-				"allowed in medieval mode"				"1"
-				"custom projectile origin offset"		"-20 -10 -30"							// Centers the explosion in both world and view to visually emit from your lower-center (the particle is offset upwards). No issue since this isn't meant to travel or do damage!
-			}
-			"attributes"
-			{
-				"secret weapon"																	// So it doesn't escape onto any rocket items
-				{
-					"attribute_class"	"provide_on_active"
-					"value"				"1"
-				}
-				"hide_attrib_additive"															// Keep ability to fire when disguised
-				{
-					"attribute_class"	"set_keep_disguise"
-					"value"				"1"
-				}
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"mult_single_wep_deploy_time"
-					"value"				"0.25"
-				}
-				"noisemaker"
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"1"
-				}
-				"unlimited quantity"
-				{
-					"attribute_class"	"energy_weapon_no_ammo"									// For future-proofing with attributes
-					"value"				"1"
-				}
-				"loadout item disables melee"
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"1"
-				}
-				// Backend stuff; most of this is copied from the c4bat
-				"rocket limited lifetime"
-				{
-					"attribute_class"	"rocket_lifetime"
-					"value"				"0.00001"
-				}
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"fuse_mult"
-					"value"				"0.00001"
-				}
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"mult_explosion_radius"
-					"value"				"0"
-				}
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"blast_dmg_to_self"
-					"value"				"0"
-				}
-				"self dmg push force hidden"
-				{
-					"attribute_class"	"mult_dmgself_push_force"
-					"value"				"0"
-				}
-				"hide_attrib_additive"		
-				{
-					"attribute_class"	"use_ammo_meter"
-					"value"				"1"
-				}
-			}
-			"visuals"
-			{
-				"sound_single_shot"		"Weapon_Null"											// This might seem extremely redundant, but ALL need to be muted! The only consistent sound is the explosion so it's no use wrangling with these.
-				"sound_melee_miss"		"Weapon_Null"
-				"sound_burst"			"Weapon_Null"
-				"sound_empty"			"Weapon_Null"
-				"sound_reload"			"Weapon_Null"
-				"sound_special1"		"Game.HappyBirthdayNoiseMaker"
-				"explosion_effect"		"bday_confetti"											// Has a slightly higher origin!
-				"animation_replacement"
-				{
-					"ACT_MP_ATTACK_STAND_MELEE"					"ACT_MP_GESTURE_VC_FISTPUMP_MELEE"
-					"ACT_MP_ATTACK_CROUCH_MELEE"				"ACT_MP_GESTURE_VC_FISTPUMP_MELEE"
-					"ACT_MP_ATTACK_SWIM_MELEE"					"ACT_MP_GESTURE_VC_FISTPUMP_MELEE"
-				}
-			}
-			"mouse_pressed_sound"		"#misc/happy_birthday.wav"								// Stopgap since TF2C doesn't accept soundscripts here...
-			"drop_sound"				"#ui/item_metal_weapon_drop.wav"
-		}
+//		"4380"
+//		{
+//			"mod_item"					"1"
+//			"tags"
+//			{
+//				"bots_cant_use"			"1"
+//			}
+//			"name"						"TF_ITEM_NOISEMAKER"									// This came to me pretty much out of nowhere on the commute home, and I knew I had to tackle it IMMEDIATELY!!
+//			"item_class"				"tfc_weapon_tranq"										// A lot of this stuff is copied off the C4Bat, if only since it's the closest I have to a melee that spawns a projectile...
+//			"item_slot"					"melee"
+//			"anim_slot"					"melee"													// This is all-class so this all has to be set to melee
+//			"bucket"					"2"
+//			"bucket_position"			"1"
+//			"show_in_armory"			"0"
+//			"testing"					"1"
+//			"holiday_restriction"		"birthday"												// This doesn't work but I'm leaving it anyway
+//
+//			"image_inventory_size_w"	"128"
+//			"image_inventory_size_h"	"82"
+//
+//			"item_name_color"			"255 240 183 255"
+//			"item_name"					"Noise Maker - TF Birthday"								// I was debating switching it to "TF2C Birthday", but that already falls under the broad umbrella of just "TF"
+//			"item_type_name"			"Party Favor"
+//			"item_description"			"
+//There's always time to celebrate!
+//Don't let the judgmental stares of
+//your teammates say otherwise..."
+//			"item_logname"				"noisemaker"
+//			"item_iconname"				"what"
+//			"image_inventory"			"backpack/crafting/noisemaker_birthday"
+//			"model_player"				"models/weapons/w_models/w_drg_ball.mdl"				// TO-DO: If I can hunt down the Noisemaker model, have it on Engi PDA anims with no arms...
+//			"attach_to_hands"			"0"
+//			"used_by_classes"
+//			{
+//				"scout"					"1"
+//				"soldier"				"1"
+//				"pyro"					"1"
+//				"demoman"				"1"
+//				"heavy"					"1"
+//				"engineer"				"1"
+//				"sniper"				"1"
+//				"civilian"				"melee"
+//			}
+//			"static_attrs"
+//			{
+//				"override projectile type"				"2"										// Fires a rocket! Actually, this isn't perfect, since it BRIEFLY plays the rocket fly noise, but the other projectiles have their own quirks too (Pipes violently shake the screen, lasers / tranq plays a flesh hit sound)
+//				"reload time increased hidden"			"0.6166"								// 0.925s refresh time for any one noise (using Tranq's 1.5s reload time)
+//				"damage bonus hidden"					"0.001"
+//				"mod use custom ammo type"				"5"										// Uses Grenades2 as ammo, so as to not interfere with other items like Bonk or etc...
+//
+//				"allowed in medieval mode"				"1"
+//				"custom projectile origin offset"		"-20 -10 -30"							// Centers the explosion in both world and view to visually emit from your lower-center (the particle is offset upwards). No issue since this isn't meant to travel or do damage!
+//			}
+//			"attributes"
+//			{
+//				"secret weapon"																	// So it doesn't escape onto any rocket items
+//				{
+//					"attribute_class"	"provide_on_active"
+//					"value"				"1"
+//				}
+//				"hide_attrib_additive"															// Keep ability to fire when disguised
+//				{
+//					"attribute_class"	"set_keep_disguise"
+//					"value"				"1"
+//				}
+//				"hide_attrib_percentage"	
+//				{
+//					"attribute_class"	"mult_single_wep_deploy_time"
+//					"value"				"0.25"
+//				}
+//				"noisemaker"
+//				{
+//					"attribute_class"	"DISPLAY_ONLY"
+//					"value"				"1"
+//				}
+//				"unlimited quantity"
+//				{
+//					"attribute_class"	"energy_weapon_no_ammo"									// For future-proofing with attributes
+//					"value"				"1"
+//				}
+//				"loadout item disables melee"
+//				{
+//					"attribute_class"	"DISPLAY_ONLY"
+//					"value"				"1"
+//				}
+//				// Backend stuff; most of this is copied from the c4bat
+//				"rocket limited lifetime"
+//				{
+//					"attribute_class"	"rocket_lifetime"
+//					"value"				"0.00001"
+//				}
+//				"hide_attrib_percentage"	
+//				{
+//					"attribute_class"	"fuse_mult"
+//					"value"				"0.00001"
+//				}
+//				"hide_attrib_percentage"	
+//				{
+//					"attribute_class"	"mult_explosion_radius"
+//					"value"				"0"
+//				}
+//				"hide_attrib_percentage"	
+//				{
+//					"attribute_class"	"blast_dmg_to_self"
+//					"value"				"0"
+//				}
+//				"self dmg push force hidden"
+//				{
+//					"attribute_class"	"mult_dmgself_push_force"
+//					"value"				"0"
+//				}
+//				"hide_attrib_additive"		
+//				{
+//					"attribute_class"	"use_ammo_meter"
+//					"value"				"1"
+//				}
+//			}
+//			"visuals"
+//			{
+//				"sound_single_shot"		"Weapon_Null"											// This might seem extremely redundant, but ALL need to be muted! The only consistent sound is the explosion so it's no use wrangling with these.
+//				"sound_melee_miss"		"Weapon_Null"
+//				"sound_burst"			"Weapon_Null"
+//				"sound_empty"			"Weapon_Null"
+//				"sound_reload"			"Weapon_Null"
+//				"sound_special1"		"Game.HappyBirthdayNoiseMaker"
+//				"explosion_effect"		"bday_confetti"											// Has a slightly higher origin!
+//				"animation_replacement"
+//				{
+//					"ACT_MP_ATTACK_STAND_MELEE"					"ACT_MP_GESTURE_VC_FISTPUMP_MELEE"
+//					"ACT_MP_ATTACK_CROUCH_MELEE"				"ACT_MP_GESTURE_VC_FISTPUMP_MELEE"
+//					"ACT_MP_ATTACK_SWIM_MELEE"					"ACT_MP_GESTURE_VC_FISTPUMP_MELEE"
+//				}
+//			}
+//			"mouse_pressed_sound"		"#misc/happy_birthday.wav"								// Stopgap since TF2C doesn't accept soundscripts here...
+//			"drop_sound"				"#ui/item_metal_weapon_drop.wav"
+//		}
 		"4381"
 		{
 			"mod_item"					"1"
