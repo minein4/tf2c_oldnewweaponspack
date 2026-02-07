@@ -1555,7 +1555,7 @@ Taste the power of American Space Magic!"
 			{
 				"clip size penalty hidden"				"0.66"									// 4 shots.
 				"fire rate penalty hidden"				"1.28"									// Slower fire rate to match Live
-				"damage bonus hidden"					"4"										// Makes it deal -about- 50 DMG? This accounts for how it usually would deal multiple ticks going through enemies | 4 for 24 no rampup, 48 rampup
+				"damage penalty hidden"					"0.4"										// Makes it deal -about- 50 DMG? This accounts for how it usually would deal multiple ticks going through enemies | 4 for 24 no rampup, 48 rampup
 				"reload time increased hidden"			"0.6"									// Vaguely the time to reload all 4 shots on the original Bison
 				"ragdolls become ash"					"1"										// Enemies "disintegrate" when killed
 				"override projectile type"				"8"										// This is an arrow! This is actually REALLY important since an arrow is the only projectile that can penetrate enemies - see below!
@@ -1575,7 +1575,7 @@ Taste the power of American Space Magic!"
 					"attribute_class"	"projectile_penetration"								// TF2C v2.1.0 - something broke at SOME point and arrows cause very bad physics issues. They kinda awkwardly get stuck on you and fly out if you start moving
 					"value"				"1"														// ...then they get stuck on enemies until they die and they KEEP MOVING. BTW it makes an incredibly spammy noise the entire time... eugh...
 				}
-				"hide_attrib_percentage"	
+				"spread penalty"	
 				{
 					"attribute_class"	"mult_spread_scale"
 					"value"				"0"
@@ -3367,89 +3367,24 @@ Blunt force, for Sapper and Spy removal."
 		
 		"3370"
 		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_RESCUE_RANGER"
-			"item_class"				"tf_weapon_shotgun"
-			"show_in_armory"			"1"
-			"item_slot"					"primary"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Rescue Ranger"
-			"item_type_name"			"Telemax Shotgun"
-			"item_description"			"
-The latest in Telemax design, for when you
-need to get outta trouble in a big ol' hurry!"
-			"item_logname"				"rescue_ranger"
-			"item_iconname"				"rescue_ranger_claw"
-			"image_inventory"			"backpack/workshop/weapons/c_models/c_tele_shotgun/c_tele_shotgun"
-			"model_world"				"models/weapons/w_models/w_tele_shotgun.mdl"
-			"model_player"				"models/weapons/v_models/v_tele_shotgun_engineer.mdl"
-			"attach_to_hands"			"2"
-			"used_by_classes"
+			"name"	"The Rescue Ranger"
+			"item_description"	"	"
+			"prefab" "weapon_rescue_ranger paintkit_base"
+			"first_sale_date"	"2012/12/19"
+			"particle_suffix"	"rescue_ranger"
+			"tags"
 			{
-				"engineer"				"1"
-			}
-			"static_attrs"																		// Backend weirdness for the projectile
-			{
-				"override projectile type"				"30"									// Classic ol' Tranq Dart
-				"damage bonus hidden"					"6.64"									// About 60 accounting for the inconsistent damage rampup?? DON'T change dmg too much - building construction relies on it and converts upgrade progress from dmg
-				"custom rampup"							"1.525"									// It's back btw. Original value was 1.2, but this is special and scuffed so y'know
-			}
-			"attributes"
-			{
-				"hide_attrib_additive"															// Building Construction ESCAPES if this isn't here
-				{
-					"attribute_class"	"provide_on_active"
-					"value"				"1"
-				}
-				"construct on hit enemy text"													// This is a new attribute that does the heavy lifting - hitting an enemy upgrades and repairs your buildings, as if you had hit them with a Wrench
-				{
-					"attribute_class"	"add_onhit_construction"								// It adds upgrade / repair progress as you do damage. For this, since it does 40-60 DMG, so it contributes 30-45 metal respectively!
-					"value"				"0.76"													// NOWP v2.7.5 - Apparently this DOES work for scalable repair / upgrade values, it was just a little broken before. Should work now!!
-				}
-				"engineer building teleporting pickup"											// THIS WORKS!? Like, it's the only thing about the Rescue Ranger that works, but it works perfectly. Huh.
-				{
-					"attribute_class"	"building_teleporting_pickup"
-					"value"				"100"
-				}
-				"clip size penalty"
-				{
-					"attribute_class"	"mult_clipsize"
-					"value"				"0.67"
-				}
-				"maxammo primary reduced"
-				{
-					"attribute_class"	"mult_maxammo_primary"
-					"value"				"0.5"
-				}
-				// Backend stuff
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"mult_bullets_per_shot"
-					"value"				"0.1"
-				}
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"mult_spread_scale"
-					"value"				"0.25" 
-				}
-				"custom projectile model"														// Changes it to the repair claw.
-				{
-					"attribute_class"	"custom_projectile_model"
-					"value"				"models/weapons/w_models/w_repair_claw.mdl"
-				}
-				"crit mod disabled"																// whoops lmao I forgot this
-				{
-					"attribute_class"	"mult_crit_chance"
-					"value"				"0"
-				}
+				"can_be_festivized"		"1"
 			}
 			"visuals"
 			{
-				"sound_single_shot"		"Weapon_RescueRanger.Single"
-				"sound_burst"			"Weapon_RescueRanger.SingleCrit"
-				"muzzle_flash"			"muzzle_tranq"
+				"attached_models_festive"
+				{
+					"0"
+					{
+						"model"	"models/workshop/weapons/c_models/c_tele_shotgun/c_tele_shotgun_festivizer.mdl"
+					}
+				}
 			}
 			"visuals_red"
 			{
@@ -4369,7 +4304,9 @@ you twitchy hooligan!”"
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_PEP_PISTOL"
-			"prefab"					"weapon_pistol"
+			// "prefab"					"weapon_pistol"
+			"item_class"				"tf_weapon_pistol"
+			"item_slot"					"secondary"
 			"show_in_armory"			"1"
 
 			"item_name_color"			"255 240 183 255"
@@ -7705,7 +7642,7 @@ Weapon reloads its entire clip at once
 		"3450"																					// TO-DO: REPLACE WITH THE ORIGINAL PRE-TF2C v2.2.0 VERSIONS ASAP!! These are only holdovers until they get it together!
 		{
 			"name"						"TF_WEAPON_SYRINGE_SHOT"								// NOWP v2.7.5 - IT FINALLY FIRES SYRINGES!!! WE ARE SO BACK
-			"item_class"				"tf_weapon_shotgun"
+			"item_class"				"tf_weapon_shotgun_primary"
 			"show_in_armory"			"1"
 			"item_slot"					"primary"
 
@@ -7723,6 +7660,7 @@ a Medical Shotgun before!?"
 			"model_world"				"models/weapons/w_models/w_syringe_shot.mdl"
 			"model_player"				"models/weapons/v_models/v_syringe_shot_snd.mdl"
 			"brass_model"				"models/weapons/shells/shell_shotgun_syringe.mdl"
+			"item_slot"					"primary"
 			"attach_to_hands"			"2"
 			"used_by_classes"
 			{
@@ -7730,26 +7668,33 @@ a Medical Shotgun before!?"
 			}
 			"static_attrs"
 			{
-				"fire rate burst"						"0.0000000000001"						// Essentially instant, feel free to remove a few zeroes if it starts causing problems
+				// "fire rate burst"						"0.0000000000001"						// Essentially instant, feel free to remove a few zeroes if it starts causing problems
 				"override projectile type"				"5"										// Syringes! This is MANDATORY!!
 				"custom projectile origin offset"		"0 -2 8"								// Emits from slightly higher up on the weapon!
 				"custom rampup"							"1.2"
 				"no damage falloff over distance"		"1"
 
-				"fire rate penalty hidden"				"0.825"									// slight hack to remedy the slower ending fire-time
+				// "fire rate penalty hidden"				"0.825"									// slight hack to remedy the slower ending fire-time
 				"clip size penalty hidden"				"1.66"
-				"damage bonus hidden"					"0.9"									// Each pellet does 6, does about 60 DMG all said
+				"damage bonus hidden"					"1.2"									// Each pellet does 6, does about 60 DMG all said
 				"mod ammo per reload"					"9"
 				"punch angle mod mult hidden"			"0.0001"
-				"hidden primary max ammo bonus"			"7.2"									// 18 reserve (10.0 for 32, 5.65 for 18, 3.75 for 12)
+				"hidden primary max ammo bonus"			"12.5"									// 18 reserve (10.0 for 32, 5.65 for 18, 3.75 for 12)
 			}
 			"attributes"
 			{
-				"medic syringe shotgun"
+				"override projectile type"
 				{
-					"attribute_class"	"set_burstfire"
-					"value"				"10"													// Shoots 10 syringes in a burst
+					"attribute_class"	"override_projectile_type"
+					"value"				"5"
 				}
+
+				"fire rate bonus"
+				{
+					"attribute_class"	"mult_postfiredelay"
+					"value"				"0.1"
+				}
+
 				"mod no reload DISPLAY ONLY"													// TO-DO: HACKY BACKEND FOR BROKEN BURSTFIRE STUFF REMOVE LATER
 				{
 					"attribute_class"	"use_ammo_meter"
@@ -7770,6 +7715,17 @@ a Medical Shotgun before!?"
 					"attribute_class"	"mult_crit_chance"
 					"value"				"0"														// It doesn't feel great to get random crits right now, so disabled...
 				}
+				"hidden separator"
+				{
+					"attribute_class"	"hidden_separator"
+					"value"				"1"
+				}
+				"auto fires full clip"
+				{
+					"attribute_class"	"auto_fires_full_clip"
+					"value"				"1"
+				}
+
 				// Backend stuff
 				"hide_attrib_percentage"	
 				{
@@ -12448,74 +12404,113 @@ into that thick skull of yours, string bean."
 
 		"3520"
 		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_WIDOWMAKER"									// Been wanting to tackle this thing for a while, but figured I'd take a crack at it now that we have more attributes
-			"item_class"				"tf_weapon_shotgun"
-			"show_in_armory"			"1"
-			"item_slot"					"primary"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Widowmaker"
-			"item_type_name"			"#TF_Weapon_Shotgun"
-			"item_description"			"Gain ammo back for every target you hit
-
-“Y'all come back now...
-More where that came from!”"
-			"item_logname"				"widowmaker"
-			"item_iconname"				"widowmaker"
-			"image_inventory"			"backpack/workshop_partner/weapons/c_models/c_dex_shotgun/c_dex_shotgun"
-			"model_world"				"models/weapons/w_models/w_dex_shotgun.mdl"				// ANNOYINGLY, the Ejection Port was just painted on the flat side of the gun and not even modelled in...
-			"model_player"				"models/weapons/v_models/v_dex_shotgun_engineer.mdl"	// So, I'm using another mod by newguy111 to make the magazine cylinder and the bolt move! Additionally, one by R234 to make the ejection port modelled.
-			"brass_model"				"models/weapons/shells/shell_shotgun_black.mdl"			// Just think it fits
-			"attach_to_hands"			"2"
+			"name"	"The Widowmaker"
+			"first_sale_date"	"2011/08/11"
+			"item_class"	"tf_weapon_shotgun_primary"
+			"craft_material_type"	"weapon"
+			"craft_class"	"weapon"
+			"capabilities"
+			{
+				"nameable"		"1"
+				"can_craft_count"	"1"
+			}
+			"tags"
+			{
+				"can_deal_damage"			"1"
+				"can_deal_critical_damage"	"1"
+				"can_deal_mvm_penetration_damage"	"1"
+				"can_deal_long_distance_damage"	"1"
+				"can_be_festivized"		"1"
+			}
+			"item_type_name"	"#TF_Weapon_Shotgun"
+			"item_logname" "widowmaker"
+			"item_iconname" "widowmaker"
+			"item_name"	"#TF_DEX_Shotgun"
+			"item_description"	"#TF_DEX_Shotgun_Desc"
+			"item_slot"	"primary"
+			"show_in_armory"	"1"
+			"item_quality"	"unique"
+			"propername"	"1"
+			"min_ilevel"	"5"
+			"max_ilevel"	"5"
+			"inspect_panel_dist" "40"
+			"image_inventory"	"backpack/workshop_partner/weapons/c_models/c_dex_shotgun/c_dex_shotgun"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"inspect_panel_dist" 			"38"
+			"model_player"	"models/workshop_partner/weapons/c_models/c_dex_shotgun/c_dex_shotgun.mdl"
+			"attach_to_hands" "1"
 			"used_by_classes"
 			{
-				"engineer"				"1"
+				"engineer"	"1"
 			}
-			"static_attrs"																		// It doesn't work exactly how it does in Live, but it's still the same basic role - you throw yourself into battle and land your shots well to recoup ammo!
+			"static_attrs"
 			{
-				"add ammo on kill"						"40"									// If you get a kill, you get a LOT of ammo back!
-				"add ammo on hit"						"15"									// Just enough to slow down ammo drain a little, but it won't work forever unlike Live. It DOES work additively if multiple pellets hit multiple people, though!
+				"min_viewmodel_offset"		"10 0 -9"
 			}
 			"attributes"
 			{
-				"mod no reload DISPLAY ONLY"													// Copied from Heavy's AA12
+				"damage bonus bullet vs sentry target"
 				{
-					"attribute_class"	"mod_max_primary_clip_override"
-					"value"				"-1"
+					"attribute_class"	"mult_dmg_bullet_vs_sentry_target"
+					"value"	"1.1"
 				}
-				"mod ammo per shot"
+				"hidden primary max ammo bonus"
 				{
-					"attribute_class"	"mod_ammo_per_shot"
-					"value"				"30"
+					"attribute_class"	"mult_maxammo_primary"
+					"value" "0.2"
 				}
-				"mod use metal ammo type"
+
+				 "mod ammo per shot"
+				 {
+				 	"attribute_class"	"mod_ammo_per_shot"
+				 	"value"	"1"
+				 }
+				//"mod use metal ammo type"
+				//{
+				//	"attribute_class"	"mod_use_metal_ammo_type"
+				//	"value"	"1"
+				//}
+				"mod no reload DISPLAY ONLY"
 				{
-					"attribute_class"	"mod_use_custom_ammo_type"
-					"value"				"3"
-				}
-				"no metal from dispensers while active"											// Not there in Live, but prevents Engi from easily griefing other Engineers by just standing and shooting
-				{
-					"attribute_class"	"no_metal_from_dispensers_while_active"
+					"attribute_class"	"mod_no_reload_display_only"
 					"value"				"1"
 				}
-				// Backend stuff
-				"hide_attrib_percentage"														// Engineer's metal count gets fucked up by the metal ammo type attribute, for some reason...
+				"mod max primary clip override"
 				{
-					"attribute_class"	"mult_maxammo_metal"									// Thankfully, since EVERYTHING here is weapon-active, this can just be effective for any other weapons Engineer has!
-					"value"				"6.25" 
+					"attribute_class"	"mod_max_primary_clip_override"
+					"value"	"-1"
+				}
+				"add onhit addammo"
+				{
+					"attribute_class"	"add_onhit_addammo"		
+					"value"	"3.3"
+				}
+				
+
+			}
+			"visuals"
+			{
+				"sound_single_shot"	"Weapon_WidowMaker.Single"
+				"sound_burst"		"Weapon_WidowMaker.SingleCrit"
+				"sound_empty"		"Weapon_WidowMaker.Empty"
+				"animation_replacement"
+				{
+					"ACT_VM_PRIMARYATTACK"	"ACT_VM_PRIMARYATTACK_SPECIAL"
+					"ACT_PRIMARY_VM_INSPECT_START"		"ACT_PRIMARY_ALT1_VM_INSPECT_START"
+					"ACT_PRIMARY_VM_INSPECT_IDLE"		"ACT_PRIMARY_ALT1_VM_INSPECT_IDLE"
+					"ACT_PRIMARY_VM_INSPECT_END"		"ACT_PRIMARY_ALT1_VM_INSPECT_END"
+				}
+				"attached_models_festive"
+				{
+					"0"
+					{
+						"model"	"models/workshop_partner/weapons/c_models/c_dex_shotgun/c_dex_shotgun_festivizer.mdl"
+					}
 				}
 			}
-			"visuals"																			// Also comes with the Widowmaker's unused sounds baked in as part of the animation!
-			{
-				"sound_single_shot"		"Weapon_WidowMaker.Single"
-				"sound_burst"			"Weapon_WidowMaker.SingleCrit"
-				"sound_empty"			"Weapon_WidowMaker.Empty"
-				"tracer_effect"			"bullet_scattergun_tracer01"
-			}
-			"mouse_pressed_sound"		"#ui/item_heavy_gun_pickup.wav"
-			"drop_sound"				"#ui/item_heavy_gun_drop.wav"
+			"mouse_pressed_sound"	"ui/item_heavy_gun_pickup.wav"
+			"drop_sound"		"ui/item_heavy_gun_drop.wav"
 		}
 
 		"3522"
