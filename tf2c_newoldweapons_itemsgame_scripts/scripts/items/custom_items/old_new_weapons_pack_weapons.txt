@@ -1404,29 +1404,6 @@ Isn't this quite a violent anti-violence rally!?"
 			"prefab" "weapon_shortstop "
 			"first_sale_date"	"2010/09/29"
 			"particle_suffix"	"shortstop"
-			"tags"
-			{
-				"can_be_festivized"		"1"
-			}
-			"visuals"
-			{
-				"styles"
-				{
-					"0"
-					{
-						"skin_red"	"0"
-						"skin_blu"	"1"
-						"selectable"	"0"
-					}
-				}
-				"attached_models_festive"
-				{
-					"0"
-					{
-						"model"	"models/workshop/weapons/c_models/c_shortstop/c_shortstop_festivizer.mdl"
-					}
-				}
-			}
 		}
 
 		"3341"
@@ -2477,114 +2454,62 @@ Do not think you can run forever, babies!"
 
 		"3359"																					// THE WEAPON NOBODY ASKED FOR! Too late. I was bored and curious how much I could get it to work. Surprisingly, more than I expected.
 		{
-			"name"						"TF_WEAPON_COWMANGLER"
-			"prefab"					"weapon_rocketlauncher"									// In NOWP v2.2.5, I tested a version pitched by user contro that turned it into a charge-based RL, based on the Huntsman. Unfortunately, that might have led to crashes, so binned it...
-			"show_in_armory"			"1"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Cow Mangler 5000"
-			"item_type_name"			"Particle Launcher"										// Is "Laser Cannon" more appropriate??
-			"item_description"			"Afterburn lasts for 1s, and does no damage
-
-“Scientists in the future have studied
-your ass for centuries... And sent
-me back in time to kick it!”"
-			"item_logname"				"cow_mangler"
-			"item_iconname"				"cow_mangler"
-			"image_inventory"			"backpack/workshop/weapons/c_models/c_drg_cowmangler/c_drg_cowmangler"
+			"name"	"The Cow Mangler 5000"
+			"first_sale_date"	"2011/07/13"
+			"item_class"	"tf_weapon_particle_cannon"
+			"craft_class"	"weapon"
+			"craft_material_type"	"weapon"
+			"capabilities"
+			{
+				"nameable"		"1"
+			}
+			"tags"
+			{
+				"can_deal_damage"		"1"
+				"can_deal_gib_damage"	"1"
+				"can_be_equipped_by_soldier_or_demo"	"1"
+				"can_deal_posthumous_damage"	"1"
+				"can_deal_long_distance_damage"	"1"
+				"can_be_festivized"		"1"
+			}
+			"item_logname"	"cow_mangler"
+			"item_iconname"	"cow_mangler"
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_FocusedWaveProjector"
+			"item_name"	"#TF_CowMangler"
+			"item_slot"	"primary"
+			"anim_slot" "primary2"
+			"item_quality"	"unique"
+			"propername"	"1"
+			"min_ilevel"	"30"
+			"max_ilevel"	"30"
+			"inspect_panel_dist" "68"
+			"image_inventory"	"backpack/workshop/weapons/c_models/c_drg_cowmangler/c_drg_cowmangler"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
 			"model_world"				"models/weapons/w_models/w_cowmangler.mdl"			
 			"model_player"				"models/weapons/v_models/v_cowmangler_soldier.mdl"
 			"attach_to_hands"			"2"
 			"used_by_classes"
 			{
-				"soldier"				"1"
+				"soldier"	"1"
 			}
-			"static_attrs"																		// I keep having to come back to this since it's always broken guh
+			"static_attrs"
 			{
-				"ragdolls become ash"					"1"										// Enemies "disintegrate" when killed
-				"reload time increased hidden"			"1.05"
-				"mod use custom ammo type"				"5"										// NOWP v2.7.5 - Hacky fix so this doesn't consume ammo from Dispensers or ammo packs when you're shot a few times. Also applies to a few other similar infinite-ammo weps!
-			}
-			"attributes"																		// THIS WEAPON IS EXTREMELY SCUFFED!
-			{
-				"energy weapon no ammo"															// DISPLAY ONLY
-				{
-					"attribute_class"	"energy_weapon_no_ammo"
-					"value"				"1"
-				}
-				"Set DamageType Ignite"															// Weird. But, I felt it a good stopgap, since ostensibly this doesn't have its Secondary Fire.
-				{
-					"attribute_class"	"set_dmgtype_ignite"
-					"value"				"1"
-				}
-				"minicrit vs burning player"
-				{
-					"attribute_class"	"single_minicrit_vs_playercond_no_dot"
-					"value"				"23"
-				}
-				"crit vs cows"
-				{
-					"attribute_class"	"single_crit_vs_playercond_no_dot"
-					"value"				"85"													// NOWP v3.2.1 - hehe. There's a cow. What do you think will happen?
-				}
-				"crit mod disabled"																// Imagine getting Crockets on a weapon with infinite ammo. Come on.
-				{
-					"attribute_class"	"mult_crit_chance"
-					"value"				"0"
-				}
-				"clip size penalty hidden"														// 5 shots! Count 'em, 5!
-				{
-					"attribute_class"	"mult_clipsize"
-					"value"				"1.2"
-				}
-				"damage penalty"
-				{
-					"attribute_class"	"mult_dmg"
-					"value"				"0.9"
-				}
-				"dmg penalty vs buildings"														// Same as before. So you can't just cheese your way through Engi nests.
-				{
-					"attribute_class"	"mult_dmg_vs_buildings"
-					"value"				"0.2"
-				}
-				"custom projectile model"														// So, in live TF2, the projectile also uses this model, so it looks like it's just the particles. Same deal, here, except with a fiery trail instead of plasma.
-				{
-					"attribute_class"	"custom_projectile_model"
-					"value"				"models/weapons/w_models/w_drg_ball.mdl"				// NOWP v2.7.5 - Since I use this so often for placeholder stuff, I've added dummy sequences for most viewmodel animations it'd need, if it's used as a viewmodel!
-				}
-				// Backend stuff
-				"hide_attrib_percentage"														// Don't worry, it only lasts for 1 and a half seconds.
-				{
-					"attribute_class"	"mult_wpn_burntime"
-					"value"				"0.1"
-				}
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"mult_wpn_burndmg"
-					"value"				"0"
-				}
+				"min_viewmodel_offset"					"10 0 -11"
+				"energy weapon no ammo"					"1"
+				"energy weapon charged shot"			"1"
+				"energy weapon no hurt building"		"1"
+				"crits_become_minicrits"				"1"
+				"crit mod disabled"						"0"
 			}
 			"visuals"
 			{
-				"sound_single_shot"		"Weapon_CowMangler.Single"
-				"sound_burst"			"Weapon_CowMangler.SingleCrit"
-				"sound_reload"			"Weapon_CowMangler.Reload"
-				"sound_special1"		"Weapon_CowMangler.Explode"
-				"player_bodygroups"
-				{
-					"rocket"		"0"															// So he doesn't load rockets, even though he still does the animation of it.
-				}
-				"animation_replacement"															// Godawful code blocks from the HMG...
-				{
-					//Deployed
-					"ACT_MP_DEPLOYED_IDLE"						"ACT_MP_STAND_PRIMARY"			// Standing Deployed
-					"ACT_MP_DEPLOYED_PRIMARY"					"ACT_MP_RUN_PRIMARY"			// Moving Deployed
-					
-					"ACT_MP_CROUCH_DEPLOYED_IDLE"				"ACT_MP_CROUCH_PRIMARY"			// Crouched Deployed
-					"ACT_MP_CROUCHWALK_DEPLOYED"				"ACT_MP_CROUCHWALK_PRIMARY"		// Moving Crouched Deployed
-
-				}
+				"sound_single_shot"	"Weapon_CowMangler.Single"
+				"sound_burst"		"Weapon_CowMangler.SingleCharged"
+				"sound_reload"		"Weapon_CowMangler.Reload"
+				"sound_special1"	"Weapon_CowMangler.Charging"
+				"sound_special2"	"Weapon_CowMangler.Idle"
 			}
 			"visuals_red"																		// TF2C v2.1.0 - TRAIL EFFECTS!! Been looking forward to this! I'll be using these to give projectiles more distinct visuals
 			{
@@ -3033,7 +2958,7 @@ Oh, don't be such a baby... Ribs grow back!"
 			"min_ilevel"	"1"
 			"max_ilevel"	"100"
 			"propername"	"1"
-			"model_world"				"models/weapons/w_models/w_gascan.mdl"
+			"model_world"				"models/weapons/c_models/c_gascan/c_gascan.mdl"
 			"model_player"				"models/weapons/v_models/v_gascan_pyro.mdl"
 			"attach_to_hands"			"2"
 			"extra_wearable"			"models/player/items/pyro_firemans_essentials_backpack.mdl"	// This used to go with the Spray n' Pray, but I decided it was better to signpost this item instead!
@@ -3062,15 +2987,10 @@ Oh, don't be such a baby... Ribs grow back!"
 			{
 				"animation_replacement"
 				{
-					"ACT_VM_DRAW"				"ACT_ITEM2_VM_DRAW"
-					"ACT_VM_IDLE"				"ACT_ITEM2_VM_IDLE"
-					"ACT_VM_PRIMARYATTACK"		"ACT_ITEM2_VM_FIRE"
+
 					"ACT_MP_ATTACK_STAND_MELEE_ALLCLASS"		"ACT_MP_ATTACK_STAND_ITEM2"
 					"ACT_MP_ATTACK_CROUCH_MELEE_ALLCLASS"		"ACT_MP_ATTACK_CROUCH_ITEM2"
 					"ACT_MP_ATTACK_SWIM_MELEE_ALLCLASS"			"ACT_MP_ATTACK_SWIM_ITEM2"
-					"ACT_SECONDARY_VM_INSPECT_START"		"ACT_ITEM2_VM_INSPECT_START"
-					"ACT_SECONDARY_VM_INSPECT_IDLE"		"ACT_ITEM2_VM_INSPECT_IDLE"
-					"ACT_SECONDARY_VM_INSPECT_END"			"ACT_ITEM2_VM_INSPECT_END"
 				}
 				"custom_particlesystem"
 				{
@@ -4517,6 +4437,11 @@ You cannot run from Katherine forever!"
 			}
 			"attributes"																		// NOWP v3.0.0 - Since I saw some references for how TF2C's old chainsaw used to work, let's rework this VERY slightly to match! Lower base-damage, but crazy fire-rate and (relatively) low push force to keep enemies in range!
 			{
+				"cant fix"
+				{
+					"attribute_class"	"display_only"
+					"value" 			"1"
+				}
 				"mod weapon chainsaw"															// TF2C v2.1.0 - Working hitscan-hull modifiers! This is set to use collision hulls that also pass through teammates.
 				{
 					"attribute_class"	"mod_bullet_impact_collision_mode"
@@ -8123,113 +8048,66 @@ Now, that is more of Heavy's style!"
 
 		"3455"
 		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_CABER"
-			"prefab"					"weapon_bottle"
-			"item_class"				"tf_weapon_detonator"									// Makes use of some unused weapon stuff from TF2C v2.1.0! From some sort of weird melee, blows you up after a few moments...
-			"show_in_armory"			"1"
-
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Ullapool Caber"
-			"item_type_name"			"...Hand Grenade?"
-			"item_description"			"Rush toward enemies, and blast 'em away!
-Explodes shortly after attacking
-
-A sober person would throw it.
-Luckily, I haven't been sober in years!"
-			"item_logname"				"ullapool_caber"
-			"item_iconname"				"ullapool_caber_explosion"
-			"image_inventory"			"backpack/workshop/weapons/c_models/c_caber/c_caber"
-			"model_world"				"models/weapons/w_models/w_caber.mdl"
-			"model_player"				"models/weapons/v_models/v_caber_demoman.mdl"			// TO-DO: I'd like to attach a "smoking" particle effect on the broken model only, but no way to toggle that only using bodygroups afaik...
-			"attach_to_hands"			"2"
+			"name"	"The Ullapool Caber"
+			"first_sale_date"	"2010/12/08"
+			"item_class"	"tf_weapon_stickbomb"
+			"craft_class"	"weapon"
+			"craft_material_type"	"weapon"
+			"capabilities"
+			{
+				"nameable"		"1"
+			}
+			"tags"
+			{
+				"can_deal_damage"		"1"
+				"can_deal_gib_damage"	"1"
+				"can_be_equipped_by_soldier_or_demo"	"1"
+				"can_be_festivized"		"1"
+			}
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_StickBomb"
+			"item_name"	"#TF_UllapoolCaber"
+			"item_description"	"#TF_UllapoolCaber_Desc"
+			"item_logname"	"ullapool_caber"
+			"item_iconname"	"ullapool_caber"
+			"item_slot"	"melee"
+			"item_quality"	"unique"
+			"propername"	"1"
+			"min_ilevel"	"10"
+			"max_ilevel"	"10"
+			"image_inventory" "backpack/workshop/weapons/c_models/c_caber/c_caber"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"inspect_panel_dist" 				"35"			
+			"model_player"	"models/workshop/weapons/c_models/c_caber/c_caber.mdl"
+			"attach_to_hands" "1"
 			"used_by_classes"
 			{
-				"demoman"				"1"
+				"demoman"	"1"
 			}
 			"static_attrs"
 			{
-				"allowed in medieval mode"				"1"
-				"special taunt"							"1"
+				"min_viewmodel_offset"		"12 0 -17"				
 			}
+			"mouse_pressed_sound"	"ui/item_metal_weapon_pickup.wav"
+			"drop_sound"		"ui/item_metal_weapon_drop.wav"
 			"attributes"
 			{
-				"provide on active"
-				{
-					"attribute_class"	"provide_on_active"
-					"value"				"1"
-				}
-				"explode on smack DISPLAY ONLY"													// This has great flavor text application honestly
-				{
-					"attribute_class"	"centerfire_projectile"
-					"value"				"1"
-				}
-				"no blast damage kill"
-				{
-					"attribute_class"	"add_onkill_addcond_self"								// Okay, NOW this is just a leftover. However, can't hurt to have it here...
-					"value"				"68 0.1"												// Only lasts for 0.1s, so you won't be able to use it for anything else unless your timing is excellent
-				}
-				"hide_attrib_percentage"
-				{
-					"attribute_class"	"mult_dmg_vs_buildings"
-					"value"				"0.6245"												// Makes it do in the ballpark of 75 dmg to buildings - aka the unboosted damage of a caber explosion alone
-				}
-				"slower weapon draw speed"
-				{
-					"attribute_class"	"mult_single_wep_deploy_time"
-					"value"				"2"
-				}
 				"fire rate penalty"
 				{
-					"attribute_class"	"mult_postfiredelay"									// This is MUCH longer since he can use it repeatedly, ESPECIALLY with the gunboats!
-					"value"				"1.7"													// Exactly 100% longer swing speed
+					"attribute_class"	"mult_postfiredelay"
+					"value"	"1.2"
+				}
+				"single wep deploy time increased"
+				{
+					"attribute_class"	"mult_single_wep_deploy_time"
+					"value"	"2.0"
 				}
 				"crit mod disabled"
 				{
 					"attribute_class"	"mult_crit_chance"
-					"value"				"0"
+					"value"	"0"
 				}
-				"add condition on hit"
-				{
-					"attribute_class"	"add_onswing_addcond"
-					"value"				"116 1.5"												// Formerly 1.25s, extended by about 0.25s. This makes it less likely the Demoman actually survives
-				}
-				// Backend stuff
-				"hide_attrib_percentage"														// Self blast damage! He takes about -45 HP, which is survivable albeit with a good chunk of health gone
-				{
-					"attribute_class"	"blast_dmg_to_self"
-					"value"				"0.128"
-				}
-				"hide_attrib_percentage"														// THIS WORKS!! Regular damage modifiers don't work for the Detonator explosion, but tHIS DOES!!
-				{
-					"attribute_class"	"mult_explosion_splash_damage"
-					"value"				"0.525"													// 110 DMG at closest range. This isn't really pulled from anything, it just feels fair. The real damage of a Caber explosion + hit is about, say, 135 dmg. Oneshots lights... And that assumes it's single-use...
-				}
-				"self dmg push force hidden"
-				{
-					"attribute_class"	"mult_dmgself_push_force"
-					"value"				"0.425"
-				}
-				"hide_attrib_percentage"
-				{
-					"attribute_class"	"mult_player_movespeed"									// Just to gimp Demo's movespeed, because activating the weapon shoots it up to 720 hU's per sec!! REALLY FAST!! Now it's 230 before and 591 after.
-					"value" 			"0.82144"
-				}
-			}
-			"visuals"
-			{
-				"sound_single_shot"		"Weapon_Crowbar.Miss"
-				"sound_melee_miss"		"Weapon_Crowbar.Miss"
-				"sound_burst"			"Weapon_Crowbar.MissCrit"
-				"sound_burst"			"Weapon_Crowbar.MissCrit"
-				"sound_melee_hit"		"Weapon_Fishwhacker.HitFlesh"
-				"sound_melee_hit_world"	"Weapon_Crowbar.HitWorld"
-				"sound_empty"			"Weapon_Null"
-				"sound_reload"			"Weapon_Null"
-				"sound_special1"		"Weapon_LooseCannon.Explode"							// This doesn't work the the normal explosion but IS used for something special... but I'm not telling you what~
-				"explosion_effect"		"explosion_shrapnel_PARENT"
 			}
 			"visuals_red"
 			{
@@ -8426,7 +8304,7 @@ Alt-Fire: Detonate all Mini-Dispensers
 					"attribute_class"	"mod_use_custom_ammo_type"								// Forcefully switches it over to use Primary ammo! Engi has some issues with it otherwise because SBL's normally use Secondary ammo...
 					"value"				"1"
 				}
-				"hide_attrib_additive"		
+				"max pipebombs decreased"		
 				{
 					"attribute_class"	"add_max_pipebombs"
 					"value"				"-7"
@@ -8937,128 +8815,18 @@ screamin' with the ol' battleaxe!”"
 
 		"3464"
 		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_GATLING"
-			"prefab"					"weapon_minigun"
-			"show_in_armory"			"1"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Brass Beast"											// Oksana, like it was in the comic
-			"item_type_name"			"#TF_Weapon_Minigun"
-			"item_description"			"
-Oh, no. I am not going anywhere, little man.
-Not until you are very... very dead!"
-			"item_logname"				"brass_beast"
-			"item_iconname"				"brass_beast"
-			"image_inventory"			"backpack/workshop/weapons/c_models/c_gatling_gun/c_gatling_gun"
-			"model_world"				"models/weapons/w_models/w_gatling_gun.mdl"
-			"model_player"				"models/weapons/v_models/v_gatling_gun_heavy.mdl"		// Matching the barrel up in the viewmodel is still misery, have I mentioned that?
-			"attach_to_hands"			"2"
-			"used_by_classes"
-			{
-				"heavy"					"1"
-			}
-			"attributes"
-			{
-				"damage bonus"
-				{
-					"attribute_class"	"mult_dmg"
-					"value"				"1.2"
-				}
-				"minigun spinup time increased"
-				{
-					"attribute_class"	"mult_minigun_spinup_time"
-					"value"				"1.5"
-				}
-				"aiming movespeed decreased"
-				{
-					"attribute_class"	"mult_player_aiming_movespeed"
-					"value"				"0.4"
-				}
-				// Backend stuff
-				"hide_attrib_additive"		
-				{
-					"attribute_class"	"minigun_deployed_crouchwalk"							// Literally almost entirely immobile, lmao
-					"value"				"1"
-				}
-			}
-			"visuals"
-			{
-				"sound_empty"			"Weapon_Gatling.ClipEmpty"
-				"sound_double_shot"		"Weapon_Gatling.Fire"
-				"sound_burst"			"Weapon_Gatling.FireCrit"
-				"sound_single_shot"		"Weapon_Gatling.WindUp"
-				"sound_special2"		"Weapon_Gatling.WindDown"
-				"sound_special3"		"Weapon_Gatling.Spin"
-			}
-			"mouse_pressed_sound"		"#ui/item_heavier_gun_pickup.wav"
-			"drop_sound"				"#ui/item_heavier_gun_drop.wav"
+			"name"	"The Brass Beast"
+			"prefab"	"weapon_gatling_gun paintkit_base"
+			"first_sale_date"	"2010/12/08"
+			"particle_suffix"	"brass_beast"
 		}
 
 		"3465"
 		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_TOMISLAV"
-			"prefab"					"weapon_minigun"
-			"show_in_armory"			"1"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Tomislav"												// Svetlana, like it was in the comic
-			"item_type_name"			"#TF_Weapon_Minigun"
-			"item_description"			"
-“Shh! Sasha is asleep.”"
-			"item_logname"				"tomislav"
-			"item_iconname"				"tomislav"
-			"image_inventory"			"backpack/workshop/weapons/c_models/c_tomislav/c_tomislav"
-			"model_world"				"models/weapons/w_models/w_tomislav.mdl"
-			"model_player"				"models/weapons/v_models/v_tomislav_heavy.mdl"			// No barrel to sync, thank god. Still shortened tho so it matches other Minigun proportions
-			"attach_to_hands"			"2"
-			"used_by_classes"
-			{
-				"heavy"					"1"
-			}
-			"attributes"																		// To be blunt I'm just too afraid to even touch this, Tomi is one of THOSE weapons that are defined by its very specific stats and not a niche...
-			{
-				"minigun no spin sounds"
-				{
-					"attribute_class"	"minigun_no_spin_sounds"
-					"value"				"1"
-				}
-				"minigun spinup time decreased"
-				{
-					"attribute_class"	"mult_minigun_spinup_time"
-					"value"				"0.8"
-				}
-				"weapon spread bonus"
-				{
-					"attribute_class"	"mult_spread_scale"
-					"value"				"0.8"
-				}
-				"fire rate penalty"
-				{
-					"attribute_class"	"mult_postfiredelay"
-					"value"				"1.2"
-				}
-				// Backend stuff
-				"hide_attrib_additive"		
-				{
-					"attribute_class"	"minigun_deployed_crouchwalk"							// I was worried about this, actually, but you're nearly immobile, so it doesn't make that much of a difference
-					"value"				"1"
-				}
-			}
-			"visuals"
-			{
-				"sound_empty"			"Weapon_Tomislav.ClipEmpty"
-				"sound_double_shot"		"Weapon_Tomislav.Fire"
-				"sound_burst"			"Weapon_Tomislav.FireCrit"
-				"sound_single_shot"		"Weapon_Tomislav.WindUp"
-				"sound_special2"		"Weapon_Tomislav.WindDown"
-				"muzzle_flash"			"muzzle_chaingun_constant"
-			}
-			"mouse_pressed_sound"		"#ui/item_heavy_gun_pickup.wav"
-			"drop_sound"				"#ui/item_heavy_gun_drop.wav"
+			"name"	"Tomislav"
+			"prefab" "weapon_tomislav paintkit_base"
+			"first_sale_date"	"2011/04/14"
+			"particle_suffix"	"tomislav"
 		}
 
 		"3466"
@@ -10259,20 +10027,10 @@ and you will make every bullet count."
 			}
 			"attributes"
 			{
-				"instant reload on kill"														// These two combined mean, if a Heavy is resourceful, this weapon can grant theoretically infinite sustain...
+				"ironside desc"
 				{
-					"attribute_class"	"instant_reload_on_kill"
-					"value"				"2"
-				}
-				"tmp dmgbonus minicrit kill"
-				{
-					"attribute_class"	"apply_weapon_damage_boost_on_kill"
-					"value"				"2"
-				}
-				"add ammo on kill"																// Since it only gives back 2 ammo on a kill, though, you'll have to pick up ammo along the way
-				{
-					"attribute_class"	"add_ammo_on_kill"
-					"value"				"2"
+					"attribute_class"	"display_only"
+					"value"				"1"
 				}
 				"clip size penalty"
 				{
@@ -10288,6 +10046,26 @@ and you will make every bullet count."
 				{
 					"attribute_class"	"mult_maxammo_secondary"
 					"value"				"0.4"
+				}
+				"hidden separator"
+				{
+					"attribute_class"	"hidden_separator"
+					"value"				"1"
+				}
+					"instant reload on kill"														// These two combined mean, if a Heavy is resourceful, this weapon can grant theoretically infinite sustain...
+				{
+					"attribute_class"	"instant_reload_on_kill"
+					"value"				"2"
+				}
+				"tmp dmgbonus minicrit kill"
+				{
+					"attribute_class"	"apply_weapon_damage_boost_on_kill"
+					"value"				"2"
+				}
+				"add ammo on kill"																// Since it only gives back 2 ammo on a kill, though, you'll have to pick up ammo along the way
+				{
+					"attribute_class"	"add_ammo_on_kill"
+					"value"				"2"
 				}
 			}
 			"visuals"
@@ -10635,209 +10413,80 @@ and hiding the evidence."
 
 		"3491"
 		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_KATANA"
-			"prefab"					"weapon_shovel"
-			"item_class"				"tf_weapon_fireaxe"										// As a byproduct of the Beacon / Harvester, the default fireaxe actually changes bodygroups if it gets a crit kill!
-			"anim_slot"					"item1"													// TF2C v2.2.0 - Anchor animations, since they fit this surprisingly well!!
-			"show_in_armory"			"1"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Half-Zatoichi"
-			"item_type_name"			"Katana"
-			"item_description"			"You have a score to settle... finish it!
-
-“Time to inform your next of kin!”"
-			"item_logname"				"demokatana"
-			"item_iconname"				"demokatana"
-			"image_inventory"			"backpack/workshop_partner/weapons/c_models/c_shogun_katana/c_shogun_katana"
-			"model_world"				"models/weapons/w_models/w_shogun_katana_new_soldier.mdl"
-			"model_player"				"models/weapons/v_models/v_shogun_katana_demoman.mdl"
-			"extra_wearable"			"models/player/items/demo_swordsheath_katana.mdl"		// TEMP REPLACE LATER
-			"extra_wearable_bodygroup_toggle_on_active" "sword"
-			"attach_to_hands"			"2"
+			"name"	"The Half-Zatoichi"
+			"first_sale_date"	"2011/03/08"
+			"prefab"	"weapon_sword"
+			"item_class"	"tf_weapon_katana"
+			"capabilities"
+			{
+				"nameable"		"1"
+			}
+			"tags"
+			{
+				"can_deal_damage"			"1"
+				"can_be_equipped_by_soldier_or_demo"	"1"
+				"can_deal_critical_damage"	"1"
+				"can_deal_taunt_damage"		"1"
+			}
+			"item_logname"	"demokatana"
+			"item_iconname"	"demokatana"
+			"item_type_name"	"#TF_Weapon_SoldierKatana"
+			"item_name"	"#TF_SoldierKatana"
+			"item_description"	"#TF_SoldierKatana_Desc"
+			"anim_slot"	"MELEE_ALLCLASS"
+			"propername"	"1"
+			"image_inventory"	"backpack/workshop_partner/weapons/c_models/c_shogun_katana/c_shogun_katana"
+			"attach_to_hands"			"1"
 			"used_by_classes"
 			{
-				"soldier"				"1"
+				"soldier"	"1"
+				"demoman"	"1"
 			}
 			"static_attrs"
 			{
-				"melee range multiplier"				"1.35"
-				"melee bounds multiplier"				"1.55"
-				"special taunt"							"1"
-				"extra wearable bodygroup toggle active"	"sword"
+				"min_viewmodel_offset"					"10 -5 -10"
+			}
+			"model_player_per_class"
+			{
+				"soldier"	"models/weapons/v_models/v_shogun_katana_demoman.mdl"
+				"demoman"	"models/workshop_partner/weapons/c_models/c_shogun_katana/c_shogun_katana.mdl"
 			}
 			"attributes"
 			{
-				"provide on active"
+				"is_a_sword"
 				{
-					"attribute_class"	"provide_on_active"
-					"value"				"1"
+					"attribute_class"	"is_a_sword"
+					"value"				"72"
 				}
-				"add condition on swing"
+				"decapitate type"
 				{
-					"attribute_class"	"add_onswing_addcond"
-					"value"				"85 180"
+					"attribute_class"	"decapitate_type"
+					"value"	"1"
 				}
 				"restore health on kill"
 				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"50"
-				}
-				"crit vs katana players"
-				{
-					"attribute_class"	"single_crit_vs_playercond_no_dot"
-					"value"				"86"
-				}
-				"hide_attrib_additive"		
-				{
-					"attribute_class"	"heal_on_kill"											// TO-DO: This leaks if getting a delayed kill with another weapon. VERY BAD ON EXPLOSIVE CLASSES
-					"value"				"100"
+					"attribute_class"	"restore_health_on_kill"
+					"value"	"50"
 				}
 				"crit mod disabled"
 				{
 					"attribute_class"	"mult_crit_chance"
-					"value"				"0"
+					"value"	"0"
 				}
-				"max health additive penalty"
+				"honorbound"
 				{
-					"attribute_class"	"add_maxhealth"
-					"value"				"-50"
+					"attribute_class"	"honorbound"
+					"value"	"1"
 				}
-				"deploy time increased"
+				"special taunt"
 				{
-					"attribute_class"	"mult_deploy_time"
-					"value"				"2.75"
-				}
-				// Backend stuff
-				"mod melee crit swing custom damage"
-				{
-					"attribute_class"	"mod_melee_crit_swing_custom_damage"
-					"value"				"27"
-				}
-				"hide_attrib_percentage"
-				{
-					"attribute_class"	"mult_patient_overheal_penalty_active"
-					"value"				"2"
+					"attribute_class"	"special_taunt"
+					"value" "1"
 				}
 			}
-			"visuals"
-			{
-				"sound_melee_miss"		"Weapon_Katana.Miss"
-				"sound_melee_hit"		"Weapon_Katana.HitFlesh"
-				"sound_melee_hit_world"	"Weapon_Katana.HitWorld"
-				"sound_burst"			"Weapon_Katana.MissCrit"
-				"sound_special1"		"Samurai.Koto"
-				"animation_replacement"
-				{
-					"ACT_MP_GESTURE_VC_FINGERPOINT_ITEM1"		"ACT_MP_GESTURE_VC_FINGERPOINT_MELEE"
-					"ACT_MP_GESTURE_VC_THUMBSUP_ITEM1"			"ACT_MP_GESTURE_VC_THUMBSUP_MELEE"
-					"ACT_MP_GESTURE_VC_HANDMOUTH_ITEM1"			"ACT_MP_GESTURE_VC_HANDMOUTH_MELEE"
-					"ACT_MP_GESTURE_VC_FISTPUMP_ITEM1"			"ACT_MP_GESTURE_VC_FISTPUMP_MELEE"
-				}
-			}
-			"mouse_pressed_sound"		"#ui/item_knife_large_pickup.wav"
-			"drop_sound"				"#ui/item_metal_weapon_drop.wav"
-		}
-		"3492"
-		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_KATANA_DEMO"
-			"prefab"					"weapon_bottle"
-			"item_class"				"tf_weapon_fireaxe"
-			"show_in_armory"			"1"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Half-Zatoichi"
-			"item_type_name"			"Katana"
-			"item_description"			"You have a score to settle... finish it!
-
-“There can be only one!”"
-			"item_logname"				"demokatana"
-			"item_iconname"				"demokatana"
-			"image_inventory"			"backpack/workshop_partner/weapons/c_models/c_shogun_katana/c_shogun_katana"
-			"model_world"				"models/weapons/w_models/w_shogun_katana_demoman.mdl"
-			"model_player"				"models/weapons/v_models/v_shogun_katana_demoman.mdl"
-			"extra_wearable"			"models/player/items/demo_swordsheath_katana.mdl"		// TEMP REPLACE LATER
-			"extra_wearable_bodygroup_toggle_on_active" "sword"
-			"attach_to_hands"			"2"
-			"used_by_classes"
-			{
-				"demoman"				"1"
-			}
-			"static_attrs"
-			{
-				"melee range multiplier"				"1.35"
-				"melee bounds multiplier"				"1.55"
-				"special taunt"							"1"
-				"extra wearable bodygroup toggle active"	"sword"
-			}
-			"attributes"
-			{
-				"provide on active"																// Why do these keep escaping!?!?
-				{
-					"attribute_class"	"provide_on_active"
-					"value"				"1"
-				}
-				"add condition on swing"
-				{
-					"attribute_class"	"add_onswing_addcond"
-					"value"				"85 180"												// This adds TF_COND_MELEE_ONLY (the non-functional one) to yourself for about 3 real-life minutes after you swing this weapon. This cond does nothing by itself, though!
-				}
-				"restore health on kill"
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"50"
-				}
-				"crit vs katana players"
-				{
-					"attribute_class"	"single_crit_vs_playercond_no_dot"
-					"value"				"86"													// ...and this crits vs. enemies with TF_COND_MELEE_ONLY. AS OF WRITING this is only other people that have been using this weapon, but I'll need to keep an eye on it!
-				}
-				"hide_attrib_additive"															// In Live TF2, this heals you a STAGGERING 50% of your max health on kill. This is SO much!!
-				{
-					"attribute_class"	"heal_on_kill"											// TO-DO: This leaks if getting a delayed kill with another weapon. VERY BAD ON EXPLOSIVE CLASSES
-					"value"				"90"													// Close enough for now. Soldier is 100 HP, Demoman rounds up to about 90 HP. Not affected by any other items they're carrying, obviously.
-				}
-				"deploy time increased"
-				{
-					"attribute_class"	"mult_deploy_time"
-					"value"				"2.75"
-				}
-				"max health additive penalty"													// Somewhat replicates the "sheath damage" since you can put it away at any time
-				{
-					"attribute_class"	"add_maxhealth"
-					"value"				"-50"													// Not quite as harsh as Live's, will evaluate...
-				}
-				"crit mod disabled"
-				{
-					"attribute_class"	"mult_crit_chance"
-					"value"				"0"
-				}
-				// Backend stuff
-				"hide_attrib_percentage"
-				{
-					"attribute_class"	"mult_patient_overheal_penalty_active"
-					"value"				"2.1"													// NOWP v3.0.0 - Restores the overheal to the default overheal values
-				}
-				"mod melee crit swing custom damage"
-				{
-					"attribute_class"	"mod_melee_crit_swing_custom_damage"
-					"value"				"27"
-				}
-			}
-			"visuals"
-			{
-				"sound_melee_miss"		"Weapon_Katana.Miss"
-				"sound_melee_hit"		"Weapon_Katana.HitFlesh"
-				"sound_melee_hit_world"	"Weapon_Katana.HitWorld"
-				"sound_burst"			"Weapon_Katana.MissCrit"
-				"sound_special1"		"Samurai.Koto"
-			}
-			"mouse_pressed_sound"		"#ui/item_knife_large_pickup.wav"
-			"drop_sound"				"#ui/item_metal_weapon_drop.wav"
+			"mouse_pressed_sound"	"ui/item_knife_large_pickup.wav"
+			"drop_sound"		"ui/item_metal_weapon_drop.wav"
+			
 		}
 
 		"3493"
@@ -15347,99 +14996,12 @@ Skewer 'em up like shrimp on a barbie."
 			"mouse_pressed_sound"		"#ui/item_heavy_gun_pickup.wav"
 			"drop_sound"				"#ui/item_heavy_gun_drop.wav"
 		}
-	"4200"																					// This weapon is by Yakibomb! Revised to fit in with the rest of my pack!
+		"4200"																					// This weapon is by Yakibomb! Revised to fit in with the rest of my pack!
 		{
-			"name"						"TF_WEAPON_CROSSBOW"
-			"prefab"					"weapon_syringegun"
-			"item_class"				"tf_weapon_paintballrifle"								// NOWP v3.0.0 - Changed the internals AGAIN, this time to the infernal Paintball Rifle. This is JUST to get the healing working... yeesh...
-			"anim_slot"					"primary"
-			"show_in_armory"			"1"
-			"bucket"					"0"
-			"bucket_position"			"1"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Crusader's Crossbow"
-			"item_type_name"			"Crossbow"
-			"item_description"			"This weapon will reload when not active
-
-Stop running, zhese gigantic arrows I
-am shooting at you are for acupuncture!"
-			"item_logname"				"crusaders_crossbow"
-			"item_iconname"				"crusaders_crossbow"
-			"image_inventory"			"backpack/weapons/c_models/c_crusaders_crossbow/c_crusaders_crossbow"
-			"model_world"				"models/weapons/w_models/w_crusaders_crossbow.mdl"		// NOWP v2.5.0 - I -finally- fixed these to fit the same model conventions as everything else. Sorry for the wait.
-			"model_player"				"models/weapons/v_models/v_crusaders_crossbow_medic.mdl" // This is adjusted to look about correct on BOTH Syringe Gun and Tranq Gun internals!
-			"attach_to_hands"			"2"
-			"used_by_classes"
-			{
-				"medic"					"1"
-			}
-			"attributes"
-			{
-				"hide_attrib_additive"															// stops overheal penalty from escaping
-				{
-					"attribute_class"	"provide_on_active"
-					"value"				"1"
-				}
-				"hide_attrib_additive"															// Removes scoping, I have no bloody idea why PBR can even scope...
-				{
-					"attribute_class"	"unimplemented_mod_sniper_no_charge"
-					"value"				"1"
-				}
-				"hide_attrib_additive"
-				{
-					"attribute_class"	"mod_rocket_gravity"
-					"value"				"0.225"
-				}
-				"hide_attrib_percentage"														// Paintballrifle has this weird mechanic where on healing a teammate, it builds a certain percent of Uber... I'll keep that, since the Live Crossbow has that too, but I wanna dial it back significantly!
-				{
-					"attribute_class"	"mult_medigun_uberchargerate_wearer"					// ONLY this one seems to affect the residual gain...
-					"value"				"0.33"													// Gain of about 4% for a successful healing hit, this is between the 2-6% variance in and out of combat for Live TF2...
-				}
-				"hide_attrib_percentage"
-				{
-					"attribute_class"	"mult_medigun_overheal_uberchargerate"
-					"value"				"0"														// You won't get any rate at all for fully overhealed patients (aka, full health)
-				}
-				"hide_attrib_additive"
-				{
-					"attribute_class"	"set_charge_type"
-					"value"				"5"														// An invalid charge type, so if you SOMEHOW get this and the uber required to do anything with it, it'll just... not, do anything.
-				}
-			}
-			"static_attrs"																		// I'll be honest with you, this is gonna get really bad and messy before it gets good. Alright, let's get to it...!
-			{
-				// Display stats
-				"comm weapon yaki"						"1"
-				"apply heal on explosion"				"45"									// Live is 75 - 150... COMPLETELY insane healing!
-				"damage at range increased"				"1.5"
-				"maxammo primary reduced"				"0.2545"								// TECHNICALLY this is the wrong display, but shhhhh
-				"no overheal"							"0"										// NOTE - This is SCUFFED and is a bit mutually exclusive with the ammo reduction because of code bullshit...
-
-				// Backend stuff
-				"hidden separator"						"1"
-				"override projectile type"				"35"									// Paintball... This technically doesn't need to be included, but it's helpful to know that Paintball is the sole projectile that heals on hit without exploding, too.
-				"custom projectile model"				"models/weapons/w_models/w_dm_crossbow_arrow.mdl"	// This just looks sleeker
-				"custom magazine model"					"models/weapons/mags/vial_mp40.mdl"
-				"allowed in medieval mode"				"1"
-
-				"damage bonus hidden"					"15"
-				"dmg bonus vs buildings hidden"			"0.6"									// Lowers damage vs. buildings slightly since 3-shotting buildings is a bit much
-				"clip size penalty hidden"				"0.2"
-				"fire rate bonus hidden"				"0.24"									// 0.1 for regular SG fire rate
-				"reload time increased hidden"			"0.84"									// 1.05 for Live
-				"mod use custom ammo type"				"1"										// SWITCHES BACK TO PRIMARY TO AVOID ISSUES WITH 'NADER
-
-				"custom rampup"							"0.5"
-				"longer damage falloff distance"		"3"										// Rampup takes effect from further away...
-				"mult dmg crit multiplier"				"0.5"									// Default to 113 (about 3x of the lowest damage, 38)
-				"punch angle mod add hidden"			"2"
-
-				// Copied from DM Crossbow
-				"Projectile speed increased hidden"		"1.125"									// Approx. restores speed to fully charged arrow speed
-				"mod rocket gravity upward force"		"0"										// FIXES ANNOYING ARROW ARC!!
-			}
+			"name"	"The Crusader's Crossbow"
+			"first_sale_date"	"2010/12/08"
+			"prefab" "weapon_crusaders_crossbow paintkit_base"
+			"particle_suffix"	"crusaders_crossbow"
 			"visuals"
 			{
 				"sound_single_shot"		"Weapon_CrusadersCrossbow.SingleFix"
@@ -19777,6 +19339,7 @@ You had better start quaking in your boots."													// This wording might b
 			{
 				"sound_single_shot"		"Weapon_QuakeRPG.Single"
 				"sound_burst"			"Weapon_QuakeRPG.SingleCrit"
+				"sound_deploy"			"Weapon_QuakeRPG.Draw"
 				"sound_reload"			"Weapon_QuakeRPG.Reload"
 				"sound_special1"		"Weapon_QuakeRPG.Explode"
 				"explosion_effect"		"ExplosionCore_MidAir_Classic"							// NOWP v2.7.5 - Okay. Since the old particles as-is were kinda bad, let's try a sorta hybrid between stock and Classic particles!!

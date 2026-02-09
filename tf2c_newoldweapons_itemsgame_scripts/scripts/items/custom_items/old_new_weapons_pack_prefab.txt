@@ -1648,7 +1648,7 @@
 	"weapon_scout_drink"
 		{
 			"enabled"	"1"
-			"item_class"	"tf_weapon_lunchbox_drink"
+			"item_class"	"tf_weapon_lunchbox"
 			"craft_class"	"weapon"
 			"craft_material_type"	"weapon"
 			"capabilities"
@@ -1671,8 +1671,13 @@
 			}
 			"static_attrs"
 			{
+				"item_meter_charge_type"						"1"
+				"item_meter_charge_rate"			"30"
+				"meter_label"							"#TF_EnergyDrink"
 				"min_viewmodel_offset"					"0 0 -5"
 			}
+
+			
 			"visuals"
 			{
 				"sound_deploy"	"Scout.DodgeCanOpen"
@@ -1748,7 +1753,7 @@
 			}
 			"show_in_armory"	"1"
 			"item_type_name"	"#TF_Weapon_Peppergun"
-			"item_description"	"#TF_TheShortstop_Desc"
+			"item_description"	"#Nowp_Weapon_Peppergun"
 			"item_name"	"#TF_TheShortstop"
 			"item_slot"	"primary"
 			"anim_slot"	"secondary"
@@ -1771,36 +1776,35 @@
 			}
 			"attributes"
 			{
-				"health from packs increased on active"											// These are from a 2014 version of the Shortstop, beside the reload penalty because fuck that
+				"provide on active"
 				{
-					"attribute_class"	"mult_health_frompacks_active"
-					"value"				"1.2"
+					"attribute_class"	"provide_on_active"
+					"value" "1"
+				}
+				"reload time increased hidden"
+				{
+					"attribute_class"	"mult_reload_time_hidden"
+					"value"	"1.5"
+				}
+				"disable fancy class select anim"
+				{
+					"attribute_class"	"disable_fancy_class_select_anim"
+					"value"	"1"
 				}
 				"damage force increase text"
 				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"1"
+					"attribute_class"	"damage_force_reduction"
+					"value" "1"
 				}
 				"damage force increase hidden"
 				{
 					"attribute_class"	"damage_force_reduction"
-					"value"				"1.4"
+					"value" "1.2"
 				}
 				"airblast vulnerability multiplier hidden"
 				{
 					"attribute_class"	"airblast_vulnerability_multiplier"
-					"value"				"1.4"
-				}
-				// Backend stuff
-				"hide_attrib_percentage"														// Hidden as of NOWP v2.2.5
-				{
-					"attribute_class"	"mult_bullets_per_shot"
-					"value"				"0.4"
-				}
-				"scattergun no reload single"
-				{
-					"attribute_class"	"set_scattergun_no_reload_single"
-					"value"				"1"
+					"value" "1.2"
 				}
 			}
 			"visuals"
@@ -2330,6 +2334,239 @@
 			"mouse_pressed_sound"	"ui/item_heavy_gun_pickup.wav"
 			"drop_sound"		"ui/item_heavy_gun_drop.wav"
 		}
+
+
+		"weapon_tomislav"
+		{
+			"enabled"	"1"
+			"item_class"	"tf_weapon_minigun"
+			"craft_class"	"weapon"
+			"craft_material_type"	"weapon"
+			"capabilities"
+			{
+				"nameable"		"1"
+				"can_craft_count"	"1"
+			}
+			"tags"
+			{
+				"can_deal_damage"			"1"
+				"can_deal_critical_damage"	"1"
+				"can_deal_mvm_penetration_damage"	"1"
+				"can_deal_long_distance_damage"	"1"
+			}
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_Minigun"
+			"item_name"	"#TF_Tomislav"
+			"item_slot"	"primary"
+			"item_logname"	"tomislav"
+			"item_iconname"	"tomislav"
+			"image_inventory"	"backpack/workshop/weapons/c_models/c_tomislav/c_tomislav"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"model_world"				"models/weapons/w_models/w_tomislav.mdl"
+			"model_player"				"models/weapons/v_models/v_tomislav_heavy.mdl"			// No barrel to sync, thank god. Still shortened tho so it matches other Minigun proportions
+			"attach_to_hands"			"2"
+			"inspect_panel_dist" "88"
+			"item_quality"	"unique"
+			"min_ilevel"	"5"
+			"max_ilevel"	"5"
+			"used_by_classes"
+			{
+				"heavy"	"1"
+			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"		"10 0 -9"
+			}
+			"visuals"
+			{
+				"sound_reload"	"Weapon_Gatling.Reload"
+				"sound_empty"	"Weapon_Tomislav.WindDown"
+				"sound_double_shot"	"Weapon_Tomislav.Fire"
+				"sound_burst"	"Weapon_Tomislav.FireCrit"
+				"sound_special1"	"Weapon_Tomislav.WindUp"
+				"sound_special2"	"Weapon_Tomislav.WindDown"
+			}
+			"mouse_pressed_sound"	"ui/item_heavy_gun_pickup.wav"
+			"drop_sound"		"ui/item_heavy_gun_drop.wav"
+			"attributes"
+			{
+				"minigun spinup time decreased"
+				{
+					"attribute_class"	"mult_minigun_spinup_time"
+					"value" "0.8"
+				}
+				"minigun no spin sounds"
+				{
+					"attribute_class"	"minigun_no_spin_sounds"
+					"value" "1"
+				}
+				"fire rate penalty"
+				{
+					"attribute_class"	"mult_postfiredelay"
+					"value"	"1.2"
+				}
+				"weapon spread bonus"
+				{
+					"attribute_class"	"mult_spread_scale"
+					"value"	"0.8"
+				}
+			}
+		}
+
+
+		"weapon_gatling_gun"
+		{
+			"enabled"	"1"
+			"item_class"	"tf_weapon_minigun"
+			"craft_class"	"weapon"
+			"craft_material_type"	"weapon"
+			"capabilities"
+			{
+				"nameable"		"1"
+			}
+			"tags"
+			{
+				"can_deal_damage"			"1"
+				"can_deal_critical_damage"	"1"
+				"can_deal_mvm_penetration_damage"	"1"
+				"can_deal_long_distance_damage"	"1"
+			}
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_Minigun"
+			"item_name"	"#TF_GatlingGun"
+			"item_slot"	"primary"
+			"item_logname"	"brass_beast"
+			"item_iconname"	"brass_beast"
+			"image_inventory"	"backpack/workshop/weapons/c_models/c_gatling_gun/c_gatling_gun"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"model_world"				"models/weapons/w_models/w_gatling_gun.mdl"
+			"model_player"				"models/weapons/v_models/v_gatling_gun_heavy.mdl"		// Matching the barrel up in the viewmodel is still misery, have I mentioned that?
+			"attach_to_hands"			"2"
+			"propername"	"1"
+			"item_quality"	"unique"
+			"min_ilevel"	"5"
+			"max_ilevel"	"5"
+			"used_by_classes"
+			{
+				"heavy"	"1"
+			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"		"10 0 -9"
+			}
+			"visuals"
+			{
+				"sound_reload"	"Weapon_Gatling.Reload"
+				"sound_empty"	"Weapon_Gatling.ClipEmpty"
+				"sound_double_shot"	"Weapon_Gatling.Fire"
+				"sound_special1"	"Weapon_Gatling.WindUp"
+				"sound_special2"	"Weapon_Gatling.WindDown"
+				"sound_special3"	"Weapon_Gatling.Spin"
+				"sound_burst"	"Weapon_Gatling.FireCrit"
+			}
+			"mouse_pressed_sound"	"ui/item_heavy_gun_pickup.wav"
+			"drop_sound"		"ui/item_heavy_gun_drop.wav"
+			"attributes"
+			{
+				"damage bonus"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"	"1.20"
+				}
+				"minigun spinup time increased"
+				{
+					"attribute_class"	"mult_minigun_spinup_time"
+					"value" "1.5"
+				}
+				"aiming movespeed decreased"
+				{
+					"attribute_class"	"mult_player_aiming_movespeed"
+					"value" "0.4"
+				}
+				"spunup_damage_resistance"
+				{
+					"attribute_class"		"spunup_damage_resistance"
+					"value"					"0.80"
+				}
+			}
+		}
+
+		"weapon_crusaders_crossbow"
+		{
+			"enabled"	"1"
+			"item_class"	"tf_weapon_crossbow"
+			"craft_class"	"weapon"
+			"craft_material_type"	"weapon"
+			"capabilities"
+			{
+				"nameable"		"1"
+			}
+			"tags"
+			{
+				"can_deal_damage"			"1"
+				"can_deal_posthumous_damage"	"1"
+				"can_deal_critical_damage"	"1"
+				"can_deal_long_distance_damage"	"1"
+				"can_heal_allies"		"1"
+			}
+			"base_item_name"	"The Crusader's Crossbow"
+			"item_type_name"	"#TF_Weapon_Crossbow"
+			"item_name"	"#TF_CrusadersCrossbow"
+			"item_description"	"#TF_CrusadersCrossbow_desc"
+			"item_logname"	"crusaders_crossbow"
+			"item_iconname"	"crusaders_crossbow"
+			"item_slot"	"primary"
+			"item_quality"	"unique"
+			"min_ilevel"	"15"
+			"max_ilevel"	"15"
+			"image_inventory"	"backpack/workshop/weapons/c_models/c_crusaders_crossbow/c_crusaders_crossbow"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"model_world"				"models/weapons/w_models/w_crusaders_crossbow.mdl"		// NOWP v2.5.0 - I -finally- fixed these to fit the same model conventions as everything else. Sorry for the wait.
+			"model_player"				"models/weapons/v_models/v_crusaders_crossbow_medic.mdl" // This is adjusted to look about correct on BOTH Syringe Gun and Tranq Gun internals!
+			"attach_to_hands"			"2"
+			"inspect_panel_dist" "42"
+			"used_by_classes"
+			{
+				"medic"	"1"
+			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"				"10 0 -14"
+				"weapon_stattrak_module_scale"			"0.608"
+				"custom projectile origin offset"		"16 8 -16"
+			}
+			"attributes"
+			{
+				"sniper no headshots"
+				{
+					"attribute_class" "set_weapon_mode"
+					"value" "1"
+				}
+				"maxammo primary reduced"
+				{
+					"attribute_class"	"mult_maxammo_primary"
+					"value"	"0.25"
+				}
+				"allowed in medieval mode"
+				{
+					"attribute_class"	"allowed_in_medieval_mode"
+					"value"	"1"
+				}
+			}
+			"visuals"
+			{
+				"sound_single_shot"	"Weapon_CrusadersCrossbow.Single"
+				"sound_burst"	"Weapon_CrusadersCrossbow.SingleCrit"
+			}
+			"mouse_pressed_sound"	"ui/item_light_gun_pickup.wav"
+			"drop_sound"		"ui/item_light_gun_drop.wav"
+			"xifier_class_remap"	"crusaders_crossbow"
+		}
+
+
 
 
 	}
