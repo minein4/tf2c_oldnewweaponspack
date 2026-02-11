@@ -1057,7 +1057,7 @@
 			"mouse_pressed_sound"	"ui/item_light_gun_pickup.wav"
 			"drop_sound"			"ui/item_light_gun_drop.wav"
 		}
-		"38" // Sandvich
+		"42" // Sandvich
 		{
 			"name"				"The Sandvich"
 			"item_name"			"#TF_Weapon_Sandvich"
@@ -1911,11 +1911,6 @@
 					"attribute_class"	"mod_sticky_is_proxy"
 					"value" 			"1"
 				}
-				"fire rate bonus"
-				{
-					"attribute_class"	"mult_postfiredelay"
-					"value"				"0.67"
-				}
 				"max pipebombs decreased"
 				{
 					"attribute_class"	"add_max_pipebombs"
@@ -1930,7 +1925,7 @@
 				"Projectile speed increased hidden"
 				{
 					"attribute_class"	"mult_projectile_speed"
-					"value"				"1.5"
+					"value"				"0.75"
 				}
 				"charge weapon no extra speed"
 				{
@@ -4079,7 +4074,7 @@
 		{
 			"name"		"mod mini-crit airborne"
 			"attribute_class"		"mini_crit_airborne"
-			"description_string"		"#Attrib_MiniCritAirborneEnemiesBlastDirectHit"
+			"description_string"		"#Attrib_MiniCritAirborneEnemies"
 			"description_format"		"value_is_additive"
 			"hidden"		"0"
 			"effect_type"		"positive"
