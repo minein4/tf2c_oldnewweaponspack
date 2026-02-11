@@ -1511,7 +1511,7 @@ through a frickin' windshield, huh, pal?"
 			"item_class"				"tf_weapon_shotgun"										// In previous versions, this was a Coilgun reskin, but that changed to make it closer to the Live TF2 counterpart.
 			"item_slot"					"secondary"
 			"show_in_armory"			"1"
-
+			"anim_slot"					"secondary2"
 			"propername"				"1"
 			"item_name_color"			"255 240 183 255"
 			"item_name"					"Righteous Bison"
@@ -2503,6 +2503,15 @@ Do not think you can run forever, babies!"
 				"crits_become_minicrits"				"1"
 				"crit mod disabled"						"0"
 			}
+			"attributes"
+			{
+				"hidden primary max ammo bonus"
+				{
+					"attribute_class"	"mult_maxammo_primary"
+					"value"				"0"
+				}
+			}
+
 			"visuals"
 			{
 				"sound_single_shot"	"Weapon_CowMangler.Single"
@@ -5205,71 +5214,71 @@ won't be the only thing you'll extinguish."
 		}
 
 		"3420"
-		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_BFB_SCATTERGUN"
-			"prefab"					"weapon_scattergun"
-			"show_in_armory"			"1"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Baby-Face's Blaster"
-			"item_type_name"			"#TF_Weapon_Scattergun"
-			"item_description"			"On Kill: Gain Haste for 4 seconds
-On Hit: Mark Yourself for Death! (2s)
-
-''You can't hit what ain't there''"
-			"item_logname"				"pep_brawlerblaster"
-			"item_iconname"				"pep_brawlerblaster"
-			"image_inventory"			"backpack/workshop/weapons/c_models/c_pep_scattergun/c_pep_scattergun"
+			{
+			"name"	"Baby Face's Blaster"
+			"prefab"		"weapon_scattergun"
+			"first_sale_date"	"2012/06/27"
+			"item_class"	"tf_weapon_pep_brawler_blaster"
+			"tags"
+			{
+				"can_deal_damage"			"1"
+				"can_deal_critical_damage"	"1"
+				"can_deal_mvm_penetration_damage"	"1"
+				"can_deal_long_distance_damage"	"1"
+				"can_be_festivized"		"1"
+			}
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_Scattergun"
+			"item_name"	"#TF_Weapon_PEP_Scattergun"
+			"item_description"	"#TF_Weapon_PEP_Scattergun_Desc"
+			"item_logname"	"pep_brawlerblaster"
+			"item_iconname"	"pep_brawlerblaster"
+			"item_quality"	"unique"
+			"min_ilevel"	"10"
+			"max_ilevel"	"10"
+			"inspect_panel_dist" "38"
+			"image_inventory"	"backpack/workshop/weapons/c_models/c_pep_scattergun/c_pep_scattergun"
 			"model_world"				"models/weapons/w_models/w_pep_scattergun.mdl"			// This would be the first place I used a technique that went on to fix a few more weapons - procedural bones! It's sorcery honestly!!
 			"model_player"				"models/weapons/v_models/v_pep_scattergun_scout.mdl"	// I just manually animated the cover moving for the v_model
 			"attach_to_hands"			"2"
-			"used_by_classes"
+			"static_attrs"
 			{
-				"scout"					"1"
+				"min_viewmodel_offset"					"10 0 -12"
 			}
 			"attributes"
 			{
-				"haste on kill with time"														// Haste boost text! Similar to other speed-boosting effects
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"4"
-				}
-				"add condition on kill"
-				{
-					"attribute_class"	"add_onkill_addcond_self"								// It took long enough to add an addcond on kill...
-					"value"				"32 4"													// Haste! This affects not just your move-speed, but also your firerate and reload speed
-				}
-				"add condition on hit self weapon"															// NOWP v3.0.0 - Since I can finally take the prov on active off, this is swapped over to being a conditional damage vuln! Dish out damage fast, but be wary while shooting at foes to do said damage!
-				{
-					"attribute_class"	"add_onhit_addcond_self_weapon"
-					"value"				"30 2"
-				}
-				"self mfd on hit"
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"2"
-				}
 				"move speed penalty"
 				{
 					"attribute_class"	"mult_player_movespeed"
-					"value"				"0.9"
+					"value"	"0.90"
+				}
+				"boost on damage"
+				{
+					"attribute_class"	"boost_on_damage"
+					"value"	"1"
+				}
+				"hype resets on jump"
+				{
+					"attribute_class"	"hype_resets_on_jump"
+					"value"	"75"
+				}
+				"lose hype on take damage"
+				{
+					"attribute_class"	"lose_hype_on_take_damage"
+					"value"	"4"
 				}
 				"clip size penalty"
 				{
 					"attribute_class"	"mult_clipsize"
-					"value"				"0.67"
+					"value"				"0.66"
 				}
 			}
-			"visuals"
-			{
-				"sound_single_shot"		"Weapon_Brawler_Blaster.Single"
-				"sound_burst"			"Weapon_Brawler_Blaster.SingleCrit"
-			}
-			"mouse_pressed_sound"		"#ui/item_heavy_gun_pickup.wav"
-			"drop_sound"				"#ui/item_heavy_gun_drop.wav"
+			"sound_single_shot"	"Weapon_Brawler_Blaster.Single"
+			"sound_burst"		"Weapon_Brawler_Blaster.SingleCrit"
+			
 		}
+
+
 		"3421"
 		{
 			"mod_item"					"1"
@@ -7737,87 +7746,58 @@ I don't need yer bloody “depth perception” for some afternoon golf, I'll hav
 
 		"3453"
 		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_SLAPPERS"									// The Hot Hand from Live, with a healthy dash of flavoring from the Slappers GMod addon. My beloved.
-			"prefab"					"weapon_fireaxe"
-			"item_class"				"tf_weapon_fists"										// Normal dmg, but you can swing with M1 and M2!
-			"show_in_armory"			"1"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Hot Hand"
-			"item_type_name"			"Glove"
-			"item_description"			"
-Smack a lil' sense into them!"
-			"item_logname"				"hot_hand"
-			"item_iconname"				"hot_hand_slapkill"										// Finally added the slap kill kill-icon, since I forgot it prior to NOWP v2.5.0!!
-			"image_inventory"			"backpack/weapons/c_models/c_slapping_glove/w_slapping_glove"
+			"name"	"The Hot Hand"
+			"tags"
+			{
+				"can_deal_damage"			"1"
+			}
+			"item_class"	"tf_weapon_slap"
+			"craft_class"	"weapon"
+			"craft_material_type"	"weapon"
+			"item_type_name"	"#TF_Weapon_Slap"
+			"item_name"	"#TF_Weapon_HotHand"
+			"item_description"	"#TF_Weapon_HotHand_Desc"
+			"item_slot"	"melee"
+			"anim_slot"	"MELEE_ALLCLASS"
+			"item_quality"	"unique"
+			"item_logname"	"hot_hand"
+			"item_iconname"	"hot_hand"
+			"min_ilevel"	"1"
+			"max_ilevel"	"100"
+			"image_inventory"	"backpack/weapons/c_models/c_slapping_glove/w_slapping_glove"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
 			"model_world"				"models/weapons/w_models/w_slappers.mdl"
 			"model_player"				"models/weapons/v_models/v_slappers_pyro.mdl"
 			"extra_wearable"			"models/weapons/w_models/w_slappers.mdl"
-			"extra_wearable_hide_on_active"	"1"
+			// "extra_wearable_hide_on_active"	"1"
+			"attach_to_hands_vm_only"	"1"
 			"attach_to_hands"			"2"
+			"propername"	"1"
 			"used_by_classes"
 			{
-				"pyro"					"1"
+				"pyro"	"1"
 			}
 			"static_attrs"
 			{
-				"particle on melee hit"					"highfive_yellow"						// A little underwhelming, but eh. Also, any color works for this - they all seem identical IMO?
-				"custom hand viewmodel"					"models/weapons/c_models/c_pyro_arms_slappers.mdl" // TF2C v2.1.0 - You can set a custom model for the viewmodel arms to use! With two conditions. It has to be global (no provide on active), and this model doesn't support critglows. Hot Hand barely manages to skirt by both of these!
-				"mod melee swing custom damage"			"33"									// NOWP v3.2.1 - Parity for the rest of the knockback stuff... dangit!!
-				"mod melee crit swing custom damage"	"33"
+				"damage penalty"					"0.8"
+				"speed_boost_on_hit_enemy"			"1.0"
 			}
 			"attributes"
 			{
-				"humiliation rate increased"
+				"disable weapon hiding for animations"
 				{
-					"attribute_class"	"DISPLAY_ONLY"											// Similar to the Mackerel, but it's just cosmetic this time!
-					"value"				"1.25"
-				}
-				"haste on kill with time"														// Since this escapes fairly easily via. afterburn, despite my best efforts, I want it to only occur if Pyro gets a kill
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"2"
-				}
-				"add condition on kill"
-				{
-					"attribute_class"	"add_onkill_addcond_self"
-					"value"				"121 2"													// Copied from D. Action, it's haste to make it slightly more worth your while!
-				}
-				"weapon enemy knockback mod mult increased"
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"1.33"
-				}
-				"hide_attrib_additive"		
-				{
-					"attribute_class"	"set_scattergun_has_knockback"
-					"value"				"1"
-				}
-				"scattergun knockback mult"
-				{
-					"attribute_class"	"scattergun_knockback_mult"
-					"value"				"0.33"
-				}
-				"damage penalty"
-				{
-					"attribute_class"	"mult_dmg"
-					"value"				"0.8"
+					"attribute_class"	"disable_weapon_hiding_for_animations"
+					"value"	"1"
 				}
 				"hide extra wearable on active"
 				{
 					"attribute_class"	"hide_extra_wearable_active"
 					"value"				"1"
 				}
-				// Backend stuff
 			}
 			"visuals"
 			{
-				"sound_melee_miss"		"Weapon_Fist.Miss"
-				"sound_melee_hit"		"Weapon_Slap.HandHit"
-				"sound_melee_hit_world"	"Weapon_Fist.HitWorld"
-				"sound_burst"			"Weapon_Fist.MissCrit"
 				"player_bodygroups"
 				{
 					"rightarm"			"1"
@@ -7829,9 +7809,12 @@ Smack a lil' sense into them!"
 					"ACT_MP_ATTACK_CROUCH_MELEE_SECONDARY"		"ACT_MP_ATTACK_CROUCH_MELEE"
 					"ACT_MP_ATTACK_SWIM_MELEE_SECONDARY"		"ACT_MP_ATTACK_SWIM_MELEE"
 				}
+				"sound_deploy"	"Weapon_Slap.Draw"
+				"sound_melee_miss"	"Weapon_Slap.Swing"
+				"sound_burst"	"Weapon_Slap.SwingCrit"
+				"sound_special1"	"Weapon_Slap.SwingFire"
+				"sound_special2"	"Weapon_Slap.SwingFireCrit"
 			}
-			"mouse_pressed_sound"		"#ui/item_rubber_pickup.wav"
-			"drop_sound"				"#ui/item_fists_drop.wav"
 		}
 		"3454"
 		{
