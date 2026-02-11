@@ -1214,7 +1214,7 @@
 			"item_class"				"tf_weapon_revolver"
 			"item_type_name"			"#TF_Weapon_Revolver"
 			"item_name"					"#TF_Weapon_Revolver"
-			"item_slot"					"primary"
+			"item_slot"					"secondary"
 			"anim_slot"					"secondary"
 			"item_quality"				"normal"
 			"min_ilevel"				"1"
@@ -2514,7 +2514,7 @@
 			"base_item_name"	"The Crusader's Crossbow"
 			"item_type_name"	"#TF_Weapon_Crossbow"
 			"item_name"	"#TF_CrusadersCrossbow"
-			"item_description"	"#TF_CrusadersCrossbow_desc"
+			"item_description"	"#Nowp_CrusadersCrossbow_desc"
 			"item_logname"	"crusaders_crossbow"
 			"item_iconname"	"crusaders_crossbow"
 			"item_slot"	"primary"
@@ -2537,7 +2537,9 @@
 				"min_viewmodel_offset"				"10 0 -14"
 				"weapon_stattrak_module_scale"			"0.608"
 				"custom projectile origin offset"		"16 8 -16"
+				"cant fix"							"1"
 			}
+
 			"attributes"
 			{
 				"sniper no headshots"
@@ -2566,8 +2568,101 @@
 			"xifier_class_remap"	"crusaders_crossbow"
 		}
 
+		"weapon_disciplinary_action"
+		{
+			"enabled"	"1"
+			"item_class"	"tf_weapon_shovel"
+			"craft_class"	"weapon"
+			"craft_material_type"	"weapon"
+			"capabilities"
+			{
+				"nameable"		"1"
+				"can_craft_count"	"1"
+			}
+			"tags"
+			{
+				"can_deal_damage"			"1"
+				"can_be_equipped_by_soldier_or_demo"	"1"
+				"can_deal_critical_damage"	"1"
+			}
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_Riding_Crop"
+			"item_name"	"#TF_DisciplinaryAction"
+			"item_logname"	"disciplinary_action"
+			"item_iconname"	"disciplinary_action"
+			"item_slot"	"melee"
+			"item_quality"	"unique"
+			"propername"	"1"
+			"min_ilevel"	"10"
+			"max_ilevel"	"10"
+			"image_inventory" "backpack/workshop/weapons/c_models/c_riding_crop/c_riding_crop"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"model_world"				"models/weapons/w_models/w_riding_crop.mdl"
+			"model_player"				"models/weapons/v_models/v_riding_crop_soldier.mdl"
+			"attach_to_hands"			"2"
+			"extra_wearable"			"models/player/items/set_generalformals.mdl"
+			"inspect_panel_dist" "50"
+			"used_by_classes"
+			{
+				"soldier"	"1"
+			}
+			"static_attrs"
+			{
+				"min_viewmodel_offset"				"10 -5 -20"
+				"weapon_stattrak_module_scale"			"0.455"
+			}
+			"attributes"
+			{
+				"damage penalty"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"	"0.75"
+				}
+				"speed buff ally"
+				{
+					"attribute_class"	"speed_buff_ally"
+					"value"	"1"
+				}
+				"melee range multiplier"
+				{
+					"attribute_class"	"melee_range_multiplier"
+					"value"	"1.7"
+				}
+				"melee bounds multiplier"
+				{
+					"attribute_class"	"melee_bounds_multiplier"
+					"value"	"1.55"
+				}
+				"kill eater score type 2"
+				{
+					"attribute_class"	"kill_eater_score_type_2"
+					"value" 	"66"	
+				}
+			}
+			"visuals"
+			{
+				"sound_melee_miss"		"DisciplineDevice.Swing"
+				"sound_melee_hit"		"DisciplineDevice.Impact"
+				"sound_melee_hit_world"	"DisciplineDevice.HitWorld"
+				"sound_melee_burst"		"DisciplineDevice.ImpactCrit"
+			}
+			"mouse_pressed_sound"	"ui/item_metal_weapon_pickup.wav"
+			"drop_sound"		"ui/item_metal_weapon_drop.wav"
+		}
 
-
+			"weapon_sniperrifle_alt1"
+		{
+			"visuals"
+			{
+				"animation_replacement"
+				{
+					"ACT_PRIMARY_VM_INSPECT_START"	"ACT_PRIMARY_ALT1_VM_INSPECT_START"
+					"ACT_PRIMARY_VM_INSPECT_IDLE"	"ACT_PRIMARY_ALT1_VM_INSPECT_IDLE"
+					"ACT_PRIMARY_VM_INSPECT_END"	"ACT_PRIMARY_ALT1_VM_INSPECT_END"
+				}
+			}
+		}
 
 	}
 }

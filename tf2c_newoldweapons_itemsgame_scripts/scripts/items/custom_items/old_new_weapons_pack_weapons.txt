@@ -3132,95 +3132,10 @@ Ya need your little baby-blankie, too?"
 
 		"3368"
 		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_RIDING_CROP"
-			"prefab"					"weapon_shovel"
-			"item_class"				"tf_weapon_umbrella"
-			"show_in_armory"			"1"
-			"equip_region"				"hat"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Disciplinary Action"
-			"item_type_name"			"Riding Crop"
-			"item_description"			"Alt-Fire: Give Speed-boost to teammates (3s)
-Boosts to allies also apply to yourself
-
-“We will push, until there is
-nothing left to push!”"
-			"item_logname"				"disciplinary_action"
-			"item_iconname"				"disciplinary_action"
-			"image_inventory"			"backpack/workshop/weapons/c_models/c_riding_crop/c_riding_crop"
-			"model_world"				"models/weapons/w_models/w_riding_crop.mdl"
-			"model_player"				"models/weapons/v_models/v_riding_crop_soldier.mdl"
-			"attach_to_hands"			"2"
-			"extra_wearable"			"models/player/items/set_generalformals.mdl"
-			"used_by_classes"
-			{
-				"soldier"				"1"
-			}
-			"static_attrs"																		// Since this is an Umbrella, turn it back into a Shovel
-			{
-				"fire rate penalty hidden"				"1.6"
-				"damage bonus hidden"					"1.39"								
-				"melee bounds multiplier"				"1.55"
-				"civ boost cond override"				"32 0.416"								// Normal Speed boost!! As of TF2C v2.1.0, Civ's default boost time seems to be 8s, so these are changed accordingly. This is 3.33s
-				"add civ boost to self fix"				"32 3.33"								// TF2C v2.1.4 - SELF-BOOSTING! Boosting anyone lets you give a cond to yourself, too. A bit scuffed as of writing, but it works!
-			}
-			"attributes"
-			{
-				"hide_attrib_additive"
-				{
-					"attribute_class"	"umbrella_recharge_rate"
-					"value"				"0.416"													// TF2C v2.1.5 - Finally, Civ boost recharge modifiers! Took long enough. Default boost has a 16s cooldown!
-				}
-				"speed_boost_on_hit"
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"1"
-				}
-				"hitscan hits allies"
-				{
-					"attribute_class"	"hitscan_hits_allies"
-					"value"				"1"
-				}
-				"add condition on hit self weapon"
-				{
-					"attribute_class"	"add_onhit_addcond_self_weapon"
-					"value"				"32 1"
-				}
-				"melee range multiplier increased"												// Here's an observation... for longer-reach melees, if there's focus on hitting teammates, then this is 1.7 instead of 1.35! The bounds mult stays the same though.
-				{
-					"attribute_class"	"melee_range_multiplier"
-					"value"				"1.7"
-				}
-				"damage penalty"																// DISPLAY ONLY
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"0.75"
-				}
-			}
-			"visuals"
-			{		
-				"sound_melee_miss"		"DisciplineDevice.Swing"
-				"sound_burst"			"DisciplineDevice.SwingCrit"							// This weapon in live TF2 is actually separated into the swing and whip hit sound, so it's a bit odd.
-				"sound_melee_hit"		"DisciplineDevice.Impact"
-				"sound_melee_hit_world"	"DisciplineDevice.HitWorld"
-				"sound_special1"		"DisciplineDevice.PowerUp"
-				"player_bodygroups"
-				{
-					"hat"				"1"
-					"headphones"		"1"
-				}
-				"animation_replacement"															// Gets this too since the weapon can boost
-				{
-					"ACT_MP_ATTACK_STAND_SECONDARYFIRE"			"ACT_MP_GESTURE_VC_FINGERPOINT_MELEE"
-					"ACT_MP_ATTACK_CROUCH_SECONDARYFIRE"		"ACT_MP_GESTURE_VC_FINGERPOINT_MELEE"
-					"ACT_MP_ATTACK_SWIM_SECONDARYFIRE"			"ACT_MP_GESTURE_VC_FINGERPOINT_MELEE"
-				}
-			}
-			"mouse_pressed_sound"		"#weapons/discipline_device_hit_world.wav"
-			"drop_sound"				"#ui/item_hat_drop.wav"
+			"name"	"The Disciplinary Action"
+			"prefab" "weapon_disciplinary_action paintkit_base"
+			"first_sale_date"	"2011/05/10"
+			"particle_suffix"	"disciplinary_action"
 		}
 
 		"3369"
@@ -4107,119 +4022,77 @@ mixed with the efficacy of a pipe-bomb."
 			"mouse_pressed_sound"		"#ui/item_metal_weapon_pickup.wav"
 			"drop_sound"				"#ui/item_metal_weapon_drop.wav"
 		}
-
-		"3383"
+			"3383"
 		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_DARTGUN"
-			"prefab"					"weapon_sniperrifle"
-			"show_in_armory"			"1"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Sydney Sleeper"
-			"item_type_name"			"Tranquilizer Rifle"									// Yep.
-			"item_description"			"
-“That'll slow you down,
-you twitchy hooligan!”"
-			"item_logname"				"sydney_sleeper"
-			"item_iconname"				"sydney_sleeper"
-			"image_inventory"			"backpack/workshop/weapons/c_models/c_sydney_sleeper/c_sydney_sleeper"
+			"name"	"The Sydney Sleeper"
+			"first_sale_date"	"2010/09/29"
+			"prefab"	"weapon_sniperrifle_alt1"
+			"item_class"	"tf_weapon_sniperrifle"
+			"craft_class"	"weapon"
+			"craft_material_type"	"weapon"
+			"item_logname"	"sydney_sleeper"
+			"item_iconname"	"sydney_sleeper"
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_SniperRifle"
+			"item_name"	"#TF_SydneySleeper"
+			"item_slot"	"primary"
+			"item_quality"	"unique"
+			"propername"	"1"
+			"min_ilevel"	"1"
+			"max_ilevel"	"1"
+			"image_inventory"	"backpack/workshop/weapons/c_models/c_sydney_sleeper/c_sydney_sleeper"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
 			"model_world"				"models/weapons/w_models/w_sydney_sleeper.mdl"
 			"model_player"				"models/weapons/v_models/v_sydney_sleeper_sniper.mdl"
 			"extra_wearable"			"models/player/items/sniper_darts.mdl"					// NOWP v3.0.0 - I was doing some housekeeping for another mod, and noticed Sniper had a bodygroup for Sydney Sleeper darts!! Since they work fine, I added them back in.
 			"attach_to_hands"			"2"
-			"brass_eject_model"			""														// I was EXCITED as hell to find this, but it doesn't... seem to be functional?
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"bullets"		"1"
+				}
+				"sound_single_shot"	"Weapon_SydneySleeper.Single"
+				"sound_burst"	"Weapon_SydneySleeper.SingleCrit"
+			}
 			"used_by_classes"
 			{
-				"sniper"				"1"
+				"sniper"	"1"
 			}
 			"static_attrs"
 			{
+				"min_viewmodel_offset"		"5 0 -8"				
 			}
-			"attributes"																		// NOWP v3.0.0 - Okay... I admit I haven't liked how this weapon felt for a while. Let's try this! A strange stopgap of what it does on headshot in Live TF2... explosive shots, applies MfD
+			"mouse_pressed_sound"	"ui/item_heavy_gun_pickup.wav"
+			"drop_sound"		"ui/item_heavy_gun_drop.wav"
+			"brass_eject_model"	""	
+			"attributes"
 			{
-				"mfd short time"
+				"sniper no headshots"
 				{
-					"attribute_class"	"mark_for_death"
-					"value"				"5"
+					"attribute_class" "set_weapon_mode"
+					"value" "1"
 				}
-				"add condition on hit weapon"
+				"jarate duration"
 				{
-					"attribute_class"	"add_onhit_addcond_weapon"								// NOWP v3.0.0 - This is back to being MfD! This has been... tricky... since another rifle already has a MfD focus, but I think I have room for 2 of them.
-					"value"				"30 5"
+					"attribute_class" "jarate_duration"
+					"value" "5"
 				}
-				"explosive bullets"
+				"crit mod disabled"
 				{
-					"attribute_class"	"explosive_bullets"
-					"value"				"1"
+					"attribute_class"	"mult_crit_chance"
+					"value"	"0"
 				}
 				"sniper charge per sec"
 				{
 					"attribute_class"	"mult_sniper_charge_per_sec"
-					"value"				"1.25"
-				}
-				"no headshot"
-				{
-					"attribute_class"	"no_headshot"
-					"value"				"1"
-				}
-				"crit mod disabled hidden"														// I don't actually know why this is here. Sniper Rifles can't random crit to begin with!
-				{
-					"attribute_class"	"mult_crit_chance"
-					"value"				"0"
-				}
-				// Backend stuff
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"mult_projectile_speed"
-					"value"				"1.35"
-				}
-				"custom projectile model"														// The unused dart model!
-				{
-					"attribute_class"	"custom_projectile_model"
-					"value"				"models/weapons/c_models/c_dart.mdl"
-				}
-				"hide_attrib_percentage"	
-				{
-					"attribute_class"	"blast_dmg_to_self"
-					"value"				"0"
-				}
-				"self dmg push force hidden"
-				{
-					"attribute_class"	"mult_dmgself_push_force"
-					"value"				"0"
+					"value"	"1.25"
 				}
 			}
-			"visuals"
-			{
-				"sound_single_shot"		"Weapon_SydneySleeper.Single"
-				"sound_burst"			"Weapon_SydneySleeper.SingleCrit"
-				"sound_reload"			"Weapon_SniperRifle.WorldReload"
-				"sound_special1"		"TFPlayer.SafestLanding"								// TO-DO: Find a better sound for this!!!!
-				"muzzle_flash"			"muzzle_tranq"
-				"explosion_effect"		"peejar_impact_small"
-			}
-			"visuals_red"																		// Copied from normal Jarate
-			{
-				"explosion_effect_crit"	"explosion_shrapnel_PARENT_red_crit"
-			}
-			"visuals_blu"
-			{
-				"explosion_effect_crit"	"explosion_shrapnel_PARENT_blue_crit"
-			}
-			"visuals_grn"
-			{
-				"explosion_effect_crit"	"explosion_shrapnel_PARENT_green_crit"
-			}
-			"visuals_ylw"
-			{
-				"explosion_effect_crit"	"explosion_shrapnel_PARENT_yellow_crit"
-			}
-			"mouse_pressed_sound"		"#ui/item_wood_weapon_pickup.wav"
-			"drop_sound"				"#ui/item_wood_weapon_drop.wav"
 		}
 
+		
 		"3384"
 		{
 			"mod_item"					"1"
@@ -5174,7 +5047,7 @@ Now, if only you knew how to use a gun..."														// I find it important t
 			"static_attrs"
 			{
 				"class select override vcd"				"taunt01"
-				"civ boost cond override"				"115 1.5"								// This is an attribute new to TF2C v2.0.2 - you can override what kind of effects the Boost gives! PLEASE NOTE, the second value isn't in seconds, it's a multiplier for the default boost time (8s)
+				"civ boost cond override"				"30 1.5"								// This is an attribute new to TF2C v2.0.2 - you can override what kind of effects the Boost gives! PLEASE NOTE, the second value isn't in seconds, it's a multiplier for the default boost time (8s)
 				"minicrits become crits"				"1"										// This technically isn't necessary, but clues the Civ in that their damage will crit now! The target gets marked with Super MfD (which is minicrit dmg + full criticals from melee damage)
 				"umbrella recharge rate increased"		"0.75"									// TF2C v2.1.5 - FINALLY! An umbrella boost recharge modifier! This sets it to 12s (default is 16s)
 				"damage penalty"						"0.8545"
@@ -5566,7 +5439,7 @@ and I do not know how to lose!"
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_REVOLVER_RIFLE"								// An old friend! Old viewers might remember this as one of the old weapons prominently shown off in my old weapons pack videos from 2015!
 			"prefab"					"weapon_sniperrifle"
-			"item_class"				"tf_weapon_hunterrifle"
+			"item_class"				"tf2c_weapon_hunting_revolver"
 			"show_in_armory"			"1"
 			"anim_slot"					"primary"
 
@@ -7595,7 +7468,7 @@ a Medical Shotgun before!?"
 			{
 				// "fire rate burst"						"0.0000000000001"						// Essentially instant, feel free to remove a few zeroes if it starts causing problems
 				"override projectile type"				"5"										// Syringes! This is MANDATORY!!
-				"custom projectile origin offset"		"0 -2 8"								// Emits from slightly higher up on the weapon!
+				// "custom projectile origin offset"		"0 -2 8"								// Emits from slightly higher up on the weapon!
 				"custom rampup"							"1.2"
 				"no damage falloff over distance"		"1"
 
@@ -7608,6 +7481,11 @@ a Medical Shotgun before!?"
 			}
 			"attributes"
 			{
+				"custom projectile origin offset"
+				{
+					"attribute_class"	"custom_projectile_origin_offset"
+					"value"				"0 5 0"
+				}
 				"override projectile type"
 				{
 					"attribute_class"	"override_projectile_type"
@@ -8157,16 +8035,22 @@ And for that: you can do more, with less."
 				"pda default desc"						"1"
 				"rush order combined"					"1"
 				"dispenser rate increased"				"1.33"									// Dispensers give significantly more ammo and generate more metal per tick of those
+				
 				// Split
 			}
 			"attributes"
 			{
-				"building cost reduction"
+			//	"building cost reduction"
+			//	{
+			//		"attribute_class"	"DISPLAY_ONLY"
+			//		"value"				"0.7"													// The numbers here aren't perfect...
+			//	}
+				"rushorder desc 2"						
 				{
 					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"0.7"													// The numbers here aren't perfect...
+					"value"				"1"
 				}
-				"buildings max level penalty"
+				"hide_attrib_percentage"
 				{
 					"attribute_class"	"add_buildings_max_level"
 					"value"				"-2"
@@ -8197,12 +8081,22 @@ And for that: you can do more, with less."
 					"attribute_class"	"mult_dispenser_radius"									// You have to get really close to the Dispenser to activate healing / ammo giving actions
 					"value"				"0.67"
 				}
-				"hide_attrib_percentage"	
+				"rushorder desc"						
+				{
+					"attribute_class"	"DISPLAY_ONLY"
+					"value"				"1"
+				}
+				"hidden separator"
+				{
+					"attribute_class"	"hidden_separator"
+					"value"				"1"
+				}
+				"mod dispenser cost"	
 				{
 					"attribute_class"	"mod_dispenser_cost"
 					"value"				"0.7"													// -30 build cost
 				}
-				"hide_attrib_percentage"	
+				"mod teleporter cost"	
 				{
 					"attribute_class"	"mod_teleporter_cost"
 					"value"				"0.7"													// -30 build cost
@@ -8363,7 +8257,7 @@ Alt-Fire: Detonate all Mini-Dispensers
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_DM_CROSSBOW"									// NOWP v3.0.0 - OKAY TOTAL OVERHAUL TIME. No prancing around, let's try this - a HL1-inspired take of the crossbow with influence from... shit, every other Sniper primary to date.
 			"prefab"					"weapon_sniperrifle"
-			"item_class"				"tf_weapon_hunterrifle"
+			"item_class"				"tf2c_weapon_hunting_revolver"
 			"show_in_armory"			"1"
 
 			"propername"				"1"
@@ -8403,6 +8297,11 @@ Take the shot, it's you or them."
 			}
 			"attributes"
 			{
+				"custom projectile model"
+				{
+					"attribute_class"	"custom_projectile_model"
+					"value"				""models/weapons/w_models/w_dm_crossbow_arrow.mdl""
+				}
 				"headshot damage decrease"
 				{
 					"attribute_class"	"mult_dmg_crit_multiplier"								// Does 225 DMG. Closest to a Huntsman headshot, where it's weaker (225 vs. 360, Huntsman has 2x charge rate compared to this BUT slower overall fire speed) - This is such an odd weapon it only really has one comparable negative trait compared to other weapons, but even then, only so.
@@ -8441,12 +8340,12 @@ Take the shot, it's you or them."
 				"explosion_effect"		"explosion_shrapnel_PARENT"
 				"animation_replacement"
 				{
-					"ACT_MP_RELOAD_STAND_PRIMARY_DEPLOYED"		"ACT_MP_ATTACK_STAND_MELEE"
-					"ACT_MP_RELOAD_CROUCH_PRIMARY_DEPLOYED"		"ACT_MP_ATTACK_CROUCH_MELEE"
-					"ACT_MP_RELOAD_SWIM_PRIMARY_DEPLOYED"		"ACT_MP_ATTACK_SWIM_MELEE"
-					"ACT_MP_RELOAD_STAND_PRIMARY"				"ACT_MP_ATTACK_STAND_MELEE"
-					"ACT_MP_RELOAD_CROUCH_PRIMARY"				"ACT_MP_ATTACK_CROUCH_MELEE"
-					"ACT_MP_RELOAD_SWIM_PRIMARY"				"ACT_MP_ATTACK_SWIM_MELEE"
+			//	"ACT_MP_RELOAD_STAND_PRIMARY_DEPLOYED"		"ACT_MP_ATTACK_STAND_MELEE"
+			//	"ACT_MP_RELOAD_CROUCH_PRIMARY_DEPLOYED"		"ACT_MP_ATTACK_CROUCH_MELEE"
+			//	"ACT_MP_RELOAD_SWIM_PRIMARY_DEPLOYED"		"ACT_MP_ATTACK_SWIM_MELEE"
+			//	"ACT_MP_RELOAD_STAND_PRIMARY"				"ACT_MP_ATTACK_STAND_MELEE"
+			//	"ACT_MP_RELOAD_CROUCH_PRIMARY"				"ACT_MP_ATTACK_CROUCH_MELEE"
+			//	"ACT_MP_RELOAD_SWIM_PRIMARY"				"ACT_MP_ATTACK_SWIM_MELEE"
 
 				}
 			}
@@ -8985,7 +8884,7 @@ before one of you gets hurt.”"
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_AMPUTATOR"									// The only slightly spicy Live port of the bunch, I had more of a vision of what I wanted this to do and I have plans for the future!
 			"prefab"					"weapon_bonesaw"
-			"item_class"				"tf_weapon_umbrella"									// Sadly, no buff aura attrib, but civ umbrella is still useful for us to use!
+			"item_class"				"tf2c_weapon_umbrella"									// Sadly, no buff aura attrib, but civ umbrella is still useful for us to use!
 			"show_in_armory"			"1"
 			"equip_region"				"whole_head"
 
@@ -9013,8 +8912,8 @@ Hohoho, vhat a stroke of medical genius!"
 			{
 				"fire rate penalty hidden"				"1.6"
 				"damage bonus hidden"					"1.475"
-				"civ boost cond override"				"111 1.25"								// The defensive buff lasts for about 10s - pretty good! PLUS, as of TF2C v2.1.0, it also heals patients too. Heck yeah.
-				"add civ boost to self fix"				"111 2.5"								// TF2C v2.1.4 - SELF-BOOSTING! Boosting anyone lets you give a cond to yourself, too. A bit scuffed as of writing, but it works! This has a shorter duration...
+				"civ boost cond override"				"26 1.25"								// The defensive buff lasts for about 10s - pretty good! PLUS, as of TF2C v2.1.0, it also heals patients too. Heck yeah.
+				"add civ boost to self fix"				"26 2.5"								// TF2C v2.1.4 - SELF-BOOSTING! Boosting anyone lets you give a cond to yourself, too. A bit scuffed as of writing, but it works! This has a shorter duration...
 			}
 			"attributes"
 			{
@@ -12446,75 +12345,61 @@ ye didn't want to get struck, ya daft idiot!"
 
 		"3526"
 		{
-			"mod_item"					"1"
-			"name"						"TF_WEAPON_HIPPOCRATIC_BUST"							// For no particular reason, I wanted to tackle this!
-			"prefab"					"weapon_bonesaw"
-			"item_class"				"tf_weapon_umbrella"
-			"show_in_armory"			"1"
-
-			"propername"				"1"
-			"item_name_color"			"255 240 183 255"
-			"item_name"					"Solemn Vow"											// I always misspell it as "Solumn"
-			"item_type_name"			"Marble Bust"
-			"item_description"			"Alt-Fire: Apply Outline to an enemy (8s)
-
-“You have 30 seconds to live.”"
-			"item_logname"				"solemn_vow"
-			"item_iconname"				"solemn_vow"
-			"image_inventory"			"backpack/weapons/c_models/c_hippocrates_bust/c_hippocrates_bust" // The BP Icon was a little weird, until I figured out he looks okay with the Pyro lightwarp!
+			"name"	"The Solemn Vow"
+			"first_sale_date"	"2011/03/22"
+			"item_class"	"tf_weapon_bonesaw"
+			"craft_class"	"weapon"
+			"craft_material_type"	"weapon"
+			"capabilities"
+			{
+				"nameable"		"1"
+			}
+			"tags"
+			{
+				"can_deal_damage"			"1"
+				"can_deal_critical_damage"	"1"
+				"can_be_festivized"		"1"
+			}
+			"anim_slot" "MELEE_ALLCLASS"
+			"item_logname"	"solemn_vow"
+			"item_iconname"	"solemn_vow"
+			"show_in_armory"	"1"
+			"item_type_name"	"#TF_Weapon_Bust"
+			"item_description"	"#TF_SolemnVow_Desc"
+			"item_name"	"#TF_SolemnVow"
+			"item_slot"	"melee"
+			"image_inventory"	"backpack/weapons/c_models/c_hippocrates_bust/c_hippocrates_bust"
+			"image_inventory_size_w"		"128"
+			"image_inventory_size_h"		"82"
+			"inspect_panel_dist" 				"40"			
 			"model_world"				"models/weapons/w_models/w_hippocrates_bust.mdl"		// Do Harm
 			"model_player"				"models/weapons/v_models/v_hippocrates_bust_medic.mdl"
 			"attach_to_hands"			"2"
+			"item_quality"	"unique"
+			"propername"	"1"
+			"min_ilevel"	"10"
+			"max_ilevel"	"10"
 			"used_by_classes"
 			{
-				"medic"				"1"
+				"medic"	"1"
 			}
-			"static_attrs"																		// Since this is an Umbrella, turn it back into a Bonesaw
+			"static_attrs"
 			{
-				"fire rate penalty hidden"				"1.76"									// Brings it up to Live's 10% slower fire-rate
-				"damage bonus hidden"					"1.29"
-
-				"civ boost cond override"				"122 1.0"								// Applies Outline for about 8s - pretty lengthy! Since Medic is usually far away from targets, this is either to signpost enemies, or to sieze oppurtunity and go in for the KILL
-				"crit vs outlined players"				"123"									// Copied from Saboteur / Backup Plan
-				"meter_label"							"DEBUFF"
+				"min_viewmodel_offset"		"10 -4 -12"				
 			}
 			"attributes"
 			{
-				"hide_attrib_additive"
-				{
-					"attribute_class"	"umbrella_recharge_rate"
-					"value"				"0.75"													// TF2C v2.1.5 - Finally, Civ boost recharge modifiers! Took long enough. Default boost has a 16s cooldown!
-				}
-				"damage penalty"
-				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"0.7"													// Lowers (raises) the damage to just 45 per. Modest, it's very bad for direct combat but is passable w/ random crits or outline crits
-				}
 				"fire rate penalty"
 				{
-					"attribute_class"	"DISPLAY_ONLY"
-					"value"				"1.1"
+					"attribute_class"	"mult_postfiredelay"
+					"value"	"1.1"
 				}
-				"boost targets enemies text"													// Copied from the Backup Plan
+				"mod see enemy health"
 				{
-					"attribute_class"	"add_civ_boost_enemies"
-					"value"				"1"
+					"attribute_class"	"see_enemy_health"
+					"value" "1"
 				}
 			}
-			"visuals"
-			{
-				"sound_melee_hit"		"Weapon_Fishwhacker.HitFlesh"							// This strikes me as incredibly blunt to hit someone with, so it gets this soundset!
-				"sound_melee_hit_world"	"Weapon_Crowbar.HitWorld"
-				"sound_taunt"			"Taunt.MedicViolin"
-				"animation_replacement"															// Gets this too since the weapon can boost
-				{
-					"ACT_MP_ATTACK_STAND_SECONDARYFIRE"			"ACT_MP_GESTURE_VC_FINGERPOINT_MELEE"
-					"ACT_MP_ATTACK_CROUCH_SECONDARYFIRE"		"ACT_MP_GESTURE_VC_FINGERPOINT_MELEE"
-					"ACT_MP_ATTACK_SWIM_SECONDARYFIRE"			"ACT_MP_GESTURE_VC_FINGERPOINT_MELEE"
-				}
-			}
-			"mouse_pressed_sound"		"#ui/item_metal_weapon_pickup.wav"						// It's NOT actually metal, but similar to the SVF, this soundset works for the kind of very hard, not very resonant material we're working with here.
-			"drop_sound"				"#ui/item_metal_weapon_drop.wav"
 		}
 		"3527"
 		{
@@ -12827,7 +12712,9 @@ Hey, guess this watch has some juice left!"
 		{
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_KRALLE"
-			"prefab"					"weapon_medigun"
+			"item_class"				"tf_weapon_medigun"
+			"item_type_name"			"#TF_Weapon_Medigun"
+			"item_slot"					"secondary"
 			"show_in_armory"			"1"
 			"equip_region"				"medigun_backpack"
 
@@ -14684,7 +14571,7 @@ I'm here live-reporting... wait, I'm what!?"
 			"mod_item"					"1"
 			"name"						"TF_WEAPON_CARDCOARDCOW"
 			"prefab"					"weapon_umbrella"
-			"item_class"				"tf_weapon_riot"
+			"item_class"				"tf_weapon_shovel"
 			"show_in_armory"			"1"
 
 			"propername"				"1"
@@ -14728,11 +14615,11 @@ acceptable disguise, thank you very much!"
 					"attribute_class"	"DISPLAY_ONLY"
 					"value"				"1"
 				}
-				"health no regen"						
-				{
-					"attribute_class"	"add_health_regen"										// To make things spicy and interesting, for as big a boon as the shielding is, you also give up your big safety net in the form of your health regen. If you want your health AND shield back, you have to take some risks!
-					"value"				"-17"													// TO-DO: Civilian actually regens 15 hp/s - lower this back down incase this begins to bleed through?? Only 17 to avoid brief regen on taking damage.
-				}
+		//	"health no regen"						
+		//	{
+		//		"attribute_class"	"add_health_regen"										// To make things spicy and interesting, for as big a boon as the shielding is, you also give up your big safety net in the form of your health regen. If you want your health AND shield back, you have to take some risks!
+		//		"value"				"-17"													// TO-DO: Civilian actually regens 15 hp/s - lower this back down incase this begins to bleed through?? Only 17 to avoid brief regen on taking damage.
+		//	}
 				"primary ammo from ammo packs penalty"											// Civilian should be able to recover shield, but it'll be more laborious and he might need to put himself into dangerous situations just to recover shield! You get 20 from most dropped weapons, and only 40 from a full ammo box.
 				{
 					"attribute_class"	"mult_primary_ammo_from_ammo_packs"
@@ -14758,18 +14645,18 @@ acceptable disguise, thank you very much!"
 				"add condition on hit weapon"													// Copied from Cyclops, yada yada. I think this might encourage Civs to be a LITTLE more proactive about being at the front?
 				{
 					"attribute_class"	"add_onhit_addcond_weapon"
-					"value"				"84 0.5"												// Add TF_COND_BALLOON_HEAD for half a sec, which does nothing on its own. 0.2845 is JUST fast enough to prevent haste minicrits, but it makes landing the combo REALLY hard...
+					"value"				"78 0.5"												// Add TF_COND_BALLOON_HEAD for half a sec, which does nothing on its own. 0.2845 is JUST fast enough to prevent haste minicrits, but it makes landing the combo REALLY hard...
 				}
 				"minicrit vs cond no dot"
 				{
 					"attribute_class"	"single_minicrit_vs_playercond_no_dot"
 					"value"				"85"													// ...and then, if the successive hit lands, deal minicrits!
 				}
-				"add condition on swing"
-				{
-					"attribute_class"	"add_onswing_addcond"
-					"value"				"84 180"												// Shhhhhh. Don't tell. This is copied from the Katana~
-				}
+				//"add condition on swing"
+				//{
+				//	"attribute_class"	"add_onswing_addcond"
+				//	"value"				"84 180"												// Shhhhhh. Don't tell. This is copied from the Katana~
+				//}
 			}
 			"visuals"																			// As a bonus, it makes mooing noises while idle occasionally! Yay!
 			{
@@ -19184,7 +19071,7 @@ That's gotta hurt in the morning
 			"show_in_armory"			"1"
 			"item_slot"					"melee"
 			"anim_slot"					"melee"
-			"bucket_position"			"1"
+
 			
 			"image_inventory_size_w"	"128"
 			"image_inventory_size_h"	"82"
@@ -19210,6 +19097,7 @@ Why don't you two talk? Face-to-face."
 			}
 			"static_attrs"																		// Stats are the mostly the SAME across all permutations - feel free to copy across all of them!
 			{
+				"civ brick"								"1"
 				"class select override vcd"				"taunt06"
 
 				"override projectile type"				"3"

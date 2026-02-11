@@ -1923,6 +1923,33 @@ soul of a twitchy hooligan"
 			"effect_type"			"positive"
 		}
 
+				"20043"
+		{
+			"name"					"civ brick"
+			"description_string"	"#attrib_nowp_civbrick"	
+			"attribute_class"		"DISPLAY_ONLY"
+			"description_format"	"value_is_percentage"
+			"effect_type"			"neutral"
+		}
+
+				"20044"
+		{
+			"name"					"rushorder desc"
+			"description_string"	"#attrib_nowp_rushorder"	
+			"attribute_class"		"DISPLAY_ONLY"
+			"description_format"	"value_is_percentage"
+			"effect_type"			"negative"
+		}
+
+				"20045"
+		{
+			"name"					"rushorder desc 2"
+			"description_string"	"#attrib_nowp_rushorder2"	
+			"attribute_class"		"DISPLAY_ONLY"
+			"description_format"	"value_is_percentage"
+			"effect_type"			"positive"
+		}
+
 
     }
     
